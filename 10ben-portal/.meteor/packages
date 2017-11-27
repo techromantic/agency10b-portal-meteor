@@ -21,3 +21,10 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 aldeed:autoform
 aldeed:simple-schema
 kadira:flow-router
+kadira:blaze-layout
+aldeed:collection2-core
+aldeed:template-extension
+accounts-ui
+accounts-password
+useraccounts:unstyled
+useraccounts:flow-routing
