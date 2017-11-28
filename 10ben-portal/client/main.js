@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { SimpleSchema } from 'meteor/simple-schema';
+import SimpleSchema from 'simpl-schema';
 import './main.html';
 
 //Simple Schema
@@ -15,3 +15,9 @@ SimpleSchema.debug = true;
 Template.applicationLayout.onCreated(function() {
   Blaze._allowJavascriptUrls();
 });
+
+Template.stub.events({
+  'click #logout' : (event, template) => {
+    AccountsTemplates.logout();
+  }
+})
