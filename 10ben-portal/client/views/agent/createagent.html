@@ -1,6 +1,10 @@
 <template name="createAgent">
+  <div class="form-header">
+    <h1>Create an Agent</h1>
+  </div>
+  <div class="form-container flex-column flex-start">
     {{#autoForm collection="Agents" id="addNewAgent" type="insert" class="add-form"}}
-        <fieldset>
+      <fieldset class="form-fieldset flex-column flex-start">
           {{> afFieldInput name='agentid'}}
           {{> afFieldInput name='datecreated'}}
           {{> afFieldInput name='name' type='text' placeholder="Full Name" }}
@@ -8,9 +12,11 @@
           {{> afFieldInput name='type' type='select' placeholder="Type" options="allowed"}}
           {{> afFieldInput name='callsign' type='text' placeholder="Callsign"}}
           {{> afFieldInput name='status' type='select' placeholder="Status" options="allowed"}}
-
-          <button type="submit">Submit</button>
+          <div class="button-container flex-row flex-start">
+            <button><a href="control-dash">Cancel</a></button>
+            <button type="submit">Submit</button>
+          </div>
       </fieldset>
-
     {{/autoForm}}
+  </div>
 </template>

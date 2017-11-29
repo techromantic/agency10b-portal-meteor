@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b73ffd7-7855-418d-9336-05d124c3c084" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" afterPath="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/assets/styles.css" afterPath="$PROJECT_DIR$/10ben-portal/client/assets/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/main.js" afterPath="$PROJECT_DIR$/10ben-portal/client/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" afterPath="$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html" afterPath="$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,19 +25,37 @@
             <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="378">
-                  <caret line="150" column="48" lean-forward="true" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
+                  <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
+                    <marker date="1511983866737" expanded="true" signature="2824:2852" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="2854:2897" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="2921:2954" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="2978:3041" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="3083:3124" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="3126:3149" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="3211:3259" ph="{...}" />
+                    <marker date="1511983866737" expanded="true" signature="3310:3380" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="createassignment.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="createassignment.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="306">
                   <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="371">
+                  <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -61,8 +78,8 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-630">
-                  <caret line="97" column="3" lean-forward="true" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
+                <state relative-caret-position="-619">
+                  <caret line="97" column="3" lean-forward="false" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -74,7 +91,7 @@
             <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="288">
-                  <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -91,10 +108,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
-        <option value="$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html" />
         <option value="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" />
         <option value="$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
         <option value="$PROJECT_DIR$/10ben-portal/client/main.js" />
+        <option value="$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html" />
       </list>
     </option>
   </component>
@@ -240,7 +257,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9402000" />
+    <option name="totallyTimeSpent" value="9576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="792" width="1366" height="744" extended-state="0" />
@@ -321,6 +338,14 @@
           <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
+            <marker date="1511983866737" expanded="true" signature="2824:2852" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2854:2897" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2921:2954" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2978:3041" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3083:3124" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3126:3149" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3211:3259" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3310:3380" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -365,14 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -408,8 +425,26 @@
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1511983866737" expanded="true" signature="2824:2852" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2854:2897" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2921:2954" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="2978:3041" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3083:3124" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3126:3149" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3211:3259" ph="{...}" />
+            <marker date="1511983866737" expanded="true" signature="3310:3380" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -421,13 +456,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="97" column="3" lean-forward="true" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="371">
+          <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
