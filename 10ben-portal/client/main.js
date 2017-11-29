@@ -9,19 +9,11 @@ SimpleSchema.extendOptions(['autoform']);
 SimpleSchema.debug = true;
 
 //Collections
+Agents = new Mongo.Collection('agents');
+Assignments = new Mongo.Collection('assignments');
 
 //Schemas
-
-//Agent
-//name
-//email
-//type
-//callsign
-//uid
-//assignment[id]
-//status
-
-Agent = new SimpleSchema({
+Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
     autoValue: function() {
@@ -47,25 +39,10 @@ Agent = new SimpleSchema({
   },
   status: {
     type: String
-  },
-  assignments: {
-    type: Array
-  },
-  'assignments.$': {
-    type: String
   }
-}, {tracker: Tracker});
+}, {tracker: Tracker}));
 
-//Assignment
-//id
-//type
-//assigned
-//title
-//desc
-//deadline
-//status
-
-Assignment = new SimpleSchema({
+Assignments.attachSchema(new SimpleSchema({
   assignmentid: {
     type: String,
     autoValue: function() {
@@ -88,9 +65,9 @@ Assignment = new SimpleSchema({
   },
   status: {
     type: String
-  }
+  },
   datecreated: {
-    type: Date
+    type: Date,
     autoValue: function() {
       return new Date()
     },
@@ -109,8 +86,11 @@ Assignment = new SimpleSchema({
     autoform: {
       type: "hidden"
     }
+  },
+  agentid: {
+    type: String,
   }
-}, {tracker: Tracker});
+}, {tracker: Tracker}));
 
 //Template Helpers
 Template.applicationLayout.onCreated(() => {
@@ -125,7 +105,7 @@ Template.login.onCreated(() => {
     $('.at-form .at-title h3').text('Welcome, Controller.');
     $('.at-pwd-form form .at-input').addClass('login-field');
     $('.at-pwd-form form .at-btn').addClass('login-button');
-    $('.at-signup-link').addClass('hidden');
+    //$('.at-signup-link').addClass('hidden');
   }, 0);
 });
 
