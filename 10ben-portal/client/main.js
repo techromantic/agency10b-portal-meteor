@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Random } from 'meteor/random';
 import SimpleSchema from 'simpl-schema';
 import './main.html';
 
@@ -10,6 +11,106 @@ SimpleSchema.debug = true;
 //Collections
 
 //Schemas
+
+//Agent
+//name
+//email
+//type
+//callsign
+//uid
+//assignment[id]
+//status
+
+Agent = new SimpleSchema({
+  agentid: {
+    type: String,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      }
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
+  name: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  type: {
+    type: String
+  },
+  callsign: {
+    type: String
+  },
+  status: {
+    type: String
+  },
+  assignments: {
+    type: Array
+  },
+  'assignments.$': {
+    type: String
+  }
+}, {tracker: Tracker});
+
+//Assignment
+//id
+//type
+//assigned
+//title
+//desc
+//deadline
+//status
+
+Assignment = new SimpleSchema({
+  assignmentid: {
+    type: String,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      }
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
+  title: {
+    type: String
+  },
+  desc: {
+    type: String
+  },
+  type: {
+    type: String
+  },
+  status: {
+    type: String
+  }
+  datecreated: {
+    type: Date
+    autoValue: function() {
+      return new Date()
+    },
+    autoform: {
+      type: "hidden"
+    }
+  },
+  deadline: {
+    type: Date
+  },
+  controllerid: {
+    type: String,
+    autoValue: function() {
+      return Meteor.userId()
+    },
+    autoform: {
+      type: "hidden"
+    }
+  }
+}, {tracker: Tracker});
 
 //Template Helpers
 Template.applicationLayout.onCreated(() => {
