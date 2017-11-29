@@ -12,18 +12,24 @@ SimpleSchema.debug = true;
 Agents = new Mongo.Collection('agents');
 Assignments = new Mongo.Collection('assignments');
 
+
 //Schemas
 Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        return Random.id(8)
+        var userkey = Random.hexString(8);
+        console.log(userkey);
+        return userkey;
       }
     },
     autoform: {
       type: "hidden"
     }
+  },
+  userkey: {
+    type: String
   },
   name: {
     type: String
@@ -33,24 +39,14 @@ Agents.attachSchema(new SimpleSchema({
   },
   type: {
     type: String,
-      allowedValues: ['Developer', 'Writer', 'Designer', 'Analyst', 'Strategist'],
-      autoform: {
-        options: [
-            {
-              label: "Developer", value: "Developer",
-             label: "Writer", value: "Writer",
-             label: "Designer", value: "Designer",
-             label: "Analyst", value: "Analyst",
-             label: "Strategist", value: "Strategist"
-            }
-        ]
-      }
+      allowedValues: ['Developer', 'Writer', 'Designer', 'Analyst', 'Strategist']
   },
   callsign: {
     type: String
   },
   status: {
-    type: String
+    type: String,
+      allowedValues: ['Active', 'Inactive']
   }
 }, {tracker: Tracker}));
 
@@ -131,9 +127,9 @@ Template.stub.events({
 
 
 //Controller Dashboard
-Template.controllerDashboard.onCreated(() => {
-  //this.agents = this.subscribe("allAgents");
-  //this.assignments = this.subscribe("allControllerAssignments");
+Template.controllerDashboard.onCreated(function(){
+  this.agents = this.subscribe("allAgents");
+  this.assignments = this.subscribe("allControllerAssignments");
 });
 
 Template.controllerDashboard.helpers({
@@ -155,3 +151,11 @@ Template.controllerDashboard.events({
     AccountsTemplates.logout();
   }
 });
+
+Template.createAgent.onCreated(function() {
+  this.agents = this.subscribe("allAgents");
+});
+
+Template.createAgent.helpers({
+
+})
