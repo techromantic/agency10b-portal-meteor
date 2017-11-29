@@ -132,6 +132,15 @@ select option {
 .flex-row {
   display: flex;
   flex-direction: row;
+  border-bottom: solid thin white;
+  border-right: solid thin white;
+}
+
+.flex-row:last-child {
+  display: flex;
+  flex-direction: row;
+  border-bottom: none;
+
 }
 
 .flex-center {

@@ -89,8 +89,24 @@ Assignments.attachSchema(new SimpleSchema({
     }
   },
   agentid: {
+    type: Array,
+      autoform: {
+          options: function () {
+          //var agents = Agents.find({}).fetch();
+              var opts = Agents.find().map(function(agent) {
+                  return {
+                      label: agent.name + ": " + agent.type,
+                      value: agent.agentid
+                  };
+              });
+              console.log(opts);
+              return opts;
+          }
+      }
+  },
+    'agentid.$' : {
     type: String
-  }
+    }
 }, {tracker: Tracker}));
 
 //Template Helpers
@@ -134,7 +150,6 @@ Template.controllerDashboard.helpers({
   controllerCallsign: () => {
     return Meteor.user().profile.callsign;
   },
-
   agents: () => {
     return Agents.find({});
   },
@@ -160,4 +175,5 @@ Template.createAgent.helpers({
 
 Template.createAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
+    this.agents = this.subscribe("allAgents");
 });
