@@ -1,10 +1,12 @@
 var userLogin = (error) => {
   if (!error)
-    FlowRouter.go('stub');
+    FlowRouter.go('control-dash');
+
+  //Add more checks if user is controller or agent
 };
 
 var userLogout = () => {
-  FlowRouter.go('login');
+  FlowRouter.go('control-login');
 };
 
 AccountsTemplates.configure({

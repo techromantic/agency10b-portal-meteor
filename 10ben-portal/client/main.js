@@ -97,14 +97,16 @@ Template.applicationLayout.onCreated(() => {
   Blaze._allowJavascriptUrls();
 });
 
-Template.login.onCreated(() => {
+//Controller Login
+Template.controllerLogin.onCreated(() => {
   setTimeout(() => {
     $('.at-form').addClass('login-form flex-column flex-center');
     $('.at-pwd-form form').addClass('flex-column flex-start');
     $('.at-form .at-title h3').addClass('login-title');
     $('.at-form .at-title h3').text('Welcome, Controller.');
     $('.at-pwd-form form .at-input').addClass('login-field');
-    $('.at-pwd-form form .at-btn').addClass('login-button');
+    $('.at-pwd-form form .login-field input').addClass('bottom-border');
+    $('.at-pwd-form form .at-btn').addClass('login-button bottom-border');
     //$('.at-signup-link').addClass('hidden');
   }, 0);
 });
@@ -113,4 +115,31 @@ Template.stub.events({
   'click #logout' : (event, template) => {
     AccountsTemplates.logout();
   }
-})
+});
+
+
+//Controller Dashboard
+Template.controllerDashboard.onCreated(() => {
+  //this.agents = this.subscribe("allAgents");
+  //this.assignments = this.subscribe("allControllerAssignments");
+});
+
+Template.controllerDashboard.helpers({
+  callsign: () => {
+    return Meteor.user().profile.callsign;
+  },
+
+  agents: () => {
+    return Agents.find({});
+  },
+
+  assignments: () => {
+    return Assignments.find({controllerid: this.userId});
+  }
+});
+
+Template.controllerDashboard.events({
+  'click #logout' : (event, template) => {
+    AccountsTemplates.logout();
+  }
+});

@@ -63,6 +63,21 @@ button:focus {
   align-items: flex-start;
 }
 
+/*Containers*/
+.full-border {
+  border: 2px solid #FFF;
+  border-radius: 10px;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+.bottom-border {
+  border: 0;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
 /*Login View*/
 .login-container {
   margin: 0;
@@ -84,10 +99,6 @@ button:focus {
   min-height: 600px;
   max-width: 600px;
   max-height: 1000px;
-  border: 2px solid #FFF;
-  border-radius: 10px;
-  animation: border-color-shift 10s ease infinite;
-  -webkit-animation: border-color-shift 10s ease infinite;
 }
 
 .login-box .login-image {
@@ -111,10 +122,11 @@ button:focus {
   font-size: 1.3em;
   background: transparent;
   color: #FFF;
-  border: 0;
-  border-bottom: 1px solid #FFF;
-  animation: border-color-shift 10s ease infinite;
-  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+.login-field input:focus {
+  animation: border-color-highlight 300ms ease 1;
+  -webkit-animation: border-color-highlight 300ms ease 1;
 }
 
 .login-button {
@@ -129,9 +141,9 @@ button:focus {
   border: 0;
 }
 
-.login-button::after {
+.login-button::after,
+.control-add a::after {
   display: block;
-  align-self: center;
   content: "";
   height: 4px;
   width: 60%;
@@ -146,8 +158,52 @@ button:focus {
   cursor: pointer;
 }
 
-.login-button:hover::after {
+.login-button:hover::after,
+.control-add a:hover::after {
   width: 100%;
   animation: border-color-highlight 300ms ease 1;
   -webkit-animation: border-color-highlight 300ms ease 1;
+}
+
+
+/*Controller Dashboard View*/
+.controller-header {
+  margin: 40px;
+}
+
+.controller-header h1 {
+  font-size: 4em;
+}
+
+.section-container {
+  margin: 60px;
+}
+
+.control-section h1::after {
+  display: block;
+  content: "";
+  height: 8px;
+  width: 600px;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+.control-container {
+  margin: 20px;
+}
+
+.control-list {
+  height: 30vh;
+  min-height: 300px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.control-add a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFF;
+  font-weight: 800;
 }
