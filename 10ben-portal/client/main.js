@@ -94,6 +94,11 @@ Assignments.attachSchema(new SimpleSchema({
 }, {tracker: Tracker}));
 
 //Template Helpers
+Template.registerHelper('formatDate', (date) => {
+  return moment(date).format('MMM. D, YYYY');
+});
+
+//Template Helpers
 Template.applicationLayout.onCreated(() => {
   Blaze._allowJavascriptUrls();
 });
@@ -122,7 +127,7 @@ Template.stub.events({
 //Controller Dashboard
 Template.controllerDashboard.onCreated(function(){
   this.agents = this.subscribe("allAgents");
-  this.assignments = this.subscribe("allControllerAssignments");
+  this.assignments = this.subscribe("allAssignments");
 });
 
 Template.controllerDashboard.helpers({
@@ -135,7 +140,7 @@ Template.controllerDashboard.helpers({
   },
 
   assignments: () => {
-    return Assignments.find({controllerid: this.userId});
+    return Assignments.find({});
   }
 });
 

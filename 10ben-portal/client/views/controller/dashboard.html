@@ -24,7 +24,9 @@
       <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each assignments}}
-            {{title}}
+            <div class="control-item flex-row flex-start">
+              <p>{{title}} (Due in {{formatDate deadline}})</p>
+            </div>
           {{/each}}
         </div>
         <div class="control-add">
