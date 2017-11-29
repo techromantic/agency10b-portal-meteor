@@ -64,3 +64,16 @@ FlowRouter.go('control-login');
   },
   name: 'create-agent'
 });
+
+FlowRouter.route('/create-assignment', {
+    action: () => {
+    if (!Meteor.user() && !Meteor.loggingIn())
+FlowRouter.go('control-login');
+else if (Meteor.user() || Meteor.loggingIn()) {
+    BlazeLayout.render('applicationLayout', {
+        main: 'createAssignment'
+    })
+}
+},
+name: 'create-assignment'
+});

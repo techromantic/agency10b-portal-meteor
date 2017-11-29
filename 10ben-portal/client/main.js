@@ -63,10 +63,12 @@ Assignments.attachSchema(new SimpleSchema({
     type: String
   },
   type: {
-    type: String
+    type: String,
+      allowedValues: ['Development', 'Copy', 'Design', 'Analysis', 'Strategy']
   },
   status: {
-    type: String
+    type: String,
+      allowedValues: ['Open', 'Assigned', 'Accepted', 'Rejected', 'Completed', 'Under Review', 'Archived']
   },
   datecreated: {
     type: Date,
@@ -86,7 +88,7 @@ Assignments.attachSchema(new SimpleSchema({
     }
   },
   agentid: {
-    type: String,
+    type: String
   }
 }, {tracker: Tracker}));
 
@@ -144,6 +146,10 @@ Template.controllerDashboard.events({
 
 Template.createAgent.onCreated(function() {
   this.agents = this.subscribe("allAgents");
+});
+
+Template.createAssignment.onCreated(function() {
+    this.assignments = this.subscribe("allControllerAssignments");
 });
 
 Template.createAgent.helpers({
