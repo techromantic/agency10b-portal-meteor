@@ -17,19 +17,17 @@ Assignments = new Mongo.Collection('assignments');
 Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
-    autoValue: function() {
-      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        var userkey = Random.hexString(8);
-        console.log(userkey);
-        return userkey;
-      }
-    },
+    defaultValue: Random.id(8),
     autoform: {
       type: "hidden"
     }
   },
-  userkey: {
-    type: String
+  datecreated: {
+    type: Date,
+    defaultValue: new Date(),
+    autoform: {
+      type: "hidden"
+    }
   },
   name: {
     type: String
@@ -53,11 +51,7 @@ Agents.attachSchema(new SimpleSchema({
 Assignments.attachSchema(new SimpleSchema({
   assignmentid: {
     type: String,
-    autoValue: function() {
-      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        return Random.id(8)
-      }
-    },
+    defaultValue: Random.id(8),
     autoform: {
       type: "hidden"
     }
@@ -76,9 +70,7 @@ Assignments.attachSchema(new SimpleSchema({
   },
   datecreated: {
     type: Date,
-    autoValue: function() {
-      return new Date()
-    },
+    defaultValue: new Date(),
     autoform: {
       type: "hidden"
     }
@@ -88,9 +80,7 @@ Assignments.attachSchema(new SimpleSchema({
   },
   controllerid: {
     type: String,
-    autoValue: function() {
-      return Meteor.userId()
-    },
+    defaultValue: Meteor.userId(),
     autoform: {
       type: "hidden"
     }

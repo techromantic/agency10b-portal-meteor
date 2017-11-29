@@ -1,14 +1,16 @@
 <template name="createAgent">
-    {{#autoForm collection="Agents" id="addNewAgent" type="insert"
-class="add-form"}}
+    {{#autoForm collection="Agents" id="addNewAgent" type="insert" class="add-form"}}
         <fieldset>
-            {{> afFieldInput name='userkey' placeholder="User Key" }}
-            {{> afFieldInput name='name' type='text' placeholder="Full Name" }}
-            {{> afFieldInput name='email' type='text' placeholder="Email" }}
-            {{> afFieldInput name='type' type='select' placeholder="Type" options="allowed"}}
-            {{> afFieldInput name='callsign' type='text' placeholder="Callsign"}}
-            {{> afFieldInput name='status' type='select' placeholder="Status" options="allowed"}}
-        </fieldset>
-        <button type="submit">Submit</button>
+          {{> afFieldInput name='agentid'}}
+          {{> afFieldInput name='datecreated'}}
+          {{> afFieldInput name='name' type='text' placeholder="Full Name" }}
+          {{> afFieldInput name='email' type='text' placeholder="Email" }}
+          {{> afFieldInput name='type' type='select' placeholder="Type" options="allowed"}}
+          {{> afFieldInput name='callsign' type='text' placeholder="Callsign"}}
+          {{> afFieldInput name='status' type='select' placeholder="Status" options="allowed"}}
+
+          <button type="submit">Submit</button>
+      </fieldset>
+
     {{/autoForm}}
 </template>
