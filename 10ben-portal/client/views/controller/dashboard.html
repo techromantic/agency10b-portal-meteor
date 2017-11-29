@@ -1,15 +1,17 @@
 <template name="controllerDashboard">
   <div class="controller-header">
-    <h1>Welcome, {{callsign}}</h1>
+    <h1>Welcome, {{controllerCallsign}}</h1>
   </div>
 
   <div class="section-container flex-column flex-start">
     <div class="control-section flex-column flex-start">
       <h1>Agent Control</h1>
-      <div class="control-container flex-row flex-center">
+      <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each agents}}
-            {{agentCallsign}}
+            <div class="control-item flex-row flex-start">
+              <p>{{callsign}} ({{name}}, {{email}}) - {{type}}</p>
+            </div>
           {{/each}}
         </div>
         <div class="control-add">
@@ -19,7 +21,7 @@
     </div>
     <div class="control-section flex-column flex-start">
       <h1>Assignment Control</h1>
-      <div class="control-container flex-row flex-center">
+      <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each assignments}}
             {{title}}

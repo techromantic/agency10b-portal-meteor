@@ -123,7 +123,7 @@ Template.controllerDashboard.onCreated(function(){
 });
 
 Template.controllerDashboard.helpers({
-  callsign: () => {
+  controllerCallsign: () => {
     return Meteor.user().profile.callsign;
   },
 

@@ -23,6 +23,70 @@ button:focus {
   display: none;
 }
 
+button {
+  background: transparent;
+  color: #FFF;
+  font-size: 1.2em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 0;
+}
+
+button::after {
+  display: block;
+  content: "";
+  height: 4px;
+  width: 60%;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+  transition: width 300ms ease;
+  -webkit-transition: width 300ms ease;
+}
+
+button a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:hover::after {
+  width: 100%;
+  animation: border-color-highlight 300ms ease 1;
+  -webkit-animation: border-color-highlight 300ms ease 1;
+}
+
+input {
+  color: #FFF;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+input:focus {
+  animation: border-color-highlight 300ms ease 1;
+  -webkit-animation: border-color-highlight 300ms ease 1;
+}
+
+select {
+  font-family: 'Raleway', sans-serif;
+  border: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  background: transparent;
+  color: #FFF;
+}
+
+select option {
+  background: #000;
+}
+
 /*Animations*/
 @keyframes border-color-shift {
   0%, 100% {
@@ -131,17 +195,8 @@ button:focus {
 
 .login-button {
   margin: 10px 0;
-  padding: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.2em;
-  font-weight: 700;
-  background: transparent;
-  color: #FFF;
-  border: 0;
 }
 
-.login-button::after,
 .control-add a::after {
   display: block;
   content: "";
@@ -154,11 +209,6 @@ button:focus {
   -webkit-transition: width 300ms ease;
 }
 
-.login-button:hover {
-  cursor: pointer;
-}
-
-.login-button:hover::after,
 .control-add a:hover::after {
   width: 100%;
   animation: border-color-highlight 300ms ease 1;
@@ -177,6 +227,11 @@ button:focus {
 
 .section-container {
   margin: 60px;
+  width: 100%;
+}
+
+.control-section {
+  width: 100%;
 }
 
 .control-section h1::after {
@@ -191,13 +246,40 @@ button:focus {
 
 .control-container {
   margin: 20px;
+  width: 100%;
 }
 
 .control-list {
   height: 30vh;
   min-height: 300px;
   max-height: 600px;
+  width: 40%;
+  max-width: 600px;
+  min-width: 500px;
   overflow-y: auto;
+}
+
+.control-item {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+}
+
+.control-item:hover {
+  cursor: pointer;
+  background: #3444F2;
+}
+
+.control-item p {
+  align-self: center;
+  font-weight: 600;
+}
+
+.control-add {
+  align-self: center;
+  margin-left: 100px;
 }
 
 .control-add a {
@@ -206,4 +288,37 @@ button:focus {
   letter-spacing: 2px;
   color: #FFF;
   font-weight: 800;
+}
+
+
+/*Form Controls*/
+.form-header {
+  margin: 40px;
+}
+
+.form-header h1 {
+  font-size: 4em;
+}
+
+.form-container {
+  margin: 60px;
+}
+
+.form-fieldset {
+  border: 0;
+  width: 40vw;
+}
+
+.form-fieldset input {
+  width: 100%;
+  font-size: 1.3em;
+  margin: 20px 0;
+}
+
+.button-container {
+  margin: 40px 0;
+}
+
+.button-container button {
+  margin-right: 40px;
 }
