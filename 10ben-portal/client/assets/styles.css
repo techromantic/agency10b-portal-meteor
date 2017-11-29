@@ -12,6 +12,20 @@ body * {
   box-sizing: border-box;
 }
 
+textarea {
+  background: transparent;
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  border: 0;
+  margin: 60px 0;
+  width: 100%;
+  min-height: 100px;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -75,6 +89,7 @@ input:focus {
 }
 
 select {
+  margin: 20px 0;
   font-family: 'Raleway', sans-serif;
   border: 0;
   font-size: 1.2em;

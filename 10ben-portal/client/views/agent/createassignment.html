@@ -1,6 +1,10 @@
 <template name="createAssignment">
+  <div class="form-header">
+    <h1>Create an Assignment</h1>
+  </div>
+  <div class="form-container flex-column flex-start">
     {{#autoForm collection="Assignments" id="addNewAssignment" type="insert" class="add-form"}}
-        <fieldset>
+        <fieldset class="form-fieldset flex-column flex-start">
             {{> afFieldInput name='assignmentid'}}
             {{> afFieldInput name='datecreated'}}
             {{> afFieldInput name='title' type='text' placeholder="Assignment Title" }}
@@ -10,8 +14,11 @@
             {{> afFieldInput name='status' type='select' placeholder="Status" options="allowed"}}
             {{> afFieldInput name='controllerid'}}
             {{> afFieldInput name='agentid' type='text' placeholder="Agent ID"}}
-            <button type="submit">Submit</button>
+            <div class="button-container flex-row flex-start">
+              <button><a href="control-dash">Cancel</a></button>
+              <button type="submit">Submit</button>
+            </div>
         </fieldset>
-
     {{/autoForm}}
+  </div>
 </template>

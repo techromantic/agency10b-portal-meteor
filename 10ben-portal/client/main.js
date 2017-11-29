@@ -60,7 +60,8 @@ Assignments.attachSchema(new SimpleSchema({
     type: String
   },
   desc: {
-    type: String
+    type: String,
+    max: 2000
   },
   type: {
     type: String,
@@ -148,10 +149,10 @@ Template.createAgent.onCreated(function() {
   this.agents = this.subscribe("allAgents");
 });
 
-Template.createAssignment.onCreated(function() {
-    this.assignments = this.subscribe("allControllerAssignments");
-});
-
 Template.createAgent.helpers({
 
 })
+
+Template.createAssignment.onCreated(function() {
+    this.assignments = this.subscribe("allAssignments");
+});
