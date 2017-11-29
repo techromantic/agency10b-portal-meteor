@@ -50,3 +50,17 @@ FlowRouter.route('/control-dash', {
   },
   name: 'control-dash'
 });
+
+//Controller Dashboard
+FlowRouter.route('/create-agent', {
+    action: () => {
+    if (!Meteor.user() && !Meteor.loggingIn())
+FlowRouter.go('control-login');
+  else if (Meteor.user() || Meteor.loggingIn()) {
+    BlazeLayout.render('applicationLayout', {
+        main: 'createAgent'
+      })
+    }
+  },
+  name: 'create-agent'
+});

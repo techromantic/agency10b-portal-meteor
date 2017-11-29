@@ -32,7 +32,19 @@ Agents.attachSchema(new SimpleSchema({
     type: String
   },
   type: {
-    type: String
+    type: String,
+      allowedValues: ['Developer', 'Writer', 'Designer', 'Analyst', 'Strategist'],
+      autoform: {
+        options: [
+            {
+              label: "Developer", value: "Developer",
+             label: "Writer", value: "Writer",
+             label: "Designer", value: "Designer",
+             label: "Analyst", value: "Analyst",
+             label: "Strategist", value: "Strategist"
+            }
+        ]
+      }
   },
   callsign: {
     type: String
