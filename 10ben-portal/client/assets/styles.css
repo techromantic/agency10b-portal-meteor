@@ -105,6 +105,15 @@ select option {
 }
 
 /*Animations*/
+@keyframes background-shift {
+  0%, 100% {
+    background-color: #3444F2;
+  }
+  50% {
+    background-color: #DF2779;
+  }
+}
+
 @keyframes border-color-shift {
   0%, 100% {
     border-color: #3444F2;
@@ -132,15 +141,12 @@ select option {
 .flex-row {
   display: flex;
   flex-direction: row;
-  border-bottom: solid thin white;
-  border-right: solid thin white;
 }
 
 .flex-row:last-child {
   display: flex;
   flex-direction: row;
   border-bottom: none;
-
 }
 
 .flex-center {
@@ -244,30 +250,95 @@ select option {
 
 /*Controller Dashboard View*/
 .controller-header {
-  margin: 40px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .controller-header h1 {
-  font-size: 4em;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.vertical-divider {
+  height: 60px;
+  width: 4px;
+  margin: 0 40px;
+  background-color: #FFF;
+  animation: background-shift 10s ease infinite;
+  -webkit-animation: background-shift 10s ease infinite;
 }
 
 .section-container {
-  margin: 60px;
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1024px;
 }
 
 .control-section {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 400px;
+  transition: left 400ms ease;
+  -webkit-transition: left 400ms ease;
 }
 
-.control-section h1::after {
+.control-section .control-title {
+  color: #888;
+  z-index: 999;
+  border-bottom: 0;
+}
+
+.control-section.active .control-title {
+  color: #FFF;
+  z-index: 999;
+}
+
+.control-section .control-title::after {
+  width: 20%;
+}
+
+.control-section.active .control-title::after {
+  width: 60%;
+}
+
+.control-section .control-container {
+  display: none;
+}
+
+.control-section.active .control-container {
+  display: inherit;
+}
+
+.control-section.active {
+  left: 0;
+}
+
+.control-title::after {
   display: block;
   content: "";
   height: 8px;
-  width: 600px;
   border-bottom: 2px solid #FFF;
   animation: border-color-shift 10s ease infinite;
   -webkit-animation: border-color-shift 10s ease infinite;
+  transition: width 300ms ease;
+  -webkit-transition: width 300ms ease;
+}
+
+.control-section:not(.active) .control-title:hover {
+  cursor: pointer;
+}
+
+.control-section:not(.active) .control-title:hover::after {
+  width: 100%;
+  animation: border-color-highlight 300ms ease 1;
+  -webkit-animation: border-color-highlight 300ms ease 1;
 }
 
 .control-container {

@@ -162,6 +162,10 @@ Template.controllerDashboard.helpers({
 Template.controllerDashboard.events({
   'click #logout' : (event, template) => {
     AccountsTemplates.logout();
+  },
+
+  'click .control-section:not(.active) .control-title' : (event, template) => {
+    $('.control-section').toggleClass('active');
   }
 });
 
