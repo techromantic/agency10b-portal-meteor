@@ -17,7 +17,7 @@
           {{/each}}
         </div>
         <div class="control-add">
-          <a href="create-agent">Add an Agent</a>
+          <button id="add-agent">Add an Agent</button>
         </div>
       </div>
     </div>
@@ -32,11 +32,18 @@
           {{/each}}
         </div>
         <div class="control-add">
-          <a href="create-assignment">Add an Assignment</a>
+          <button id="add-assignment">Add an Assignment</button>
         </div>
       </div>
     </div>
   </div>
 
   <button id="logout">Logout</button>
+
+  <div class="form-modal full-border flex-column flex-start" id="agent-form">
+    {{> createAgent}}
+  </div>
+  <div class="form-modal full-border flex-column flex-start" id="assignment-form">
+    {{> createAssignment}}
+  </div>
 </template>

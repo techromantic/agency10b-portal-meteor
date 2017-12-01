@@ -128,7 +128,7 @@ Template.controllerLogin.onCreated(() => {
     $('.at-form .at-title h3').text('Welcome, Controller.');
     $('.at-pwd-form form .at-input').addClass('login-field');
     $('.at-pwd-form form .login-field input').addClass('bottom-border');
-    $('.at-pwd-form form .at-btn').addClass('login-button bottom-border');
+    $('.at-pwd-form form .at-btn').addClass('login-button');
     //$('.at-signup-link').addClass('hidden');
   }, 0);
 });
@@ -166,6 +166,16 @@ Template.controllerDashboard.events({
 
   'click .control-section:not(.active) .control-title' : (event, template) => {
     $('.control-section').toggleClass('active');
+  },
+
+  'click #add-agent' : (event, template) => {
+    $('#assignment-form').removeClass('active');
+    $('#agent-form').addClass('active');
+  },
+
+  'click #add-assignment' : (event, template) => {
+    $('#agent-form').removeClass('active');
+    $('#assignment-form').addClass('active');
   }
 });
 
@@ -173,11 +183,27 @@ Template.createAgent.onCreated(function() {
   this.agents = this.subscribe("allAgents");
 });
 
-Template.createAgent.helpers({
+Template.createAgent.events({
+  'click #cancel-form' : (event, template) => {
+    $('#agent-form').removeClass('active');
+  },
 
-})
+  'click #submit-form' : (event, template) => {
+    $('#agent-form').removeClass('active');
+  },
+});
 
 Template.createAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
     this.agents = this.subscribe("allAgents");
 });
+
+Template.createAssignment.events({
+  'click #cancel-form' : (event, template) => {
+    $('#assignment-form').removeClass('active');
+  },
+
+  'click #submit-form' : (event, template) => {
+    $('#assignment-form').removeClass('active');
+  },
+})

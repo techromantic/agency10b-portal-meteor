@@ -6,6 +6,7 @@ body {
   color: #FFF;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body * {
@@ -34,15 +35,16 @@ button:focus {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 button {
+  font-family: 'Raleway', sans-serif !important;
   background: transparent;
   color: #FFF;
-  font-size: 1.2em;
+  font-size: 1.2em !important;
   font-weight: 800;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   letter-spacing: 2px;
   border: 0;
 }
@@ -91,10 +93,10 @@ input:focus {
 }
 
 select {
-  margin: 20px 0;
-  font-family: 'Raleway', sans-serif;
+  margin: 40px 0 !important;
+  font-family: 'Raleway', sans-serif !important;
   border: 0;
-  font-size: 1.2em;
+  font-size: 1.3em !important;
   font-weight: 600;
   background: transparent;
   color: #FFF;
@@ -289,6 +291,12 @@ select option {
   -webkit-transition: left 400ms ease;
 }
 
+.control-section .control-title,
+.control-section.active .control-title {
+  transition: color 400ms ease-out;
+  -webkit-transition: color 400ms ease-out;
+}
+
 .control-section .control-title {
   color: #888;
   z-index: 999;
@@ -387,18 +395,35 @@ select option {
   font-weight: 800;
 }
 
+/*Form Modals*/
+.form-modal {
+  position: absolute;
+  top: -200vh;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: #000;
+  transition: top 0s ease, opacity 400ms ease;
+  -webkit-transition: top 0s ease, opacity 400ms ease;
+  z-index: 999;
+}
+
+.form-modal.active {
+  top: 50%;
+  opacity: 1;
+}
 
 /*Form Controls*/
 .form-header {
-  margin: 40px;
+  margin: 20px 40px;
 }
 
 .form-header h1 {
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .form-container {
-  margin: 60px;
+  margin: 20px;
 }
 
 .form-fieldset {
