@@ -89,6 +89,7 @@
 
 .control-section:not(.active) .control-title:hover {
   cursor: pointer;
+  color: #FFF;
 }
 
 .control-section:not(.active) .control-title:hover::after {
@@ -112,9 +113,14 @@
   overflow-y: auto;
 }
 
+.control-item:first-child {
+  border-top: 1px solid #FFF;
+}
+
 .control-item {
   width: 100%;
-  padding: 10px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #FFF;
   background: #000;
   transition: background 300ms ease;
   -webkit-transition: background 300ms ease;
@@ -125,20 +131,16 @@
   background: #3444F2;
 }
 
-.control-item p {
+.control-item span {
+  font-size: 1.2em;
   align-self: center;
-  font-weight: 600;
+  font-weight: 400;
 }
 
-.control-add {
-  align-self: center;
+.control-panel {
   margin-left: 100px;
 }
 
-.control-add a {
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #FFF;
-  font-weight: 800;
+.control-panel button {
+  margin: 10px 0;
 }

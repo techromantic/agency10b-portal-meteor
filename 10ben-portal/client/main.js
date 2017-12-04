@@ -92,15 +92,13 @@ Assignments.attachSchema(new SimpleSchema({
     type: Array,
       autoform: {
           options: function () {
-          //var agents = Agents.find({}).fetch();
-              var opts = Agents.find().map(function(agent) {
-                  return {
-                      label: agent.name + ": " + agent.type,
-                      value: agent.agentid
-                  };
-              });
-              console.log(opts);
-              return opts;
+            var opts = Agents.find().map(function(agent) {
+                return {
+                    label: agent.name + ": " + agent.type,
+                    value: agent.agentid
+                };
+            });
+            return opts;
           }
       }
   },
@@ -109,12 +107,42 @@ Assignments.attachSchema(new SimpleSchema({
     }
 }, {tracker: Tracker}));
 
+//FlowRouter Autoform Hooks
+AutoForm.addHooks(null, {
+    onError: (name, error, template) => {
+      console.log(name + " error:", error);
+    }
+});
+
+AutoForm.addHooks('addAgent', {
+    onSuccess: (formType, result) => {
+      FlowRouter.go('control-dash');
+    }
+});
+
+AutoForm.addHooks('editAgent', {
+    onSuccess: (formType, result) => {
+      FlowRouter.go('control-dash');
+    }
+});
+
+AutoForm.addHooks('addAssignment', {
+    onSuccess: (formType, result) => {
+      FlowRouter.go('control-dash');
+    }
+});
+
+AutoForm.addHooks('editAssignment', {
+    onSuccess: (formType, result) => {
+      FlowRouter.go('control-dash');
+    }
+});
+
 //Template Helpers
 Template.registerHelper('formatDate', (date) => {
   return moment(date).format('MMM. D, YYYY');
 });
 
-//Template Helpers
 Template.applicationLayout.onCreated(() => {
   Blaze._allowJavascriptUrls();
 });
@@ -139,7 +167,6 @@ Template.stub.events({
   }
 });
 
-
 //Controller Dashboard
 Template.controllerDashboard.onCreated(function(){
   this.agents = this.subscribe("allAgents");
@@ -150,6 +177,7 @@ Template.controllerDashboard.helpers({
   controllerCallsign: () => {
     return Meteor.user().profile.callsign;
   },
+
   agents: () => {
     return Agents.find({});
   },
@@ -169,14 +197,22 @@ Template.controllerDashboard.events({
   },
 
   'click #add-agent' : (event, template) => {
-    $('#assignment-form').removeClass('active');
-    $('#agent-form').addClass('active');
+    $('#agent-add').addClass('active');
     $('.form-bg').addClass('active');
   },
 
   'click #add-assignment' : (event, template) => {
-    $('#agent-form').removeClass('active');
-    $('#assignment-form').addClass('active');
+    $('#assignment-add').addClass('active');
+    $('.form-bg').addClass('active');
+  },
+
+  'click .agent-item' : (event, template) => {
+    $('#agent-edit').addClass('active');
+    $('.form-bg').addClass('active');
+  },
+
+  'click .assignment-item' : (event, template) => {
+    $('#assignment-edit').addClass('active');
     $('.form-bg').addClass('active');
   }
 });
@@ -187,15 +223,37 @@ Template.createAgent.onCreated(function() {
 
 Template.createAgent.events({
   'click #cancel-form' : (event, template) => {
-    $('#agent-form').removeClass('active');
+    $('#agent-add').removeClass('active');
     $('.form-bg').removeClass('active');
   },
 
   'click #submit-form' : (event, template) => {
-    $('#agent-form').removeClass('active');
+    $('#agent-add').removeClass('active');
     $('.form-bg').removeClass('active');
   },
 });
+
+Template.editAgent.onCreated(function() {
+  this.agents = this.subscribe("allAgents");
+});
+
+Template.editAgent.helpers({
+  agentdetail: () => {
+    return Agents.find({agentid: FlowRouter.getParam('agentid')});
+  }
+});
+
+Template.editAgent.events({
+  'click #cancel-form' : (event, template) => {
+    $('#agent-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+  },
+
+  'click #submit-form' : (event, template) => {
+    $('#agent-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+  }
+})
 
 Template.createAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
@@ -204,12 +262,35 @@ Template.createAssignment.onCreated(function() {
 
 Template.createAssignment.events({
   'click #cancel-form' : (event, template) => {
-    $('#assignment-form').removeClass('active');
+    $('#assignment-add').removeClass('active');
     $('.form-bg').removeClass('active');
   },
 
   'click #submit-form' : (event, template) => {
-    $('#assignment-form').removeClass('active');
+    $('#assignment-add').removeClass('active');
     $('.form-bg').removeClass('active');
   },
+})
+
+Template.editAssignment.onCreated(function() {
+    this.assignments = this.subscribe("allAssignments");
+    this.agents = this.subscribe("allAgents");
+});
+
+Template.editAssignment.helpers({
+  assignmentdetail: () => {
+    return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
+  }
+});
+
+Template.editAssignment.events({
+  'click #cancel-form' : (event, template) => {
+    $('#assignment-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+  },
+
+  'click #submit-form' : (event, template) => {
+    $('#assignment-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+  }
 })

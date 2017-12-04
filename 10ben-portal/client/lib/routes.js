@@ -51,29 +51,22 @@ FlowRouter.route('/control-dash', {
   name: 'control-dash'
 });
 
-//Controller Dashboard
-FlowRouter.route('/create-agent', {
-    action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn())
-FlowRouter.go('control-login');
-  else if (Meteor.user() || Meteor.loggingIn()) {
-    BlazeLayout.render('applicationLayout', {
-        main: 'createAgent'
-      })
+//Edit Agent
+FlowRouter.route( '/control-dash/edit/agent/:agentid', {
+  action: () => {
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go('login');
     }
   },
-  name: 'create-agent'
+  name: 'editagent'
 });
 
-FlowRouter.route('/create-assignment', {
-    action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn())
-FlowRouter.go('control-login');
-else if (Meteor.user() || Meteor.loggingIn()) {
-    BlazeLayout.render('applicationLayout', {
-        main: 'createAssignment'
-    })
-}
-},
-name: 'create-assignment'
+//Edit Assignment
+FlowRouter.route( '/control-dash/edit/assignment/:assignmentid', {
+  action: () => {
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go('login');
+    }
+  },
+  name: 'editassignment'
 });
