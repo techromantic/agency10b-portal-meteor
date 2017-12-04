@@ -126,13 +126,13 @@
   padding: 15px 10px;
   border-bottom: 1px solid #FFF;
   background: transparent;
-  transition: background 300ms ease;
-  -webkit-transition: background 300ms ease;
 }
 
 .control-item:hover {
   cursor: pointer;
-  background: #3444F2;
+  animation: button-radial 150ms ease 1;
+  -webkit-animation: button-radial 150ms ease 1;
+  animation-fill-mode: forwards;
 }
 
 .control-item span {
