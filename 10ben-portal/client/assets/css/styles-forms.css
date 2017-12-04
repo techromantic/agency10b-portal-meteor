@@ -42,10 +42,18 @@
 
 .button-container {
   margin: 40px 0;
+  width: 100%;
 }
 
 .button-container button {
   margin-right: 40px;
+}
+
+.delete-button {
+  margin-left: auto;
+  color: #FF2015;
+  animation: border-warning-shift 10s ease infinite;
+  -webkit-animation: border-warning-shift 10s ease infinite;
 }
 
 /*Form Background*/

@@ -40,6 +40,7 @@
             <div class="button-container flex-row flex-start">
               <button id="cancel-form"><a href="/control-dash">Cancel</a></button>
               <button id="submit-form" type="submit">Submit</button>
+              {{#quickRemoveButton collection="Assignments" _id=this._id id="delete-form" class="delete-button" type="button" beforeRemove=beforeRemove onSuccess=onSuccess}}Delete{{/quickRemoveButton}}
             </div>
         </fieldset>
     {{/autoForm}}

@@ -230,7 +230,7 @@ Template.createAgent.events({
   'click #submit-form' : (event, template) => {
     $('#agent-add').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
+  }
 });
 
 Template.editAgent.onCreated(function() {
@@ -240,6 +240,23 @@ Template.editAgent.onCreated(function() {
 Template.editAgent.helpers({
   agentdetail: () => {
     return Agents.find({agentid: FlowRouter.getParam('agentid')});
+  },
+
+  beforeRemove: () => {
+    return function (collection, id) {
+      let doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.name + '"?')) {
+        this.remove();
+      }
+    };
+  },
+
+  onSuccess: () => {
+    return (result) => {
+      $('#agent-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
+      FlowRouter.go('control-dash');
+    };
   }
 });
 
@@ -269,7 +286,7 @@ Template.createAssignment.events({
   'click #submit-form' : (event, template) => {
     $('#assignment-add').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
+  }
 })
 
 Template.editAssignment.onCreated(function() {
@@ -280,6 +297,23 @@ Template.editAssignment.onCreated(function() {
 Template.editAssignment.helpers({
   assignmentdetail: () => {
     return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
+  },
+
+  beforeRemove: () => {
+    return function (collection, id) {
+      let doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.name + '"?')) {
+        this.remove();
+      }
+    };
+  },
+
+  onSuccess: () => {
+    return (result) => {
+      $('#assignment-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
+      FlowRouter.go('control-dash');
+    };
   }
 });
 

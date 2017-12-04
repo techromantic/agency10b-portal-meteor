@@ -113,6 +113,10 @@
   overflow-y: auto;
 }
 
+.control-list a {
+  width: 100%;
+}
+
 .control-item:first-child {
   border-top: 1px solid #FFF;
 }

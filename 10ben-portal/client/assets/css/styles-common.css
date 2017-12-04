@@ -130,6 +130,15 @@ a {
   }
 }
 
+@keyframes border-warning-shift {
+  0%, 100% {
+    border-color: #FF6961;
+  }
+  50% {
+    border-color: #FF2015;
+  }
+}
+
 @keyframes border-color-highlight {
   0% {
     border-color: #3444F2;

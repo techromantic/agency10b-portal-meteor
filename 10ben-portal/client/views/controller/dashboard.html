@@ -11,13 +11,15 @@
       <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each agents}}
-            <div class="control-item flex-row flex-start">
-              <a class="agent-item" href="/control-dash/edit/agent/{{agentid}}"><span>{{callsign}} ({{name}}, {{email}}) - {{type}}</span></a>
-            </div>
+            <a class="agent-item" href="/control-dash/edit/agent/{{agentid}}">
+              <div class="control-item flex-row flex-start">
+                <span>{{callsign}} ({{name}}, {{email}}) - {{type}}</span>
+              </div>
+            </a>
           {{/each}}
         </div>
         <div class="control-panel flex-column flex-start">
-          <button id="add-agent">Add an Agent</button>
+          <a id="add-agent" href="/control-dash/add/agent"><button>Add an Agent</button></a>
           <button id="sort-agent">Sort Agents</button>
         </div>
       </div>
@@ -27,13 +29,15 @@
       <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each assignments}}
-            <div class="control-item flex-row flex-start">
-              <a class="assignment-item" href="/control-dash/edit/assignment/{{assignmentid}}"><span>{{title}} (Due in {{formatDate deadline}})</span></a>
-            </div>
+            <a class="assignment-item" href="/control-dash/edit/assignment/{{assignmentid}}">
+              <div class="control-item flex-row flex-start">
+                <span>{{title}} (Due in {{formatDate deadline}})</span>
+              </div>
+            </a>
           {{/each}}
         </div>
         <div class="control-panel flex-column flex-start">
-          <button id="add-assignment">Add an Assignment</button>
+          <a id="add-assignment" href="/control-dash/add/assignment"><button>Add an Assignment</button></a>
           <button id="sort-assignment">Sort Assignments</button>
         </div>
       </div>
