@@ -22,6 +22,20 @@ FlowRouter.route('/control-login', {
   name: 'control-login'
 });
 
+//Agent Login
+FlowRouter.route('/agent-login', {
+    action: () => {
+        console.log('agent login');
+        if (!Meteor.user() && !Meteor.loggingIn())  {
+            BlazeLayout.render('applicationLayout', {
+                main: 'agentLogin'
+            })
+        }
+    },
+    name: 'agent-login'
+});
+
+
 
 //Stub Page
 FlowRouter.route('/stub', {

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b73ffd7-7855-418d-9336-05d124c3c084" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/10ben-portal/client/views/controller/agentLogin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/assets/styles.css" afterPath="$PROJECT_DIR$/10ben-portal/client/assets/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" afterPath="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/main.js" afterPath="$PROJECT_DIR$/10ben-portal/client/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" afterPath="$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/10ben-portal/server/main.js" afterPath="$PROJECT_DIR$/10ben-portal/server/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,189 +20,86 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55427045">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1170">
-                  <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-                  <folding>
-                    <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-                    <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-                    <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-                    <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-                    <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-                    <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-                    <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-                    <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-                    <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-                    <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-                    <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-                    <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-                    <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-                    <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/styles.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="143" column="1" lean-forward="false" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-                  <folding>
-                    <marker date="1511989813308" expanded="true" signature="1084:1179" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1194:1216" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1238:1364" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1372:1573" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1587:1698" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1707:1861" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1877:1900" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1947:2033" ph="..." />
-                    <marker date="1511989813308" expanded="true" signature="1960:1992" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="1999:2031" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2069:2147" ph="..." />
-                    <marker date="1511989813308" expanded="true" signature="2076:2108" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2176:2222" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2234:2435" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2276:2436" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2451:2504" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2518:2579" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2609:2771" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2788:2947" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="2981:3079" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3092:3289" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3315:3373" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3400:3475" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3496:3516" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3537:3620" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3647:3758" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3774:3795" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="3819:4099" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4129:4255" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4307:4326" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4350:4371" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4392:4426" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4445:4463" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4492:4702" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4723:4757" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4773:4908" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="4924:5061" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5083:5128" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5146:5191" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5206:5253" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5270:5385" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5419:5438" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5456:5477" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5495:5514" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5531:5562" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5585:5641" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5661:5682" ph="{...}" />
-                    <marker date="1511989813308" expanded="true" signature="5709:5734" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="createassignment.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-                  <folding>
-                    <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-                    <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-                    <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-                    <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="72" column="16" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
-                  <folding>
-                    <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-                    <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-                    <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-                    <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-                    <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-                    <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="431">
-                  <caret line="109" column="20" lean-forward="false" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="createagent.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="217" column="5" lean-forward="true" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+                <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+                <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+                <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+                <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+                <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+                <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+                <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+                <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+                <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>atForm</find>
+      <find>agent-login</find>
+      <find>controllerLogin</find>
+      <find>click</find>
+      <find>FlowRouter</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -209,10 +108,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
-        <option value="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" />
         <option value="$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html" />
         <option value="$PROJECT_DIR$/10ben-portal/client/assets/styles.css" />
         <option value="$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
+        <option value="$PROJECT_DIR$/10ben-portal/client/views/controller/edit/editagent.html" />
+        <option value="$PROJECT_DIR$/10ben-portal/client/lib/routes.js" />
+        <option value="$PROJECT_DIR$/10ben-portal/client/views/controller/agentLogin.html" />
+        <option value="$PROJECT_DIR$/10ben-portal/server/main.js" />
         <option value="$PROJECT_DIR$/10ben-portal/client/main.js" />
       </list>
     </option>
@@ -234,7 +136,7 @@
     <handled-path value="$PROJECT_DIR$/10ben-portal/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="792" />
+    <option name="y" value="24" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -254,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,12 +182,39 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="10b" type="b2602c69:ProjectViewProjectNode" />
+              <item name="10b" type="462c0819:PsiDirectoryNode" />
+              <item name="10ben-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="10b" type="b2602c69:ProjectViewProjectNode" />
+              <item name="10b" type="462c0819:PsiDirectoryNode" />
+              <item name="10ben-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="agent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="10b" type="b2602c69:ProjectViewProjectNode" />
+              <item name="10b" type="462c0819:PsiDirectoryNode" />
+              <item name="10ben-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="10b" type="b2602c69:ProjectViewProjectNode" />
+              <item name="10b" type="462c0819:PsiDirectoryNode" />
+              <item name="10ben-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,25 +259,26 @@
       <option name="presentableId" value="Default" />
       <updated>1511903781032</updated>
       <workItem from="1511903783469" duration="6485000" />
+      <workItem from="1512417875952" duration="3866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12178000" />
+    <option name="totallyTimeSpent" value="16651000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="792" width="1366" height="744" extended-state="0" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.50292826" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.49707174" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -377,173 +308,59 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="59" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
-          <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/application.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/server/publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="72" column="16" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
           <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+            <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
           <folding>
-            <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-            <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-            <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-          <folding>
-            <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -551,17 +368,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -589,31 +399,7 @@
         <state relative-caret-position="427">
           <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
           <folding>
-            <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-            <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-            <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,50 +408,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="59" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
           <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+            <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
           </folding>
         </state>
       </provider>
@@ -696,44 +474,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="72" column="16" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
           <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+            <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
           </folding>
         </state>
       </provider>
@@ -742,61 +517,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
           <folding>
-            <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-            <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-            <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,17 +537,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -843,31 +568,7 @@
         <state relative-caret-position="427">
           <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
           <folding>
-            <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-            <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-            <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,51 +577,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="59" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
           <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+            <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js" />
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html" />
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/styles.css" />
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html" />
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/stub.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/create/createagent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/edit/editagent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -931,183 +666,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/10ben-portal/server/publish.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/accounts.js">
+    <entry file="file://$PROJECT_DIR$/10ben-portal/server/lib/account_config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/lib/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="72" column="16" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <marker date="1511982470623" expanded="true" signature="41:57" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="59:69" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="297:313" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="315:325" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="365:461" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="413:454" ph="{&quot;main&quot;: 'controllerLogin'...}" />
-            <marker date="1511982470623" expanded="true" signature="618:634" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="636:646" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="773:858" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="821:851" ph="{&quot;main&quot;: 'stub'...}" />
-            <marker date="1511982470623" expanded="true" signature="941:957" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="959:969" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1096:1196" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1144:1189" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
-            <marker date="1511982470623" expanded="true" signature="1287:1305" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1307:1317" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1436:1526" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1482:1519" ph="{&quot;main&quot;: 'createAgent'...}" />
-            <marker date="1511982470623" expanded="true" signature="1599:1617" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1619:1629" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1746:1835" ph="{...}" />
-            <marker date="1511982470623" expanded="true" signature="1792:1832" ph="{&quot;main&quot;: 'createAssignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="41:57" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="59:69" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="297:313" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="315:325" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:944" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="928:1190" ph="{&quot;name&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="946:956" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="946:1172" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1083:1168" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1131:1161" ph="{&quot;main&quot;: 'stub'...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1267" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1251:1536" ph="{&quot;name&quot;: 'control-dash'...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1279" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1269:1510" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1406:1506" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1454:1499" ph="{&quot;main&quot;: 'controllerDashboard'...}" />
+            <marker date="1512421828820" expanded="true" signature="1598:1729" ph="{&quot;name&quot;: 'add-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="1616:1706" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1665:1702" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="1801:1937" ph="{&quot;name&quot;: 'add-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="1819:1909" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2009:2141" ph="{&quot;name&quot;: 'edit-agent'...}" />
+            <marker date="1512421828820" expanded="true" signature="2027:2117" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2228:2365" ph="{&quot;name&quot;: 'edit-assignment'...}" />
+            <marker date="1512421828820" expanded="true" signature="2246:2336" ph="{...}" />
+            <marker date="1512421828820" expanded="true" signature="2351:2365" ph="{&quot;name&quot;: 'create-assignment'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding>
-            <marker date="1511989791128" expanded="true" signature="410:413" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1239" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1252" ph="..." />
-            <marker date="1511989791128" expanded="true" signature="1202:1263" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createagent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/assets/styles.css">
+    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/controller/agentLogin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="143" column="1" lean-forward="false" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-          <folding>
-            <marker date="1511989813308" expanded="true" signature="1084:1179" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1194:1216" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1238:1364" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1372:1573" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1587:1698" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1707:1861" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1877:1900" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1947:2033" ph="..." />
-            <marker date="1511989813308" expanded="true" signature="1960:1992" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="1999:2031" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2069:2147" ph="..." />
-            <marker date="1511989813308" expanded="true" signature="2076:2108" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2176:2222" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2234:2435" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2276:2436" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2451:2504" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2518:2579" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2609:2771" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2788:2947" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="2981:3079" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3092:3289" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3315:3373" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3400:3475" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3496:3516" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3537:3620" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3647:3758" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3774:3795" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="3819:4099" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4129:4255" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4307:4326" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4350:4371" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4392:4426" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4445:4463" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4492:4702" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4723:4757" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4773:4908" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="4924:5061" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5083:5128" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5146:5191" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5206:5253" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5270:5385" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5419:5438" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5456:5477" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5495:5514" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5531:5562" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5585:5641" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5661:5682" ph="{...}" />
-            <marker date="1511989813308" expanded="true" signature="5709:5734" ph="{...}" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="66" lean-forward="false" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10ben-portal/client/views/agent/createassignment.html">
+    <entry file="file://$PROJECT_DIR$/10ben-portal/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/10ben-portal/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="217" column="5" lean-forward="true" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
           <folding>
-            <marker date="1511989813304" expanded="true" signature="7:199" ph="..." />
-            <marker date="1511989813304" expanded="true" signature="442:961" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="455:553" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="521:549" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="570:664" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="632:660" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="674:696" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="707:729" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="739:844" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="858:880" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="892:959" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1028:1767" ph="{...}" />
-            <marker date="1511989813304" expanded="true" signature="1046:1144" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1112:1140" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1155:1177" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1187:1224" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1234:1336" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1348:1478" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1495:1589" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1557:1585" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1603:1623" ph="{&quot;type&quot;: Date...}" />
-            <marker date="1511989813304" expanded="true" signature="1641:1742" ph="{&quot;type&quot;: String...}" />
-            <marker date="1511989813304" expanded="true" signature="1710:1738" ph="{&quot;type&quot;: &quot;hidden&quot;...}" />
-            <marker date="1511989813304" expanded="true" signature="1755:1767" ph="{&quot;type&quot;: Array...}" />
-            <marker date="1511989813304" expanded="true" signature="3999:4008" ph="{...}" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

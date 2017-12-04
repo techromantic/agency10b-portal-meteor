@@ -13,3 +13,9 @@ Meteor.users.allow({
     return true;
   }
 })
+
+Meteor.methods({
+    'checkAgentKey': function (userkey) {
+        return (Agents.findOne({agentid: userkey})) ? true : false;
+    }
+});

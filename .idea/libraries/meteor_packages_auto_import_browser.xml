@@ -81,6 +81,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/process.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/install-packages.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/stubs.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/aldeed_delete-button/2.0.0/web.browser/delete-button.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/reify.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/css.js" />
@@ -504,6 +505,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/process.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/install-packages.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/stubs.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/aldeed_delete-button/2.0.0/web.browser/delete-button.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/reify.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.9.2/web.browser/css.js" />
