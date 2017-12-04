@@ -33,18 +33,19 @@ Agents.attachSchema(new SimpleSchema({
     type: String
   },
   email: {
-    type: String
+    type: String,
+    regEx: SimpleSchema.RegEx.Email
   },
   type: {
     type: String,
-      allowedValues: ['Developer', 'Writer', 'Designer', 'Analyst', 'Strategist']
+    allowedValues: ['Developer', 'Writer', 'Designer', 'Analyst', 'Strategist']
   },
   callsign: {
     type: String
   },
   status: {
     type: String,
-      allowedValues: ['Active', 'Inactive']
+    allowedValues: ['Active', 'Inactive']
   }
 }, {tracker: Tracker}));
 
@@ -65,11 +66,11 @@ Assignments.attachSchema(new SimpleSchema({
   },
   type: {
     type: String,
-      allowedValues: ['Development', 'Copy', 'Design', 'Analysis', 'Strategy']
+    allowedValues: ['Development', 'Copy', 'Design', 'Analysis', 'Strategy']
   },
   status: {
     type: String,
-      allowedValues: ['Open', 'Assigned', 'Accepted', 'Rejected', 'Completed', 'Under Review', 'Archived']
+    allowedValues: ['Open', 'Assigned', 'Accepted', 'Rejected', 'Completed', 'Under Review', 'Archived']
   },
   datecreated: {
     type: Date,
@@ -79,7 +80,10 @@ Assignments.attachSchema(new SimpleSchema({
     }
   },
   deadline: {
-    type: Date
+    type: Date,
+    autoform: {
+      type: "bootstrap-datepicker"
+    }
   },
   controllerid: {
     type: String,
@@ -91,20 +95,20 @@ Assignments.attachSchema(new SimpleSchema({
   agentid: {
     type: Array,
       autoform: {
-          options: function () {
-            var opts = Agents.find().map(function(agent) {
-                return {
-                    label: agent.name + ": " + agent.type,
-                    value: agent.agentid
-                };
-            });
-            return opts;
-          }
-      }
-  },
-    'agentid.$' : {
-    type: String
+        options: function () {
+          var opts = Agents.find().map(function(agent) {
+              return {
+                  label: agent.name + ": " + agent.type,
+                  value: agent.agentid
+              };
+          });
+          return opts;
+        }
     }
+  },
+  'agentid.$' : {
+    type: String
+  }
 }, {tracker: Tracker}));
 
 //FlowRouter Autoform Hooks
@@ -115,25 +119,45 @@ AutoForm.addHooks(null, {
 });
 
 AutoForm.addHooks('addAgent', {
+    onError: (formType, error) => {
+      alert("Error adding agent: " + error);
+    },
     onSuccess: (formType, result) => {
+      $('#agent-add').removeClass('active');
+      $('.form-bg').removeClass('active');
       FlowRouter.go('control-dash');
     }
 });
 
 AutoForm.addHooks('editAgent', {
+    onError: (formType, error) => {
+      alert("Error updating agent: " + error);
+    },
     onSuccess: (formType, result) => {
+      $('#agent-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
       FlowRouter.go('control-dash');
     }
 });
 
 AutoForm.addHooks('addAssignment', {
+    onError: (formType, error) => {
+      alert("Error adding assignment: " + error);
+    },
     onSuccess: (formType, result) => {
+      $('#assignment-add').removeClass('active');
+      $('.form-bg').removeClass('active');
       FlowRouter.go('control-dash');
     }
 });
 
 AutoForm.addHooks('editAssignment', {
+    onError: (formType, error) => {
+      alert("Error updating assignment: " + error);
+    },
     onSuccess: (formType, result) => {
+      $('#assignment-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
       FlowRouter.go('control-dash');
     }
 });
@@ -223,13 +247,10 @@ Template.createAgent.onCreated(function() {
 
 Template.createAgent.events({
   'click #cancel-form' : (event, template) => {
+    event.preventDefault();
     $('#agent-add').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
-
-  'click #submit-form' : (event, template) => {
-    $('#agent-add').removeClass('active');
-    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
   }
 });
 
@@ -262,13 +283,10 @@ Template.editAgent.helpers({
 
 Template.editAgent.events({
   'click #cancel-form' : (event, template) => {
+    event.preventDefault();
     $('#agent-edit').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
-
-  'click #submit-form' : (event, template) => {
-    $('#agent-edit').removeClass('active');
-    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
   }
 })
 
@@ -279,13 +297,10 @@ Template.createAssignment.onCreated(function() {
 
 Template.createAssignment.events({
   'click #cancel-form' : (event, template) => {
+    event.preventDefault();
     $('#assignment-add').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
-
-  'click #submit-form' : (event, template) => {
-    $('#assignment-add').removeClass('active');
-    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
   }
 })
 
@@ -319,12 +334,9 @@ Template.editAssignment.helpers({
 
 Template.editAssignment.events({
   'click #cancel-form' : (event, template) => {
+    event.preventDefault();
     $('#assignment-edit').removeClass('active');
     $('.form-bg').removeClass('active');
-  },
-
-  'click #submit-form' : (event, template) => {
-    $('#assignment-edit').removeClass('active');
-    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
   }
 })

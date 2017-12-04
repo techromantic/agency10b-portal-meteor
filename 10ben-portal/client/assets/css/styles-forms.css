@@ -36,6 +36,7 @@
 
 .form-fieldset input {
   width: 100%;
+  max-width: 100%;
   font-size: 1.3em;
   margin: 20px 0;
 }
