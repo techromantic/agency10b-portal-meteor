@@ -2,11 +2,13 @@
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  background-color: #000;
   color: #FFF;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: #000;
+  background-image: radial-gradient(#333 5%, transparent 0);
+  background-size: 40px 40px;
 }
 
 body * {
