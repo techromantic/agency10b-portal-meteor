@@ -52,6 +52,8 @@ button {
   text-transform: uppercase !important;
   letter-spacing: 2px;
   border: 0;
+  border-radius: 0;
+  padding: 5px 8px;
 }
 
 button::after {
@@ -73,8 +75,12 @@ button a {
   color: #FFF;
 }
 
-button:hover {
+button:hover,
+button:active {
   cursor: pointer;
+  animation: button-radial 150ms ease 1;
+  -webkit-animation: button-radial 150ms ease 1;
+  animation-fill-mode: forwards;
 }
 
 button:hover::after {
@@ -150,6 +156,37 @@ a {
   }
   100% {
     border-color: #FFF;
+  }
+}
+
+@keyframes button-radial {
+  0% {
+    background: radial-gradient(circle at center, #DF2779 0%, #000 0%, #000 100%);
+  }
+  10% {
+    background: radial-gradient(circle at center, #DF2779 9%, #000 10%, #000 100%);
+  }
+  25% {
+    background: radial-gradient(circle at center, #DF2779 24%, #000 25%, #000 100%);
+  }
+  40% {
+    background: radial-gradient(circle at center, #DF2779 39%, #000 40%, #000 100%);
+  }
+  50% {
+    background: radial-gradient(circle at center, #DF2779 49%, #000 50%, #000 100%);
+  }
+  60% {
+    background: radial-gradient(circle at center, #DF2779 59%, #000 60%, #000 100%);
+  }
+  75% {
+    background: radial-gradient(circle at center, #DF2779 74%, #000 75%, #000 100%);
+  }
+  90% {
+    background: radial-gradient(circle at center, #DF2779 89%, #000 90%, #000 100%);
+  }
+  100% {
+    color: #fff;
+    background: radial-gradient(circle at center, #DF2779 99%, #000 100%, #000 100%);
   }
 }
 
