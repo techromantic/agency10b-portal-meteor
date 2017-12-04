@@ -93,7 +93,7 @@ input:focus {
 }
 
 select {
-  margin: 40px 0 !important;
+  margin: 20px 0 !important;
   font-family: 'Raleway', sans-serif !important;
   border: 0;
   font-size: 1.3em !important;
@@ -435,6 +435,19 @@ select option {
   width: 100%;
   font-size: 1.3em;
   margin: 20px 0;
+}
+
+.form-field {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-field span {
+  font-size: 1.4em;
+  font-weight: 800;
+  width: 40%;
+  max-width: 150px;
+  margin-right: 20px;
 }
 
 .button-container {

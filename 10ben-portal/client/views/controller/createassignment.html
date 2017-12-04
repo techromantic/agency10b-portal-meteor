@@ -1,0 +1,46 @@
+<template name="createAssignment">
+  <div class="form-header">
+    <h1>Create an Assignment</h1>
+  </div>
+  <div class="form-container flex-column flex-start">
+    {{#autoForm collection="Assignments" id="addNewAssignment" type="insert" class="add-form"}}
+        <fieldset class="form-fieldset flex-column flex-start">
+            {{> afFieldInput name='assignmentid'}}
+            {{> afFieldInput name='datecreated'}}
+            {{> afFieldInput name='controllerid'}}
+            <div class="form-field flex-row flex-start">
+              <span>Title:</span>
+              {{> afFieldInput name='title' type='text'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Description:</span>
+              {{> afFieldInput name='desc' type='textarea'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Assignment Type:</span>
+              {{> afFieldInput name='type' type='select' options="allowed"}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Deadline:</span>
+              {{> afFieldInput name='deadline' type='date'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Status:</span>
+              {{> afFieldInput name='status' type='select' options="allowed"}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Assignment Type:</span>
+              {{> afFieldInput name='type' type='select' options="allowed"}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Agent Assigned:</span>
+              {{> afFieldInput name='agentid' type="select"}}
+            </div>
+            <div class="button-container flex-row flex-start">
+              <button id="cancel-form">Cancel</button>
+              <button id="submit-form" type="submit">Submit</button>
+            </div>
+        </fieldset>
+    {{/autoForm}}
+  </div>
+</template>

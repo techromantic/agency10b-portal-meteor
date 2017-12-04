@@ -171,11 +171,13 @@ Template.controllerDashboard.events({
   'click #add-agent' : (event, template) => {
     $('#assignment-form').removeClass('active');
     $('#agent-form').addClass('active');
+    $('.form-bg').addClass('active');
   },
 
   'click #add-assignment' : (event, template) => {
     $('#agent-form').removeClass('active');
     $('#assignment-form').addClass('active');
+    $('.form-bg').addClass('active');
   }
 });
 
@@ -186,10 +188,12 @@ Template.createAgent.onCreated(function() {
 Template.createAgent.events({
   'click #cancel-form' : (event, template) => {
     $('#agent-form').removeClass('active');
+    $('.form-bg').removeClass('active');
   },
 
   'click #submit-form' : (event, template) => {
     $('#agent-form').removeClass('active');
+    $('.form-bg').removeClass('active');
   },
 });
 
@@ -201,9 +205,11 @@ Template.createAssignment.onCreated(function() {
 Template.createAssignment.events({
   'click #cancel-form' : (event, template) => {
     $('#assignment-form').removeClass('active');
+    $('.form-bg').removeClass('active');
   },
 
   'click #submit-form' : (event, template) => {
     $('#assignment-form').removeClass('active');
+    $('.form-bg').removeClass('active');
   },
 })
