@@ -185,6 +185,7 @@ Template.controllerLogin.onCreated(() => {
   }, 0);
 });
 
+//Agent Login
 Template.agentLogin.onCreated(() => {
     setTimeout(() => {
         $('.at-form').addClass('login-form flex-column flex-center');
@@ -209,19 +210,13 @@ Template.agentLogin.events({
               alert('There is an error while checking credentials.');
           } else {
             if (result === true){
-                FlowRouter.go('control-dash');
+                FlowRouter.go(`/agent-dash/${userkey}`);
             } else {
                 alert('That userkey is not acceptable.');
             }
           }
         });
     }
-});
-
-Template.stub.events({
-  'click #logout' : (event, template) => {
-    AccountsTemplates.logout();
-  }
 });
 
 //Controller Dashboard
@@ -274,6 +269,7 @@ Template.controllerDashboard.events({
   }
 });
 
+//Create Agent
 Template.createAgent.onCreated(function() {
   this.agents = this.subscribe("allAgents");
 });
@@ -291,6 +287,7 @@ Template.editAgent.onCreated(function() {
   this.agents = this.subscribe("allAgents");
 });
 
+//Edit Agent
 Template.editAgent.helpers({
   agentdetail: () => {
     return Agents.find({agentid: FlowRouter.getParam('agentid')});
@@ -323,6 +320,7 @@ Template.editAgent.events({
   }
 })
 
+//Create Assignment
 Template.createAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
     this.agents = this.subscribe("allAgents");
@@ -337,6 +335,7 @@ Template.createAssignment.events({
   }
 })
 
+//Edit Assignment
 Template.editAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
     this.agents = this.subscribe("allAgents");
@@ -373,3 +372,26 @@ Template.editAssignment.events({
     FlowRouter.go('control-dash');
   }
 })
+
+
+//Agent Dashboard
+Template.agentDashboard.onCreated(function(){
+  this.agents = this.subscribe("allAgents");
+  this.assignments = this.subscribe("allAssignments");
+});
+
+Template.agentDashboard.helpers({
+  agentcallsign: () => {
+    return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).callsign;
+  },
+
+  assignments: () => {
+    return Assignments.find({});
+  }
+});
+
+Template.agentDashboard.events({
+  'click #logout' : (event, template) => {
+    AccountsTemplates.logout();
+  }
+});

@@ -25,30 +25,21 @@ FlowRouter.route('/control-login', {
 //Agent Login
 FlowRouter.route('/agent-login', {
     action: () => {
-        console.log('agent login');
-        if (!Meteor.user() && !Meteor.loggingIn())  {
-            BlazeLayout.render('applicationLayout', {
-                main: 'agentLogin'
-            })
-        }
+      BlazeLayout.render('applicationLayout', {
+          main: 'agentLogin'
+      })
     },
     name: 'agent-login'
 });
 
-
-
-//Stub Page
-FlowRouter.route('/stub', {
+//Agent Dashboard
+FlowRouter.route('/agent-dash/:agentid', {
   action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn())
-      FlowRouter.go('control-login');
-    else if (Meteor.user() || Meteor.loggingIn()) {
-      BlazeLayout.render('applicationLayout', {
-        main: 'stub'
-      })
-    }
+    BlazeLayout.render('applicationLayout', {
+      main: 'agentDashboard'
+    })
   },
-  name: 'stub'
+  name: 'agent-dash'
 });
 
 //Controller Dashboard
