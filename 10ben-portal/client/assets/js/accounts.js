@@ -1,6 +1,6 @@
 //Logout Config
 var redirectOnLogout = () => {
-  FlowRouter.go('/login');
+  FlowRouter.go('/agent-login');
 }
 
 AccountsTemplates.configure({

@@ -167,6 +167,12 @@ Template.registerHelper('formatDate', (date) => {
   return moment(date).format('MMM. D, YYYY');
 });
 
+Template.registerHelper('getController', (controllerid) => {
+  return Meteor.users.findOne({_id: controllerid}).profile.callsign;
+});
+
+
+//Application Init
 Template.applicationLayout.onCreated(() => {
   Blaze._allowJavascriptUrls();
 });
@@ -376,17 +382,18 @@ Template.editAssignment.events({
 
 //Agent Dashboard
 Template.agentDashboard.onCreated(function(){
+  this.users = this.subscribe("allUsers");
   this.agents = this.subscribe("allAgents");
   this.assignments = this.subscribe("allAssignments");
 });
 
 Template.agentDashboard.helpers({
-  agentcallsign: () => {
+  agentCallsign: () => {
     return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).callsign;
   },
 
   assignments: () => {
-    return Assignments.find({});
+    return Assignments.find({agentid:FlowRouter.getParam('agentid')});
   }
 });
 

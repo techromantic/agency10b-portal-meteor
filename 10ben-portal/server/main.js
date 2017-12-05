@@ -14,6 +14,7 @@ Meteor.users.allow({
   }
 })
 
+//Validation Methods
 Meteor.methods({
     'checkAgentKey': function (userkey) {
         return (Agents.findOne({agentid: userkey})) ? true : false;

@@ -1,4 +1,8 @@
 //Controller Publications
+Meteor.publish('allUsers', () => {
+  return Meteor.users.find({});
+});
+
 Meteor.publish('allAgents', () => {
   return Agents.find({});
 });

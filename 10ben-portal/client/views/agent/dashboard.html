@@ -1,9 +1,35 @@
 <template name="agentDashboard">
-  Stub
-  {{agentcallsign}}
-  {{#each assignments}}
-    <h1>Test</h1>
-  {{/each}}
+  <div class="controller-header flex-row flex-center">
+    <h1>Dashboard</h1>
+    <div class="vertical-divider"></div>
+    <h1>{{agentCallsign}}</h1>
+  </div>
 
-  <button id="logout">Logout</button>
+  <div class="section-container">
+    <div class="dash-section full-border flex-column flex-start">
+      <h1 class="dash-title">Your Assignments</h1>
+      <div class="dash-list flex-column flex-start">
+        {{#each assignments}}
+            <div class="dash-item flex-column flex-start">
+              <span class="dash-item-title">{{title}} ({{type}})</span>
+              <div class="dash-item-details flex-row flex-start">
+                <span class="dash-deadline">Deadline: {{formatDate deadline}}</span>
+                <span class="dash-controller">Assigned by {{getController controllerid}}</span>
+              </div>
+              <span>Status: {{status}}</span>
+              <div class="dash-panel flex-row flex-start">
+                <button>View Details</button>
+                <button>Accept</button>
+                <button>Reject</button>
+              </div>
+            </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-bg"></div>
+  <div class="login-panel flex-row">
+    <button id="logout">Logout</button>
+  </div>
 </template>

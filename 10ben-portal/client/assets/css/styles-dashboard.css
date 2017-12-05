@@ -148,3 +148,67 @@
 .control-panel button {
   margin: 10px 0;
 }
+
+
+/*Agent Dashboard View*/
+.dash-section {
+  width: 100%;
+  padding: 20px 40px 40px 40px;
+}
+
+.dash-title {
+  font-size: 3em;
+}
+
+.dash-title::after {
+  display: block;
+  content: "";
+  height: 10px;
+  width: 40vw;
+  max-width: 500px;
+  border-bottom: 6px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+.dash-list {
+  width: 100%;
+}
+
+.dash-item {
+  width: 100%;
+  padding: 25px 20px;
+  border-bottom: 1px solid #FFF;
+  background: transparent;
+}
+
+.dash-item:first-child {
+  border-top: 1px solid #FFF;
+}
+
+.dash-item span {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.dash-item span.dash-item-title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.dash-item-details {
+  width: 100%;
+  font-weight: 600;
+}
+
+.dash-controller {
+  align-self: flex-end;
+  margin-left: auto !important;
+}
+
+.dash-panel {
+  width: 100%;
+  margin-top: 20px;
+}
