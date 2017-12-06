@@ -18,6 +18,11 @@ Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
     defaultValue: Random.id(8),
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      }
+    },
     autoform: {
       type: "hidden"
     }
@@ -53,6 +58,11 @@ Assignments.attachSchema(new SimpleSchema({
   assignmentid: {
     type: String,
     defaultValue: Random.id(8),
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      }
+    },
     autoform: {
       type: "hidden"
     }
