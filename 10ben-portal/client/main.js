@@ -381,7 +381,7 @@ Template.editAssignment.events({
 
 
 //Agent Dashboard
-Template.agentDashboard.onCreated(function(){
+Template.agentDashboard.onCreated(function() {
   this.users = this.subscribe("allUsers");
   this.agents = this.subscribe("allAgents");
   this.assignments = this.subscribe("allAssignments");
@@ -393,12 +393,38 @@ Template.agentDashboard.helpers({
   },
 
   assignments: () => {
-    return Assignments.find({agentid:FlowRouter.getParam('agentid')});
+    return Assignments.find({agentid: FlowRouter.getParam('agentid')});
   }
 });
 
 Template.agentDashboard.events({
   'click #logout' : (event, template) => {
     AccountsTemplates.logout();
+  },
+
+  'click #view-assignment' : (event, template) => {
+    $('#assignment-view').addClass('active');
+    $('.form-bg').addClass('active');
+  }
+});
+
+//View Assignment
+Template.viewAssignment.onCreated(function() {
+  this.users = this.subscribe("allUsers");
+  this.agents = this.subscribe("allAgents");
+  this.assignments = this.subscribe("allAssignments");
+});
+
+Template.viewAssignment.helpers({
+  assignmentDetail: () => {
+    return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
+  }
+});
+
+Template.viewAssignment.events({
+  'click #cancel-view' : (event, template) => {
+    $('#assignment-view').removeClass('active');
+    $('.form-bg').removeClass('active');
+    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
   }
 });

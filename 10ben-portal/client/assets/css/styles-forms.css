@@ -16,7 +16,7 @@
   opacity: 1;
 }
 
-/*Form Controls*/
+/*Form Details*/
 .form-header {
   margin: 20px 40px;
 }
@@ -55,6 +55,76 @@
   color: #FF2015;
   animation: border-warning-shift 10s ease infinite;
   -webkit-animation: border-warning-shift 10s ease infinite;
+}
+
+/*View Details*/
+.view-container {
+  width: 50vw;
+  min-width: 300px;
+  max-width: 1024px;
+  margin: 20px;
+}
+
+.view-title,
+.view-description,
+.view-panel {
+  width: 100%;
+  padding: 20px;
+}
+
+.view-title h1 {
+  font-size: 3em;
+  margin: 20px 0 0 0;
+}
+
+.view-title h1::after {
+  display: block;
+  content: "";
+  height: 10px;
+  width: 40vw;
+  max-width: 500px;
+  border-bottom: 6px solid #FFF;
+  margin-bottom: 10px;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+}
+
+.view-details {
+  width: 100%;
+}
+
+.view-details h4,
+.view-description h4 {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.view-details h4:last-child {
+  margin-left: auto;
+}
+
+.view-description span {
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+
+.view-description span.view-desc {
+  max-height: 400px;
+  line-height: 1.4em;
+  overflow-y: auto;
+  margin: 20px 10px;
+}
+
+.view-description span.view-type,
+.view-description span.view-deadline {
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+.view-description h3 {
+  font-size: 2em;
+  margin: 10px 0;
 }
 
 /*Form Background*/

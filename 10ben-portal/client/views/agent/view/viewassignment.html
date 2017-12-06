@@ -1,0 +1,28 @@
+<template name="viewAssignment">
+  <div class="view-container flex-column flex-start">
+    {{#each assignmentDetail}}
+      <div class="view-title flex-column flex-start">
+        <h1>{{title}}</h1>
+        <div class="view-details flex-row flex-start">
+          <h4>Status: {{status}}</h4>
+          <h4>Assigned by: {{getController controllerid}}</h4>
+        </div>
+      </div>
+      <div class="view-description flex-column flex-start">
+        <h3>Assignment Details:</h3>
+        <span class="view-desc">{{desc}}</span>
+        <div class="view-details flex-row flex-start">
+          <h4 class="view-type">Work Type: {{type}}</h4>
+          <h4 class="view-deadline">Deadline: {{formatDate deadline}}</h4>
+        </div>
+      </div>
+      <div class="view-panel">
+        <div class="button-container flex-row">
+          <button id="cancel-view">Cancel</button>
+          <button id="accept-view">Accept</button>
+          <button id="reject-view">Reject</button>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>

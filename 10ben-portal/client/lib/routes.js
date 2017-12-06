@@ -95,3 +95,10 @@ FlowRouter.route( '/control-dash/edit/assignment/:assignmentid', {
   },
   name: 'edit-assignment'
 });
+
+//View Assignment
+FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
+  action: () => {
+  },
+  name: 'view-assignment'
+});

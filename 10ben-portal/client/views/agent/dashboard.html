@@ -11,14 +11,15 @@
       <div class="dash-list flex-column flex-start">
         {{#each assignments}}
             <div class="dash-item flex-column flex-start">
-              <span class="dash-item-title">{{title}} ({{type}})</span>
+              <span class="dash-item-title">{{title}}</span>
               <div class="dash-item-details flex-row flex-start">
                 <span class="dash-deadline">Deadline: {{formatDate deadline}}</span>
+                <span class="dash-type">Type: {{type}}</span>
                 <span class="dash-controller">Assigned by {{getController controllerid}}</span>
               </div>
               <span>Status: {{status}}</span>
               <div class="dash-panel flex-row flex-start">
-                <button>View Details</button>
+                <a id="view-assignment" href="/agent-dash/{{agentid}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
                 <button>Accept</button>
                 <button>Reject</button>
               </div>
@@ -26,6 +27,11 @@
         {{/each}}
       </div>
     </div>
+  </div>
+
+  <!--View Modals-->
+  <div class="form-modal full-border flex-column flex-start" id="assignment-view">
+    {{> viewAssignment}}
   </div>
 
   <div class="form-bg"></div>
