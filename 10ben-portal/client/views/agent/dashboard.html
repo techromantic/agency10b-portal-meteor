@@ -12,12 +12,14 @@
         {{#each assignments}}
             <div class="dash-item flex-column flex-start">
               <span class="dash-item-title">{{title}}</span>
-              <div class="dash-item-details flex-row flex-start">
+              <div class="dash-item-details bold flex-row flex-start">
                 <span class="dash-deadline">Deadline: {{formatDate deadline}}</span>
-                <span class="dash-type">Type: {{type}}</span>
                 <span class="dash-controller">Assigned by {{getController controllerid}}</span>
               </div>
-              <span>Status: {{status}}</span>
+              <div class="dash-item-details flex-row flex-start">
+                <span>Type: {{type}}</span>
+                <span>Status: {{status}}</span>
+              </div>
               <div class="dash-panel flex-row flex-start">
                 <a id="view-assignment" href="/agent-dash/{{agentid}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
                 <button>Accept</button>

@@ -200,6 +200,9 @@
 
 .dash-item-details {
   width: 100%;
+}
+
+.dash-item-details.bold {
   font-weight: 600;
 }
 
