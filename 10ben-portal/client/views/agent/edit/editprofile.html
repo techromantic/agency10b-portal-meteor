@@ -4,7 +4,7 @@
   </div>
   {{#each agentprofile}}
   <div class="form-container flex-column flex-start">
-    {{#autoForm collection="Agents" id="editAgent" doc=this type="update" class="edit-form"}}
+    {{#autoForm collection="Agents" id="editProfile" doc=this type="update" class="edit-form"}}
       <fieldset class="form-fieldset flex-column flex-start">
           {{> afFieldInput name='agentid'}}
           {{> afFieldInput name='datecreated'}}

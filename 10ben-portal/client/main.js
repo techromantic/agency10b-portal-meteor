@@ -19,11 +19,6 @@ Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
     defaultValue: Random.id(8),
-    autoValue: function() {
-      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        return Random.id(8)
-      }
-    },
     autoform: {
       type: "hidden"
     }
@@ -59,11 +54,6 @@ Assignments.attachSchema(new SimpleSchema({
   assignmentid: {
     type: String,
     defaultValue: Random.id(8),
-    autoValue: function() {
-      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        return Random.id(8)
-      }
-    },
     autoform: {
       type: "hidden"
     }
@@ -148,6 +138,17 @@ AutoForm.addHooks('editAgent', {
       $('#agent-edit').removeClass('active');
       $('.form-bg').removeClass('active');
       FlowRouter.go('control-dash');
+    }
+});
+
+AutoForm.addHooks('editProfile', {
+    onError: (formType, error) => {
+      alert("Error updating profile: " + error);
+    },
+    onSuccess: (formType, result) => {
+      $('#profile-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
+      FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
     }
 });
 

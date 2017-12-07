@@ -162,18 +162,6 @@
   padding: 5px 8px;
 }
 
-.select-div::after{
-  display: block;
-  content: "";
-  height: 4px;
-  width: 60%;
-  border-bottom: 2px solid #FFF;
-  animation: border-color-shift 10s ease infinite;
-  -webkit-animation: border-color-shift 10s ease infinite;
-  transition: width 300ms ease;
-  -webkit-transition: width 300ms ease;
-}
-
 select {
   display: inline;
 }
