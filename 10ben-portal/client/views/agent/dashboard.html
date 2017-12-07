@@ -21,7 +21,7 @@
                 <span>Status: {{status}}</span>
               </div>
               <div class="dash-panel flex-row flex-start">
-                <a id="view-assignment" href="/agent-dash/{{agentid}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
+                <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
                 <button>Accept</button>
                 <button>Reject</button>
               </div>
@@ -29,11 +29,26 @@
         {{/each}}
       </div>
     </div>
+    <div class="dash-section half-section full-border flex-column flex-start">
+      <h1 class="dash-title">Your Profile</h1>
+      <div class="dash-details flex-column flex-start">
+        <span class="dash-callsign">Callsign: {{agentCallsign}}</span>
+        <span class="dash-name">Name: {{agentName}}</span>
+        <span class="dash-email">Email: {{agentEmail}}</span>
+        <a id="edit-profile" href="/agent-dash/{{agentId}}/edit/profile"><button>Edit Profile</button></a>
+      </div>
+    </div>
   </div>
+
 
   <!--View Modals-->
   <div class="form-modal full-border flex-column flex-start" id="assignment-view">
     {{> viewAssignment}}
+  </div>
+
+  <!--Edit Modals-->
+  <div class="form-modal full-border flex-column flex-start" id="profile-edit">
+    {{> editProfile}}
   </div>
 
   <div class="form-bg"></div>

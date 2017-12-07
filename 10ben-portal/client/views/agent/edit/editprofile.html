@@ -1,0 +1,39 @@
+<template name="editProfile">
+  <div class="form-header">
+    <h1>Edit Profile</h1>
+  </div>
+  {{#each agentprofile}}
+  <div class="form-container flex-column flex-start">
+    {{#autoForm collection="Agents" id="editAgent" doc=this type="update" class="edit-form"}}
+      <fieldset class="form-fieldset flex-column flex-start">
+          {{> afFieldInput name='agentid'}}
+          {{> afFieldInput name='datecreated'}}
+          <div class="form-field flex-row flex-start">
+            <span>Full Name:</span>
+            {{> afFieldInput name='name' type='text'}}
+          </div>
+          <div class="form-field flex-row flex-start">
+            <span>Email:</span>
+            {{> afFieldInput name='email' type='text' }}
+          </div>
+          <div class="form-field hidden flex-row flex-start">
+            <span>Agent Type:</span>
+            {{> afFieldInput name='type' type='select' options="allowed"}}
+          </div>
+          <div class="form-field flex-row flex-start">
+            <span>Callsign:</span>
+            {{> afFieldInput name='callsign' type='text'}}
+          </div>
+          <div class="form-field hidden flex-row flex-start">
+            <span>Status:</span>
+            {{> afFieldInput name='status' type='select' options="allowed"}}
+          </div>
+          <div class="button-container flex-row">
+            <button id="cancel-form">Cancel</button>
+            <button id="submit-form" type="submit">Update</button>
+          </div>
+      </fieldset>
+    {{/autoForm}}
+  </div>
+  {{/each}}
+</template>
