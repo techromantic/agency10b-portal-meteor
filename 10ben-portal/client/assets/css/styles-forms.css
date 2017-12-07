@@ -145,3 +145,48 @@
   display: block;
   background: rgba(0,0,0,0.7);
 }
+
+/*Form Controls*/
+.form-header {
+  margin: 20px 40px;
+}
+
+.form-header h1 {
+  font-size: 3em;
+}
+
+.form-container {
+  margin: 20px;
+}
+
+.form-fieldset {
+  border: 0;
+  width: 40vw;
+}
+
+.form-fieldset input {
+  width: 100%;
+  font-size: 1.3em;
+  margin: 20px 0;
+}
+
+.form-field {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-field span {
+  font-size: 1.4em;
+  font-weight: 800;
+  width: 40%;
+  max-width: 150px;
+  margin-right: 20px;
+}
+
+.button-container {
+  margin: 40px 0;
+}
+
+.button-container button {
+  margin-right: 40px;
+}

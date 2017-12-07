@@ -102,3 +102,11 @@ FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
   },
   name: 'view-assignment'
 });
+
+
+//Edit Profile
+FlowRouter.route('/agent-dash/:agentid/edit/profile', {
+  action: () => {
+  },
+  name: 'edit-profile'
+});

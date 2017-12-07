@@ -444,6 +444,18 @@ Template.agentDashboard.helpers({
     return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).callsign;
   },
 
+  agentId: () => {
+    return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).agentid;
+  },
+
+  agentName: () => {
+    return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).name;
+  },
+
+  agentEmail: () => {
+    return Agents.findOne({agentid: FlowRouter.getParam('agentid')}).email;
+  },
+
   assignments: () => {
     return Assignments.find({agentid: FlowRouter.getParam('agentid')});
   }
@@ -457,7 +469,12 @@ Template.agentDashboard.events({
   'click #view-assignment' : (event, template) => {
     $('#assignment-view').addClass('active');
     $('.form-bg').addClass('active');
-  }
+  },
+
+  'click #edit-profile' : (event, template) => {
+    $('#profile-edit').addClass('active');
+    $('.form-bg').addClass('active');
+  },
 });
 
 //View Assignment
@@ -476,6 +493,48 @@ Template.viewAssignment.helpers({
 Template.viewAssignment.events({
   'click #cancel-view' : (event, template) => {
     $('#assignment-view').removeClass('active');
+    $('.form-bg').removeClass('active');
+    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+  }
+});
+
+Template.viewAssignment.helpers({
+  agentprofile: () => {
+    return Agents.find({agentid: FlowRouter.getParam('agentid')});
+  }
+});
+
+Template.viewAssignment.events({
+  'click #cancel-form' : (event, template) => {
+    $('#profile-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+  }
+});
+
+//Edit Profile
+Template.editProfile.onCreated(function() {
+  this.agents = this.subscribe("allAgents");
+});
+
+Template.editProfile.helpers({
+  agentprofile: () => {
+    return Agents.find({agentid: FlowRouter.getParam('agentid')});
+  },
+
+  onSuccess: () => {
+    return (result) => {
+      $('#profile-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
+      FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+    };
+  }
+});
+
+Template.editProfile.events({
+  'click #cancel-form' : (event, template) => {
+    event.preventDefault();
+    $('#profile-edit').removeClass('active');
     $('.form-bg').removeClass('active');
     FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
   }
