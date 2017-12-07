@@ -32,6 +32,27 @@
             </div>
             <button id="sort-agent">Sort Agents</button>
         </div>
+        <div class="control-list message-list flex-column flex-start">
+          {{#each messages}}
+            <div class="message-item flex-row flex-start">
+              {{content}}
+              {{senderid}}
+            </div>
+          {{/each}}
+          {{#autoForm collection="Messages" id="sendMessage" doc=this type="insert" class="add-form"}}
+            <fieldset class="form-fieldset flex-column flex-start">
+                <div class="form-field flex-row flex-start">
+                  <span>Create Message:</span>
+                  {{> afFieldInput name='content' type='text'}}
+                </div>
+                {{> afFieldInput name='senderid'}}
+                {{> afFieldInput name='datecreated'}}
+                <div class="button-container flex-row">
+                  <button id="submit-form" type="submit">Send</button>
+                </div>
+            </fieldset>
+          {{/autoForm}}
+        </div>
       </div>
     </div>
     <div class="control-section  flex-column flex-start">

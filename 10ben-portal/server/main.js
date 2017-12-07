@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 //Collections
 Agents = new Mongo.Collection('agents');
 Assignments = new Mongo.Collection('assignments');
+Messages = new Mongo.Collection('messages');
 
 Meteor.startup(() => {
   // code to run on server at startup

@@ -101,6 +101,7 @@
 .control-container {
   margin: 20px;
   width: 100%;
+  flex-flow: wrap;
 }
 
 .control-list {
@@ -114,6 +115,10 @@
 }
 
 .control-list a {
+  width: 100%;
+}
+
+.control-list.message-list {
   width: 100%;
 }
 
@@ -142,7 +147,8 @@
 }
 
 .control-panel {
-  margin-left: 300px;
+  padding-left: 40px;
+  width: 50%;
 }
 
 .control-panel button {
