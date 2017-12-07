@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Random } from 'meteor/random';
+import { Session} from 'meteor/session';
 import SimpleSchema from 'simpl-schema';
 import './main.html';
 
@@ -237,8 +238,12 @@ Template.agentLogin.events({
 
 //Controller Dashboard
 Template.controllerDashboard.onCreated(function(){
-  this.agents = this.subscribe("allAgents");
-  this.assignments = this.subscribe("allAssignments");
+    this.agents = new ReactiveVar([]);
+    this.agents.set(Agents.find({}));
+    this.assignments = new ReactiveVar([]);
+    this.assignments.set(Assignments.find({}));
+ // this.agents = this.subscribe("allAgents");
+  //this.assignments = this.subscribe("allAssignments");
 });
 
 Template.controllerDashboard.helpers({
@@ -247,11 +252,14 @@ Template.controllerDashboard.helpers({
   },
 
   agents: () => {
-    return Agents.find({});
+    return Template.instance().agents.get();
+    // return Agents.find({});
+    //   return Template.parentData(1).agents.get();
   },
 
   assignments: () => {
-    return Assignments.find({});
+    return Template.instance().assignments.get();
+    //  return Assignments.find({});
   }
 });
 
@@ -282,8 +290,42 @@ Template.controllerDashboard.events({
   'click .assignment-item' : (event, template) => {
     $('#assignment-edit').addClass('active');
     $('.form-bg').addClass('active');
+  },
+
+  'change #filter-agent' : (event, template) => {
+      var agentType = $(event.target).val();
+      console.log(agentType);
+      template.agents.set(Agents.find({type: agentType}));
+  },
+
+  'change #filter-assignment' : (event, template) => {
+      var assignmentType = $(event.target).val();
+      console.log(assignmentType);
+      template.assignments.set(Assignments.find({type: assignmentType}));
   }
+
 });
+
+Template.controllerDashboard.datas = function(filter){
+    console.log(filter);
+    var result = new Array();
+    if(ac != undefined){
+        var cursor = RawData.find({type:ac});
+        var data = cursor.fetch();
+        console.log(data);
+
+        // for(var ii = 0; ii < data.length;ii++){
+        //     var nData = NextData.findOne({_id : data[ii].Next_ID});
+        //     result[ii] = {
+        //         Name : nData.Name
+        //     };
+        // }
+
+        cursor.rewind(); //we rewind our cursor here so that it can be iterated again from the beginning when needed
+
+        return result;
+    }
+};
 
 //Create Agent
 Template.createAgent.onCreated(function() {
