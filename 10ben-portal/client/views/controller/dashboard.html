@@ -20,7 +20,17 @@
         </div>
         <div class="control-panel flex-column flex-start">
           <a id="add-agent" href="/control-dash/add/agent"><button>Add an Agent</button></a>
-          <button id="sort-agent">Sort Agents</button>
+            <div class="select-div">
+                Filter Agents
+                <select id="filter-agent" selected="Filter">
+                    <option value="Designer">Designers</option>
+                    <option value="Developer">Developers</option>
+                    <option value="Analyst">Analysts</option>
+                    <option value="Strategist">Strategists</option>
+                    <option value="Writer">Writers</option>
+                </select>
+            </div>
+            <button id="sort-agent">Sort Agents</button>
         </div>
       </div>
     </div>
@@ -38,6 +48,16 @@
         </div>
         <div class="control-panel flex-column flex-start">
           <a id="add-assignment" href="/control-dash/add/assignment"><button>Add an Assignment</button></a>
+            <div class="select-div">
+                Filter Assignments
+                <select id="filter-assignment" selected="Filter">
+                    <option value="Development">Development</option>
+                    <option value="Copy">Copy</option>
+                    <option value="Design">Design</option>
+                    <option value="Analysis">Analysis</option>
+                    <option value="Strategy">Strategy</option>
+                </select>
+            </div>
           <button id="sort-assignment">Sort Assignments</button>
         </div>
       </div>
