@@ -56,6 +56,8 @@ button {
   padding: 5px 8px;
 }
 
+
+
 button::after {
   display: block;
   content: "";
@@ -161,28 +163,46 @@ a {
 
 @keyframes button-radial {
   0% {
-    background: radial-gradient(circle at center, #DF2779 0%, #000 0%, #000 100%);
+    background: radial-gradient(circle at center, #3d3bdf 0%, #000 0%, #000 100%);
+  }
+  5% {
+    background: radial-gradient(circle at center, #4d2cdf 4%, #000 10%, #000 100%);
   }
   10% {
-    background: radial-gradient(circle at center, #DF2779 9%, #000 10%, #000 100%);
+    background: radial-gradient(circle at center, #652cdf 9%, #000 10%, #000 100%);
+  }
+  17.5% {
+    background: radial-gradient(circle at center, #7a26df 16.5%, #000 25%, #000 100%);
   }
   25% {
-    background: radial-gradient(circle at center, #DF2779 24%, #000 25%, #000 100%);
+    background: radial-gradient(circle at center, #7a26df 24%, #000 25%, #000 100%);
+  }
+  32.5% {
+    background: radial-gradient(circle at center, #7a26df 31%, #000 25%, #000 100%);
   }
   40% {
-    background: radial-gradient(circle at center, #DF2779 39%, #000 40%, #000 100%);
+    background: radial-gradient(circle at center, #8023df 39%, #000 40%, #000 100%);
   }
   50% {
-    background: radial-gradient(circle at center, #DF2779 49%, #000 50%, #000 100%);
+    background: radial-gradient(circle at center, #982adf 49%, #000 50%, #000 100%);
   }
   60% {
-    background: radial-gradient(circle at center, #DF2779 59%, #000 60%, #000 100%);
+    background: radial-gradient(circle at center, #cf25df 59%, #000 60%, #000 100%);
+  }
+  67.5% {
+    background: radial-gradient(circle at center, #cf25df 66%, #000 60%, #000 100%);
   }
   75% {
-    background: radial-gradient(circle at center, #DF2779 74%, #000 75%, #000 100%);
+    background: radial-gradient(circle at center, #df28d7 74%, #000 75%, #000 100%);
+  }
+  82.5% {
+    background: radial-gradient(circle at center, #df28d7 81%, #000 75%, #000 100%);
   }
   90% {
-    background: radial-gradient(circle at center, #DF2779 89%, #000 90%, #000 100%);
+    background: radial-gradient(circle at center, #df20c8 89%, #000 90%, #000 100%);
+  }
+  95% {
+    background: radial-gradient(circle at center, #df20c8 94%, #000 90%, #000 100%);
   }
   100% {
     color: #fff;

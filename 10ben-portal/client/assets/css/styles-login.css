@@ -47,6 +47,7 @@
 
 .login-field label {
   display: none;
+
 }
 
 .login-field input,
@@ -54,6 +55,7 @@
   margin: 10px 0;
   font-size: 1.3em;
   background: transparent;
+  text-align: center;
   color: #FFF;
 }
 

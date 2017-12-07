@@ -142,11 +142,40 @@
 }
 
 .control-panel {
-  margin-left: 100px;
+  margin-left: 300px;
 }
 
 .control-panel button {
   margin: 10px 0;
+}
+
+.select-div {
+  font-family: 'Raleway', sans-serif !important;
+  background: transparent;
+  color: #FFF;
+  font-size: 1.2em !important;
+  font-weight: 800;
+  text-transform: uppercase !important;
+  letter-spacing: 2px;
+  border: 0;
+  border-radius: 0;
+  padding: 5px 8px;
+}
+
+.select-div::after{
+  display: block;
+  content: "";
+  height: 4px;
+  width: 60%;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+  transition: width 300ms ease;
+  -webkit-transition: width 300ms ease;
+}
+
+select {
+  display: inline;
 }
 
 
