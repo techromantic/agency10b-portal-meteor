@@ -5,8 +5,10 @@
   <div class="form-container flex-column flex-start">
     {{#autoForm collection="Agents" id="addAgent" type="insert" class="add-form"}}
       <fieldset class="form-fieldset flex-column flex-start">
-          {{> afFieldInput name='agentid'}}
-          {{> afFieldInput name='datecreated'}}
+          <div class="hidden">
+            {{> afFieldInput name='agentid'}}
+            {{> afFieldInput name='datecreated'}}
+          </div>
           <div class="form-field flex-row flex-start">
             <span>Full Name:</span>
             {{> afFieldInput name='name' type='text'}}

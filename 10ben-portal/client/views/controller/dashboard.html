@@ -39,14 +39,16 @@
               {{senderid}}
             </div>
           {{/each}}
-          {{#autoForm collection="Messages" id="sendMessage" doc=this type="insert" class="add-form"}}
+          {{#autoForm collection="Messages" id="sendMessage" type="insert" class="add-form"}}
             <fieldset class="form-fieldset flex-column flex-start">
+                <div class="hidden">
+                  {{> afFieldInput name='senderid'}}
+                  {{> afFieldInput name='datecreated'}}
+                </div>    
                 <div class="form-field flex-row flex-start">
                   <span>Create Message:</span>
                   {{> afFieldInput name='content' type='text'}}
                 </div>
-                {{> afFieldInput name='senderid'}}
-                {{> afFieldInput name='datecreated'}}
                 <div class="button-container flex-row">
                   <button id="submit-form" type="submit">Send</button>
                 </div>

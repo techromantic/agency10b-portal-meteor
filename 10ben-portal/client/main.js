@@ -18,16 +18,22 @@ Messages = new Mongo.Collection('messages');
 Agents.attachSchema(new SimpleSchema({
   agentid: {
     type: String,
-    defaultValue: Random.id(8),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        let id = Random.id();
+        console.log(id);
+        return id;
+      }
     }
   },
   datecreated: {
     type: Date,
-    defaultValue: new Date(),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        let date = new Date();
+        console.log(date);
+        return date;
+      }
     }
   },
   name: {
@@ -53,9 +59,10 @@ Agents.attachSchema(new SimpleSchema({
 Assignments.attachSchema(new SimpleSchema({
   assignmentid: {
     type: String,
-    defaultValue: Random.id(8),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      }
     }
   },
   title: {
@@ -75,9 +82,10 @@ Assignments.attachSchema(new SimpleSchema({
   },
   datecreated: {
     type: Date,
-    defaultValue: new Date(),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return new Date();
+      }
     }
   },
   deadline: {
@@ -88,9 +96,10 @@ Assignments.attachSchema(new SimpleSchema({
   },
   controllerid: {
     type: String,
-    defaultValue: Meteor.userId(),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Meteor.userId();
+      }
     }
   },
   agentid: {
@@ -113,27 +122,25 @@ Assignments.attachSchema(new SimpleSchema({
 }, {tracker: Tracker}));
 
 Messages.attachSchema(new SimpleSchema({
-  content: {
-    type: String
-  },
   senderid: {
     type: String,
-    defaultValue: (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId(),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId();
+      }
     }
   },
   datecreated: {
     type: Date,
-    defaultValue: new Date(),
-    autoform: {
-      type: "hidden"
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return new Date();
+      }
     }
   },
-  // assignmentid: {
-  //   type: String,
-  //   defaultValue: FlowRouter.getParam('assignmentid')
-  // }
+  content: {
+    type: String
+  }
 }, {tracker: Tracker}));
 
 //FlowRouter Autoform Hooks
@@ -203,6 +210,6 @@ AutoForm.addHooks('sendMessage', {
       alert("Error sending message: " + error);
     },
     onSuccess: (formType, result) => {
-      console.log(formType);
+      console.log(result);
     }
 });

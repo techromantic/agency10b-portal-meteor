@@ -6,9 +6,11 @@
   <div class="form-container flex-column flex-start">
     {{#autoForm collection="Assignments" id="editAssignment" doc=this type="update" class="edit-form"}}
         <fieldset class="form-fieldset flex-column flex-start">
-            {{> afFieldInput name='assignmentid'}}
-            {{> afFieldInput name='datecreated'}}
-            {{> afFieldInput name='controllerid'}}
+            <div class="hidden">
+              {{> afFieldInput name='assignmentid'}}
+              {{> afFieldInput name='datecreated'}}
+              {{> afFieldInput name='controllerid'}}
+            </div>
             <div class="form-field flex-row flex-start">
               <span>Title:</span>
               {{> afFieldInput name='title' type='text'}}
