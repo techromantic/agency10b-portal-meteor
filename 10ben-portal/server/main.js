@@ -5,6 +5,7 @@ import { Session } from 'meteor/session';
 import { Match } from 'meteor/check'
 import { check } from 'meteor/check'
 import SimpleSchema from 'simpl-schema';
+import {Email} from 'meteor/email';
 
 //Collections
 Agents = new Mongo.Collection('agents');
@@ -184,6 +185,7 @@ Messages.attachSchema(MessageSchema);
 
 Meteor.startup(() => {
   // code to run on server at startup
+    process.env.MAIL_URL = "smtp://postmaster@sandbox7f352be01259405aacba840a713f2ad0.mailgun.org:25fa41a946c85fb6ebca0c9989cf6959@smtp.mailgun.org:587";
 });
 
 Meteor.users.allow({
@@ -196,5 +198,20 @@ Meteor.users.allow({
 Meteor.methods({
     'checkAgentKey': function (userkey) {
         return (Agents.findOne({agentid: userkey})) ? true : false;
+    },
+    'newAgentEmail': function (agent) {
+        SSR.compileTemplate('newAgentEmail', Assets.getText('newagent.html'));
+
+        var agentData = {
+            name: agent.name,
+            userkey: agent.userkey,
+        };
+
+        Email.send({
+            to: agent.email,
+            from: "sarim@10ben.io",
+            subject: "Welcome to 10Ben",
+            html: SSR.render('newAgentEmail', agentData),
+        });
     }
 });

@@ -17,7 +17,20 @@ AutoForm.addHooks('addAgent', {
     onSuccess: (formType, result) => {
       $('#agent-add').removeClass('active');
       $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
+
+        var agent = Agents.findOne({_id: result});
+        Meteor.call('newAgentEmail', agent, function (err, result) {
+            if(err) {
+                alert('There was an error while sending the email.');
+            } else {
+                if (result === true){
+                    alert('Email was succesfully sent.');
+                } else {
+                    alert('Email may not have been sent.');
+                }
+            }
+        });
+        FlowRouter.go('control-dash');
     }
 });
 
