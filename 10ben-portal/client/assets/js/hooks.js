@@ -19,11 +19,11 @@ AutoForm.addHooks('addAgent', {
       $('.form-bg').removeClass('active');
 
         var agent = Agents.findOne({_id: result});
-        Meteor.call('newAgentEmail', agent, function (err, result) {
+        Meteor.call('newAgentEmail', agent, (err, result) => {
             if(err) {
                 alert('There was an error while sending the email.');
             } else {
-                if (result === true){
+                if (result === true) {
                     alert('Email was succesfully sent.');
                 } else {
                     alert('Email may not have been sent.');
@@ -108,6 +108,6 @@ AutoForm.addHooks('sendMessage', {
       alert("Error sending message: " + error);
     },
     onSuccess: (formType, result) => {
-      
+
     }
 });

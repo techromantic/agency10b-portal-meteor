@@ -32,32 +32,9 @@
             </div>
             <button id="sort-agent">Sort Agents</button>
         </div>
-        <div class="control-list message-list flex-column flex-start">
-          {{#each messages}}
-            <div class="message-item flex-row flex-start">
-              <span>{{formatDateTime datecreated}}: {{content}}</span>
-
-            </div>
-          {{/each}}
-          {{#autoForm collection="Messages" id="sendMessage" type="insert" class="add-form"}}
-            <fieldset class="form-fieldset flex-column flex-start">
-                <div class="hidden">
-                  {{> afFieldInput name='senderid'}}
-                  {{> afFieldInput name='datecreated'}}
-                </div>
-                <div class="form-field flex-row flex-start">
-                  <span>Create Message:</span>
-                  {{> afFieldInput name='content' type='text'}}
-                </div>
-                <div class="button-container flex-row">
-                  <button id="submit-form" type="submit">Send</button>
-                </div>
-            </fieldset>
-          {{/autoForm}}
-        </div>
       </div>
     </div>
-    <div class="control-section  flex-column flex-start">
+    <div class="control-section flex-column flex-start">
       <h1 class="control-title">Assignment Control</h1>
       <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
@@ -82,6 +59,24 @@
                 </select>
             </div>
           <button id="sort-assignment">Sort Assignments</button>
+        </div>
+      </div>
+    </div>
+    <div class="control-section flex-column flex-start">
+      <h1 class="control-title">Messaging</h1>
+      <div class="control-container flex-row flex-start">
+        <div class="control-panel flex-column flex-start">
+          {{#each assignments}}
+            <h3>{{title}}</h3>
+            <div class="control-list message-list flex-column flex-start">
+              {{#each lastMessage assignmentid}}
+                <div class="message-item flex-row flex-start">
+                  <span class="message-content"><span class="bold">{{getSender senderid}}:</span> {{content}}</span>
+                  <span class="message-date">{{formatDateTime datecreated}}</span>
+                </div>
+              {{/each}}
+            </div>
+          {{/each}}
         </div>
       </div>
     </div>

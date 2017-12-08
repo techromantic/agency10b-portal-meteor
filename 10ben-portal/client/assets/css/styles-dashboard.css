@@ -39,6 +39,10 @@
   -webkit-transition: left 400ms ease;
 }
 
+.control-section:nth-child(3) {
+  left: 800px;
+}
+
 .control-section .control-title,
 .control-section.active .control-title {
   transition: color 400ms ease-out;

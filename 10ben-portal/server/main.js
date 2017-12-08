@@ -176,6 +176,14 @@ MessageSchema = new SimpleSchema({
   },
   content: {
     type: String
+  },
+  assignmentid: {
+    type: String,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return "MaeZJj8t";
+      }
+    }
   }
 });
 
@@ -196,13 +204,14 @@ Meteor.users.allow({
 
 //Validation Methods
 Meteor.methods({
-    'checkAgentKey': function (userkey) {
+    'checkAgentKey': (userkey) => {
         return (Agents.findOne({agentid: userkey})) ? true : false;
     },
-    'newAgentEmail': function (agent) {
+
+    'newAgentEmail': (agent) => {
         SSR.compileTemplate('newAgentEmail', Assets.getText('newagent.html'));
 
-        var agentData = {
+        let agentData = {
             name: agent.name,
             userkey: agent.userkey,
         };

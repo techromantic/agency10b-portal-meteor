@@ -176,6 +176,14 @@ MessageSchema = new SimpleSchema({
   },
   content: {
     type: String
+  },
+  assignmentid: {
+    type: String,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return "MaeZJj8t";
+      }
+    }
   }
 });
 

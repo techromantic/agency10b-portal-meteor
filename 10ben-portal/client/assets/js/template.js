@@ -8,6 +8,14 @@ Template.registerHelper('formatDateTime', (date) => {
   return moment(date).format('LT');
 });
 
+Template.registerHelper('getSender', (senderid) => {
+  if (Meteor.users.findOne({_id: senderid}).profile.callsign) {
+    return Meteor.users.findOne({_id: senderid}).profile.callsign;
+  } else {
+    return Agents.findOne({agentid: senderid}).profile.callsign;
+  }
+});
+
 Template.registerHelper('getController', (controllerid) => {
   return Meteor.users.findOne({_id: controllerid}).profile.callsign;
 });
@@ -93,8 +101,8 @@ Template.controllerDashboard.helpers({
     //  return Assignments.find({});
   },
 
-  messages: () => {
-    return Messages.find({});
+  lastMessage: (aid) => {
+    return Messages.find({assignmentid: aid}, {sort: {datecreated: -1, limit: 1}});
   }
 });
 
@@ -103,8 +111,9 @@ Template.controllerDashboard.events({
     AccountsTemplates.logout();
   },
 
-  'click .control-section:not(.active) .control-title' : (event, template) => {
-    $('.control-section').toggleClass('active');
+  'click .control-section .control-title' : (event, template) => {
+    $('.control-section').removeClass('active');
+    $(event.target).parent('.control-section').addClass('active');
   },
 
   'click #add-agent' : (event, template) => {
