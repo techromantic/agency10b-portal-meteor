@@ -35,8 +35,8 @@
         <div class="control-list message-list flex-column flex-start">
           {{#each messages}}
             <div class="message-item flex-row flex-start">
-              {{content}}
-              {{senderid}}
+              <span>{{formatDateTime datecreated}}: {{content}}</span>
+
             </div>
           {{/each}}
           {{#autoForm collection="Messages" id="sendMessage" type="insert" class="add-form"}}
@@ -44,7 +44,7 @@
                 <div class="hidden">
                   {{> afFieldInput name='senderid'}}
                   {{> afFieldInput name='datecreated'}}
-                </div>    
+                </div>
                 <div class="form-field flex-row flex-start">
                   <span>Create Message:</span>
                   {{> afFieldInput name='content' type='text'}}

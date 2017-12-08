@@ -4,6 +4,10 @@ Template.registerHelper('formatDate', (date) => {
   return moment(date).format('MMM. D, YYYY');
 });
 
+Template.registerHelper('formatDateTime', (date) => {
+  return moment(date).format('LT');
+});
+
 Template.registerHelper('getController', (controllerid) => {
   return Meteor.users.findOne({_id: controllerid}).profile.callsign;
 });

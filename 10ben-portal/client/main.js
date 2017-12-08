@@ -1,12 +1,18 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Random } from 'meteor/random';
-import { Session} from 'meteor/session';
+import { Session } from 'meteor/session';
+import { Match } from 'meteor/check'
+import { check } from 'meteor/check'
 import SimpleSchema from 'simpl-schema';
 import './main.html';
 
 //Simple Schema
 SimpleSchema.extendOptions(['autoform']);
+SimpleSchema.extendOptions({
+  denyInsert: Match.Optional(Boolean),
+  denyUpdate: Match.Optional(Boolean)
+});
 SimpleSchema.debug = true;
 
 //Collections
@@ -15,26 +21,30 @@ Assignments = new Mongo.Collection('assignments');
 Messages = new Mongo.Collection('messages');
 
 //Schemas
-Agents.attachSchema(new SimpleSchema({
+AgentSchema = new SimpleSchema({
   agentid: {
     type: String,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        let id = Random.id();
-        console.log(id);
-        return id;
+        return Random.id(8);
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Random.id(8)};
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   datecreated: {
     type: Date,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        let date = new Date();
-        console.log(date);
-        return date;
+        return new Date();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date};
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   name: {
     type: String
@@ -54,16 +64,22 @@ Agents.attachSchema(new SimpleSchema({
     type: String,
     allowedValues: ['Active', 'Inactive']
   }
-}, {tracker: Tracker}));
+});
 
-Assignments.attachSchema(new SimpleSchema({
+AssignmentSchema = new SimpleSchema({
   assignmentid: {
     type: String,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return Random.id(8)
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Random.id(8)};
+      } else {
+        this.unset();
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   title: {
     type: String
@@ -85,8 +101,14 @@ Assignments.attachSchema(new SimpleSchema({
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return new Date();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: new Date};
+      } else {
+        this.unset();
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   deadline: {
     type: Date,
@@ -99,8 +121,14 @@ Assignments.attachSchema(new SimpleSchema({
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return Meteor.userId();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Meteor.userId()};
+      } else {
+        this.unset();
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   agentid: {
     type: Array,
@@ -119,16 +147,22 @@ Assignments.attachSchema(new SimpleSchema({
   'agentid.$' : {
     type: String
   }
-}, {tracker: Tracker}));
+});
 
-Messages.attachSchema(new SimpleSchema({
+MessageSchema = new SimpleSchema({
   senderid: {
     type: String,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId();
+      } else if (this.isUpsert) {
+        return {$setOnInsert: (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId()};
+      } else {
+        this.unset();
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   datecreated: {
     type: Date,
@@ -136,80 +170,15 @@ Messages.attachSchema(new SimpleSchema({
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return new Date();
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   },
   content: {
     type: String
   }
-}, {tracker: Tracker}));
-
-//FlowRouter Autoform Hooks
-AutoForm.addHooks(null, {
-    onError: (name, error, template) => {
-      console.log(name + " error:", error);
-    }
 });
 
-AutoForm.addHooks('addAgent', {
-    onError: (formType, error) => {
-      alert("Error adding agent: " + error);
-    },
-    onSuccess: (formType, result) => {
-      $('#agent-add').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
-    }
-});
-
-AutoForm.addHooks('editAgent', {
-    onError: (formType, error) => {
-      alert("Error updating agent: " + error);
-    },
-    onSuccess: (formType, result) => {
-      $('#agent-edit').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
-    }
-});
-
-AutoForm.addHooks('editProfile', {
-    onError: (formType, error) => {
-      alert("Error updating profile: " + error);
-    },
-    onSuccess: (formType, result) => {
-      $('#profile-edit').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
-    }
-});
-
-AutoForm.addHooks('addAssignment', {
-    onError: (formType, error) => {
-      alert("Error adding assignment: " + error);
-    },
-    onSuccess: (formType, result) => {
-      $('#assignment-add').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
-    }
-});
-
-AutoForm.addHooks('editAssignment', {
-    onError: (formType, error) => {
-      alert("Error updating assignment: " + error);
-    },
-    onSuccess: (formType, result) => {
-      $('#assignment-edit').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
-    }
-});
-
-AutoForm.addHooks('sendMessage', {
-    onError: (formType, error) => {
-      alert("Error sending message: " + error);
-    },
-    onSuccess: (formType, result) => {
-      console.log(result);
-    }
-});
+Agents.attachSchema(AgentSchema);
+Assignments.attachSchema(AssignmentSchema);
+Messages.attachSchema(MessageSchema);
