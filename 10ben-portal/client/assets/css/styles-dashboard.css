@@ -125,16 +125,18 @@
   overflow-y: auto;
 }
 
+.control-list.full-width {
+  width: 100%;
+  max-width: 1024px;
+  min-width: 800px;
+}
+
 .control-list a {
   width: 100%;
 }
 
-.control-list.message-list {
-  width: 100%;
-}
-
-.control-item:first-child {
-  border-top: 1px solid #FFF;
+.control-list a.assignment-item {
+  padding: 20px;
 }
 
 .control-item {
@@ -142,6 +144,10 @@
   padding: 15px 10px;
   border-bottom: 1px solid #FFF;
   background: transparent;
+}
+
+.control-item:first-child {
+  border-top: 1px solid #FFF;
 }
 
 .control-item:hover {
@@ -155,6 +161,11 @@
   font-size: 1.2em;
   align-self: center;
   font-weight: 400;
+}
+
+.assignment-item .control-item .assignment-date {
+  margin-left: auto;
+  font-weight: 700;
 }
 
 .control-panel {
@@ -183,6 +194,46 @@ select {
   display: inline;
 }
 
+.assign-message-list {
+  width: 100%;
+  height: auto;
+}
+
+.assign-message-item {
+  width: 100%;
+}
+
+.assign-message-item span {
+  align-self: flex-start;
+}
+
+.assign-message-title {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 10px 0;
+}
+
+.assign-message-sender {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.assign-message-details {
+  margin: 40px 0;
+  font-size: 1em !important;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.assign-message-item .bold {
+  font-weight: 700;
+}
+
+.assign-message-date {
+  margin-left: auto;
+  color: #BBB;
+}
 
 /*Agent Dashboard View*/
 .dash-section {

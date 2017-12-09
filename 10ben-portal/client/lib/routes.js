@@ -60,7 +60,7 @@ FlowRouter.route('/control-dash', {
 FlowRouter.route( '/control-dash/add/agent/', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      FlowRouter.go('login');
+      FlowRouter.go('control-login');
     }
   },
   name: 'add-agent'
@@ -70,7 +70,7 @@ FlowRouter.route( '/control-dash/add/agent/', {
 FlowRouter.route( '/control-dash/add/assignment/', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      FlowRouter.go('login');
+      FlowRouter.go('control-login');
     }
   },
   name: 'add-assignment'
@@ -80,7 +80,7 @@ FlowRouter.route( '/control-dash/add/assignment/', {
 FlowRouter.route( '/control-dash/edit/agent/:agentid', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      FlowRouter.go('login');
+      FlowRouter.go('control-login');
     }
   },
   name: 'edit-agent'
@@ -90,7 +90,7 @@ FlowRouter.route( '/control-dash/edit/agent/:agentid', {
 FlowRouter.route( '/control-dash/edit/assignment/:assignmentid', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      FlowRouter.go('login');
+      FlowRouter.go('control-login');
     }
   },
   name: 'edit-assignment'
@@ -103,6 +103,15 @@ FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
   name: 'view-assignment'
 });
 
+//View Assignment Message
+FlowRouter.route( '/control-dash/message/assignment/:assignmentid', {
+  action: () => {
+    if (!Meteor.user() && !Meteor.loggingIn()) {
+      FlowRouter.go('agent-login');
+    }
+  },
+  name: 'message-assignment'
+});
 
 //Edit Profile
 FlowRouter.route('/agent-dash/:agentid/edit/profile', {

@@ -232,6 +232,10 @@ a {
   align-items: flex-start;
 }
 
+.full-width {
+  width: 100%;
+}
+
 /*Containers*/
 .full-border {
   border: 2px solid #FFF;

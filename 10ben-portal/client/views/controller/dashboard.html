@@ -41,7 +41,8 @@
           {{#each assignments}}
             <a class="assignment-item" href="/control-dash/edit/assignment/{{assignmentid}}">
               <div class="control-item flex-row flex-start">
-                <span>{{title}} (Due in {{formatDate deadline}})</span>
+                <span>{{title}}</span>
+                <span class="assignment-date">Due in {{formatDate deadline}}</span>
               </div>
             </a>
           {{/each}}
@@ -65,17 +66,24 @@
     <div class="control-section three flex-column flex-start">
       <h1 class="control-title">Messaging</h1>
       <div class="control-container flex-row flex-start">
-        <div class="control-panel flex-column flex-start">
+        <div class="control-list full-width flex-column flex-start">
           {{#each assignments}}
-            <h3>{{title}}</h3>
-            <div class="control-list message-list flex-column flex-start">
-              {{#each lastMessage assignmentid}}
-                <div class="message-item flex-row flex-start">
-                  <span class="message-content"><span class="bold">{{getSender senderid}}:</span> {{content}}</span>
-                  <span class="message-date">{{formatDateTime datecreated}}</span>
+            <a class="assignment-item" href="/control-dash/message/assignment/{{assignmentid}}">
+              <div class="control-item">
+                <h3 class="assign-message-title">{{title}}</h3>
+                <div class="assign-message-list flex-column flex-start">
+                  {{#each lastMessage assignmentid}}
+                    <div class="assign-message-item flex-column flex-start">
+                      <div class="full-width flex-row flex-start">
+                        <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
+                        <span class="assign-message-date">{{formatFullDate datecreated}}</span>
+                      </div>
+                      <span class="assign-message-details">{{condenseMessage content}}</span>
+                    </div>
+                  {{/each}}
                 </div>
-              {{/each}}
-            </div>
+              </div>
+            </a>
           {{/each}}
         </div>
       </div>

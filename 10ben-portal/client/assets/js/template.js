@@ -1,5 +1,9 @@
 
 //Template Helpers
+Template.registerHelper('formatFullDate', (date) => {
+  return moment(date).format('lll');
+});
+
 Template.registerHelper('formatDate', (date) => {
   return moment(date).format('MMM. D, YYYY');
 });
@@ -19,6 +23,10 @@ Template.registerHelper('getSender', (senderid) => {
 Template.registerHelper('getController', (controllerid) => {
   return Meteor.users.findOne({_id: controllerid}).profile.callsign;
 });
+
+Template.registerHelper('condenseMessage', (message) => {
+  return message.substring(0, 240) + '...';
+})
 
 
 //Application Init
