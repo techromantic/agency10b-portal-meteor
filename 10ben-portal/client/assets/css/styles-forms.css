@@ -11,6 +11,11 @@
   z-index: 999;
 }
 
+.form-modal.large-modal {
+  width: 60vw;
+  height: 80vh;
+}
+
 .form-modal.active {
   top: 50%;
   opacity: 1;
@@ -189,4 +194,39 @@
 
 .button-container button {
   margin-right: 40px;
+}
+
+/*Message Forms*/
+.message-list {
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.message-item {
+  width: 100%;
+  margin: 5px;
+  padding: 20px;
+}
+
+.message-content {
+  font-size: 1.1em;
+}
+
+.message-details {
+  width: 100%;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.message-sender {
+  font-weight: 700;
+}
+
+.message-date {
+  font-style: italic;
+  margin-left: auto;
+  color: #BBB;
 }

@@ -155,10 +155,6 @@ MessageSchema = new SimpleSchema({
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
         return (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId();
-      } else if (this.isUpsert) {
-        return {$setOnInsert: (!Meteor.user() && !Meteor.loggingIn()) ? FlowRouter.getParam('agentid') : Meteor.userId()};
-      } else {
-        this.unset();
       }
     },
     denyInsert: false,
@@ -181,9 +177,11 @@ MessageSchema = new SimpleSchema({
     type: String,
     autoValue: function() {
       if (this.isInsert && (!this.isSet || this.value.length === 0)) {
-        return "MaeZJj8t";
+        return FlowRouter.getParam('assignmentid');
       }
-    }
+    },
+    denyInsert: false,
+    denyUpdate: true
   }
 });
 

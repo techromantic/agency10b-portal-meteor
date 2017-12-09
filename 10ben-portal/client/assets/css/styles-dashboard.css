@@ -135,22 +135,21 @@
   width: 100%;
 }
 
-.control-list a.assignment-item {
-  padding: 20px;
-}
-
-.control-item {
+.control-item,
+.assignment-item.message {
   width: 100%;
   padding: 15px 10px;
   border-bottom: 1px solid #FFF;
   background: transparent;
 }
 
-.control-item:first-child {
+.control-item:first-child,
+.assignment-item.message:first-child {
   border-top: 1px solid #FFF;
 }
 
-.control-item:hover {
+.control-item:hover,
+.assignment-item.message:hover {
   cursor: pointer;
   animation: button-radial 150ms ease 1;
   -webkit-animation: button-radial 150ms ease 1;
@@ -163,7 +162,7 @@
   font-weight: 400;
 }
 
-.assignment-item .control-item .assignment-date {
+.assignment-item .assignment-date {
   margin-left: auto;
   font-weight: 700;
 }

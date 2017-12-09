@@ -13,11 +13,19 @@ Template.registerHelper('formatDateTime', (date) => {
 });
 
 Template.registerHelper('getSender', (senderid) => {
+  let sender = '';
+
   if (Meteor.users.findOne({_id: senderid}).profile.callsign) {
-    return Meteor.users.findOne({_id: senderid}).profile.callsign;
+    sender = Meteor.users.findOne({_id: senderid}).profile.callsign;
   } else {
-    return Agents.findOne({agentid: senderid}).profile.callsign;
+    sender = Agents.findOne({agentid: senderid}).profile.callsign;
   }
+
+  if (senderid === Meteor.userId())
+    return sender + " (You)";
+  else
+    return sender;
+
 });
 
 Template.registerHelper('getController', (controllerid) => {
@@ -110,7 +118,7 @@ Template.controllerDashboard.helpers({
   },
 
   lastMessage: (aid) => {
-    return Messages.find({assignmentid: aid}, {sort: {datecreated: -1, limit: 1}});
+    return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
   }
 });
 
@@ -160,8 +168,13 @@ Template.controllerDashboard.events({
     $('.form-bg').addClass('active');
   },
 
-  'click .assignment-item' : (event, template) => {
+  'click #edit-assignment' : (event, template) => {
     $('#assignment-edit').addClass('active');
+    $('.form-bg').addClass('active');
+  },
+
+  'click #message-assignment' : (event, template) => {
+    $('#assignment-message').addClass('active');
     $('.form-bg').addClass('active');
   },
 
@@ -410,5 +423,26 @@ Template.editProfile.events({
     $('#profile-edit').removeClass('active');
     $('.form-bg').removeClass('active');
     FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+  }
+});
+
+//Assignment Messaging
+Template.messageAssignment.onCreated(function() {
+  this.assignments = this.subscribe("allAssignments");
+  this.messages = this.subscribe("allMessages");
+});
+
+Template.messageAssignment.helpers({
+  messages: () => {
+    return Messages.find({assignmentid: FlowRouter.getParam('assignmentid')}, {sort: {datecreated: -1}});
+  }
+});
+
+Template.messageAssignment.events({
+  'click #close-form' : (event, template) => {
+    event.preventDefault();
+    $('#assignment-message').removeClass('active');
+    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
   }
 });
