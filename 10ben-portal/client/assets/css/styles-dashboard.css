@@ -30,6 +30,10 @@
   max-width: 1024px;
 }
 
+.section-container.agent-container {
+  flex-wrap: wrap;
+}
+
 .control-section {
   width: 100%;
   position: absolute;
@@ -238,11 +242,14 @@ select {
 .dash-section {
   width: 100%;
   padding: 20px 40px 40px 40px;
-  margin: 20px 0;
 }
 
-.dash-section.half-section {
-  width: 50%;
+.dash-section.profile-section {
+  width: 40%;
+}
+
+.dash-section.message-section {
+  width: 60%;
 }
 
 .dash-title {
@@ -253,7 +260,7 @@ select {
   display: block;
   content: "";
   height: 10px;
-  width: 40vw;
+  width: 40%;
   max-width: 500px;
   border-bottom: 6px solid #FFF;
   animation: border-color-shift 10s ease infinite;

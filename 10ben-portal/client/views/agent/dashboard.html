@@ -5,8 +5,8 @@
     <h1>{{agentCallsign}}</h1>
   </div>
 
-  <div class="section-container">
-    <div class="dash-section full-border flex-column flex-start">
+  <div class="section-container agent-container flex-row flex-start">
+    <div class="dash-section">
       <h1 class="dash-title">Your Assignments</h1>
       <div class="dash-list flex-column flex-start">
         {{#each assignments}}
@@ -29,13 +29,34 @@
         {{/each}}
       </div>
     </div>
-    <div class="dash-section half-section full-border flex-column flex-start">
+    <div class="dash-section profile-section">
       <h1 class="dash-title">Your Profile</h1>
       <div class="dash-details flex-column flex-start">
         <span class="dash-callsign">Callsign: {{agentCallsign}}</span>
         <span class="dash-name">Name: {{agentName}}</span>
         <span class="dash-email">Email: {{agentEmail}}</span>
         <a id="edit-profile" href="/agent-dash/{{agentId}}/edit/profile"><button>Edit Profile</button></a>
+      </div>
+    </div>
+    <div class="dash-section message-section">
+      <h1 class="dash-title">Your Messages</h1>
+      <div class="control-list flex-column flex-start">
+        {{#each assignments}}
+          <a class="assignment-item message" id="message-assignment" href="/agent-dash/{{agentid}}/message/assignment/{{assignmentid}}">
+            <h3 class="assign-message-title">{{title}}</h3>
+            <div class="assign-message-list flex-column flex-start">
+              {{#each lastMessage assignmentid}}
+                <div class="assign-message-item flex-column flex-start">
+                  <div class="full-width flex-row flex-start">
+                    <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
+                    <span class="assign-message-date">{{formatFullDate datecreated}}</span>
+                  </div>
+                  <span class="assign-message-details">{{condenseMessage content}}</span>
+                </div>
+              {{/each}}
+            </div>
+          </a>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -49,6 +70,11 @@
   <!--Edit Modals-->
   <div class="form-modal full-border flex-column flex-start" id="profile-edit">
     {{> editProfile}}
+  </div>
+
+  <!--Message Modals-->
+  <div class="form-modal large-modal full-border flex-column flex-start" id="assignment-message">
+    {{> messageAssignment}}
   </div>
 
   <div class="form-bg"></div>

@@ -103,14 +103,21 @@ FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
   name: 'view-assignment'
 });
 
-//View Assignment Message
+//View Assignment Message (Controller)
 FlowRouter.route( '/control-dash/message/assignment/:assignmentid', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
-      FlowRouter.go('agent-login');
+      FlowRouter.go('control-login');
     }
   },
-  name: 'message-assignment'
+  name: 'message-assignment-control'
+});
+
+//View Assignment Message (Agent)
+FlowRouter.route( '/agent-dash/:agentid/message/assignment/:assignmentid', {
+  action: () => {
+  },
+  name: 'message-assignment-agent'
 });
 
 //Edit Profile

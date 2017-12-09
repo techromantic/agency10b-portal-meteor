@@ -17,19 +17,11 @@ Template.registerHelper('formatDateFromNow', (date) => {
 });
 
 Template.registerHelper('getSender', (senderid) => {
-  let sender = '';
-
-  if (Meteor.users.findOne({_id: senderid}).profile.callsign) {
-    sender = Meteor.users.findOne({_id: senderid}).profile.callsign;
+  if (Meteor.users.findOne({_id: senderid})) {
+    return Meteor.users.findOne({_id: senderid}).profile.callsign;
   } else {
-    sender = Agents.findOne({agentid: senderid}).profile.callsign;
+    return Agents.findOne({agentid: senderid}).callsign;
   }
-
-  if (senderid === Meteor.userId())
-    return sender + " (You)";
-  else
-    return sender;
-
 });
 
 Template.registerHelper('getController', (controllerid) => {
@@ -348,6 +340,7 @@ Template.agentDashboard.onCreated(function() {
   this.users = this.subscribe("allUsers");
   this.agents = this.subscribe("allAgents");
   this.assignments = this.subscribe("allAssignments");
+  this.messages = this.subscribe("allMessages");
 });
 
 Template.agentDashboard.helpers({
@@ -369,6 +362,10 @@ Template.agentDashboard.helpers({
 
   assignments: () => {
     return Assignments.find({agentid: FlowRouter.getParam('agentid')});
+  },
+
+  lastMessage: (aid) => {
+    return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
   }
 });
 
@@ -379,6 +376,11 @@ Template.agentDashboard.events({
 
   'click #view-assignment' : (event, template) => {
     $('#assignment-view').addClass('active');
+    $('.form-bg').addClass('active');
+  },
+
+  'click #message-assignment' : (event, template) => {
+    $('#assignment-message').addClass('active');
     $('.form-bg').addClass('active');
   },
 
@@ -468,6 +470,6 @@ Template.messageAssignment.events({
     event.preventDefault();
     $('#assignment-message').removeClass('active');
     $('.form-bg').removeClass('active');
-    FlowRouter.go('control-dash');
+    window.history.back()
   }
 });
