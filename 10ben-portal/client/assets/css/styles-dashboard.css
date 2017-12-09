@@ -34,13 +34,24 @@
   width: 100%;
   position: absolute;
   top: 0;
-  left: 400px;
   transition: left 400ms ease;
   -webkit-transition: left 400ms ease;
 }
 
+.control-section:nth-child(1) {
+  left: 0;
+}
+
+.control-section:nth-child(2) {
+  left: 400px;
+}
+
 .control-section:nth-child(3) {
   left: 800px;
+}
+
+.control-section.active {
+  left: 0 !important;
 }
 
 .control-section .control-title,
@@ -74,10 +85,6 @@
 
 .control-section.active .control-container {
   display: inherit;
-}
-
-.control-section.active {
-  left: 0;
 }
 
 .control-title::after {
