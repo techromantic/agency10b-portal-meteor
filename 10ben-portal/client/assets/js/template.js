@@ -12,6 +12,10 @@ Template.registerHelper('formatDateTime', (date) => {
   return moment(date).format('LT');
 });
 
+Template.registerHelper('formatDateFromNow', (date) => {
+    return moment(date).fromNow();
+});
+
 Template.registerHelper('getSender', (senderid) => {
   let sender = '';
 
@@ -183,6 +187,23 @@ Template.controllerDashboard.events({
       console.log(agentType);
       template.agents.set(Agents.find({type: agentType}));
   },
+  'change #search-agent' : (event, template) => {
+      var search = $(event.target).val();
+      console.log(search);
+      if(search.length !== 0){
+          template.agents.set(
+              Agents.find({
+                  $or: [{name: {$regex: search, $options: 'i'}},
+                      {callsign: {$regex: search, $options: 'i'}},
+                      {email: {$regex: search, $options: 'i'}}]
+              })
+          );
+      } else {
+        template.agents.set(Agents.find({}));
+      }
+
+  },
+
 
   'change #filter-assignment' : (event, template) => {
       var assignmentType = $(event.target).val();
@@ -283,7 +304,11 @@ Template.createAssignment.events({
 Template.editAssignment.onCreated(function() {
     this.assignments = this.subscribe("allAssignments");
     this.agents = this.subscribe("allAgents");
+
+    //this.currentAgent = Agents.findOne({_id: FlowRouter.getParam({'assignmentid'})});
 });
+
+
 
 Template.editAssignment.helpers({
   assignmentdetail: () => {

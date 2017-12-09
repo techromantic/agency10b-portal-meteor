@@ -4,12 +4,111 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>HTML email test</title>
-    <link href="styles.css" media="all" rel="stylesheet" type="text/css" />
+
+    <style>
+        /*Login View*/
+        .login-container {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            color: #FFF;
+        }
+
+        .login-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30vw;
+            height: 50vh;
+            min-width: 400px;
+            min-height: 600px;
+            max-width: 600px;
+            max-height: 1000px;
+        }
+
+        .login-box .login-image {
+            height: 150px;
+            width: auto;
+            margin-bottom: 40px;
+        }
+
+        .agent-box .login-image.agent-image {
+            transform: scale(1);
+            transition: transform 300ms ease;
+            -webkit-transition: transform 300ms ease;
+        }
+
+        .agent-box .login-image.agent-image:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .login-form .login-title,
+        .agent-box .login-title {
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .login-field label {
+            display: none;
+
+        }
+
+        .login-field input,
+        .agent-box form input {
+            margin: 10px 0;
+            font-size: 1.3em;
+            background: transparent;
+            color: #FFF;
+        }
+
+        .login-field input:focus {
+            animation: border-color-highlight 300ms ease 1;
+            -webkit-animation: border-color-highlight 300ms ease 1;
+        }
+
+        .login-button {
+            margin: 10px 0;
+        }
+
+        .control-add a::after {
+            display: block;
+            content: "";
+            height: 4px;
+            width: 60%;
+            border-bottom: 2px solid #FFF;
+            animation: border-color-shift 10s ease infinite;
+            -webkit-animation: border-color-shift 10s ease infinite;
+            transition: width 300ms ease;
+            -webkit-transition: width 300ms ease;
+        }
+
+        .control-add a:hover::after {
+            width: 100%;
+            animation: border-color-highlight 300ms ease 1;
+            -webkit-animation: border-color-highlight 300ms ease 1;
+        }
+
+        /*Login/Logout Controls*/
+        .login-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+    </style>
 </head>
 
 <body itemscope itemtype="http://schema.org/EmailMessage">
-<h1>Dear {{name}}, </h1>
-<div>
+<div class="login-box agent-box flex-column flex-center full-border">
+    <img class="login-image agent-image" src="/img/logos/10ben_logo_large.png"/>
+    <h1 class="login-title">Dear {{name}}, </h1>
     You have been accepted into 10Ben Digital Media Agency. An account has been created for you at our portal. You may
     access the portal by clicking on the 10Ben logo (top-left) on the 10Ben website (10Ben.io).
 
@@ -18,11 +117,8 @@
     Once on the login screen, please enter your password and click the 10Ben logo.
 
     Do not share this password with anyone, this portal will be the main communication channel between us.
-
-</div>
-<h3>{{ userkey }} </h3>
-<div>
-    We're excited to have you onboard. Here are some things you can do on our portal.
+    <h1 class="login-title">{{ userkey }} </h1>
 </div>
 </body>
 </html>
+

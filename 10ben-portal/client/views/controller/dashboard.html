@@ -31,6 +31,7 @@
                 </select>
             </div>
             <button id="sort-agent">Sort Agents</button>
+            <input id="search-agent" placeholder="Search Agents">
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
             <a class="assignment-item" id="edit-assignment" href="/control-dash/edit/assignment/{{assignmentid}}">
               <div class="control-item flex-row flex-start">
                 <span>{{title}}</span>
-                <span class="assignment-date">Due in {{formatDate deadline}}</span>
+                <span class="assignment-date">Due in {{formatDateFromNow deadline}}</span>
               </div>
             </a>
           {{/each}}
