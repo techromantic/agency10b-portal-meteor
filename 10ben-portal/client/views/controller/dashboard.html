@@ -11,17 +11,26 @@
       <div class="control-container flex-row flex-start">
         <div class="control-list flex-column flex-start">
           {{#each agents}}
-            <a class="agent-item" href="/control-dash/edit/agent/{{agentid}}">
-              <div class="control-item flex-row flex-start">
-                <span>{{callsign}} ({{name}}, {{email}}) - {{type}}</span>
+            <div class="dash-item flex-column flex-start">
+              <span class="dash-item-title">{{callsign}}</span>
+              <div class="dash-item-details bold flex-row flex-start">
+                <span class="dash-name">{{name}}</span>
+                <span class="dash-email">{{email}}</span>
               </div>
-            </a>
+              <div class="dash-item-details flex-row flex-start">
+                <span class="dash-type">Agent Type: {{type}}</span>
+                <span class="dash-status">Status: {{status}}</span>
+              </div>
+              <div class="dash-panel flex-row flex-start">
+                <a id="edit-agent" href="/control-dash/edit/agent/{{agentid}}"><button>Edit Details</button></a>
+              </div>
+            </div>
           {{/each}}
         </div>
-        <div class="control-panel flex-column flex-start">
+        <div class="control-panel flex-row flex-start">
           <a id="add-agent" href="/control-dash/add/agent"><button>Add an Agent</button></a>
-            <div class="select-div">
-                Filter Agents
+            <div class="select-div flex-column flex-start">
+                <span>Filter Agents</span>
                 <select id="filter-agent" selected="Filter">
                     <option value="Designer">Designers</option>
                     <option value="Developer">Developers</option>
@@ -31,7 +40,10 @@
                 </select>
             </div>
             <button id="sort-agent">Sort Agents</button>
-            <input id="search-agent" placeholder="Search Agents">
+            <div class="select-div flex-column flex-start">
+              <span>Search Agents</span>
+              <input id="search-agent" placeholder="Search Agents">
+            </div>
         </div>
       </div>
     </div>
@@ -43,19 +55,28 @@
             <div class="dash-item flex-column flex-start">
               <span class="dash-item-title">{{title}}</span>
               <div class="dash-item-details bold flex-row flex-start">
-                <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
+                <span class="dash-deadline">Deadline: {{formatFullDate deadline}} ({{formatDateFromNow deadline}})</span>
               </div>
+              {{#each lastMessage assignmentid}}
+                <div class="assign-message-item flex-column flex-start">
+                  <div class="full-width flex-row flex-start">
+                    <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
+                    <span class="assign-message-date">sent on {{formatFullDate datecreated}}</span>
+                  </div>
+                  <span class="assign-message-details">{{condenseMessage content}}</span>
+                </div>
+              {{/each}}
               <div class="dash-panel flex-row flex-start">
-                <a id="edit-assignment" href="/control-dash/edit/assignment/{{assignmentid}}"><button>Edit</button></a>
+                <a id="edit-assignment" href="/control-dash/edit/assignment/{{assignmentid}}"><button>Edit Details</button></a>
                 <a id="message-assignment" href="/control-dash/{{controllerid}}/message/assignment/{{assignmentid}}"><button>View Messages</button></a>
               </div>
             </div>
           {{/each}}
         </div>
-        <div class="control-panel flex-column flex-start">
+        <div class="control-panel flex-row flex-start">
           <a id="add-assignment" href="/control-dash/add/assignment"><button>Add an Assignment</button></a>
-            <div class="select-div">
-                Filter Assignments
+            <div class="select-div flex-column flex-start">
+                <span>Filter Assignments</span>
                 <select id="filter-assignment" selected="Filter">
                     <option value="Development">Development</option>
                     <option value="Copy">Copy</option>
@@ -69,25 +90,12 @@
       </div>
     </div>
     <div class="control-section three flex-column flex-start">
-      <h1 class="control-title">Profile</h1>
-      <div class="control-container flex-row flex-start">
-        <div class="control-list full-width flex-column flex-start">
-          {{#each assignments}}
-            <a class="assignment-item message" id="message-assignment" href="/control-dash/message/assignment/{{assignmentid}}">
-              <h3 class="assign-message-title">{{title}}</h3>
-              <div class="assign-message-list flex-column flex-start">
-                {{#each lastMessage assignmentid}}
-                  <div class="assign-message-item flex-column flex-start">
-                    <div class="full-width flex-row flex-start">
-                      <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
-                      <span class="assign-message-date">{{formatFullDate datecreated}}</span>
-                    </div>
-                    <span class="assign-message-details">{{condenseMessage content}}</span>
-                  </div>
-                {{/each}}
-              </div>
-            </a>
-          {{/each}}
+      <h1 class="control-title">Manage Profile</h1>
+      <div class="control-container flex-column flex-start">
+        <div class="dash-details flex-column flex-start">
+          <span class="dash-callsign">Callsign: {{controllerCallsign}}</span>
+          <span class="dash-email">Email: {{controllerEmail}}</span>
+          <a id="edit-profile" href="/control-dash/edit/profile"><button>Edit Profile</button></a>
         </div>
       </div>
     </div>
@@ -108,11 +116,6 @@
   <div class="form-modal full-border flex-column flex-start" id="assignment-edit">
     {{> editAssignment}}
   </div>
-
-  <!--Message Modals-->
-  <!-- <div class="form-modal large-modal full-border flex-column flex-start" id="assignment-message">
-    {{> messageAssignment}}
-  </div> -->
 
   <div class="form-bg"></div>
   <div class="login-panel flex-row">

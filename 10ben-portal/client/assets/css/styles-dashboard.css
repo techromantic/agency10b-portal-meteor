@@ -123,9 +123,7 @@
   height: 30vh;
   min-height: 300px;
   max-height: 600px;
-  width: 40%;
-  max-width: 600px;
-  min-width: 500px;
+  width: 100%;
   overflow-y: auto;
 }
 
@@ -172,25 +170,27 @@
 }
 
 .control-panel {
-  padding-left: 40px;
-  width: 50%;
-}
-
-.control-panel button {
-  margin: 10px 0;
+  width: 100%;
+  justify-content: space-around !important;
 }
 
 .select-div {
-  font-family: 'Raleway', sans-serif !important;
   background: transparent;
-  color: #FFF;
-  font-size: 1.2em !important;
-  font-weight: 800;
-  text-transform: uppercase !important;
-  letter-spacing: 2px;
   border: 0;
   border-radius: 0;
   padding: 5px 8px;
+}
+
+.select-div span {
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.select-div input {
+  margin: 20px 0;
 }
 
 select {
@@ -234,7 +234,7 @@ select {
 }
 
 .assign-message-date {
-  margin-left: auto;
+  margin-left: auto !important;
   color: #BBB;
 }
 
@@ -306,7 +306,9 @@ select {
   font-weight: 600;
 }
 
-.dash-controller {
+.dash-controller,
+.dash-email,
+.dash-status {
   align-self: flex-end;
   margin-left: auto !important;
 }
@@ -314,6 +316,11 @@ select {
 .dash-panel {
   width: 100%;
   margin-top: 20px;
+}
+
+.dash-panel a {
+  width: auto;
+  margin-right: 20px;
 }
 
 .dash-details {

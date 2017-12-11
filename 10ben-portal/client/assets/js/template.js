@@ -57,6 +57,7 @@ Template.controllerDashboard.onCreated(function(){
     this.agents.set(Agents.find({}));
     this.assignments = new ReactiveVar([]);
     this.assignments.set(Assignments.find({}));
+    this.messages = this.subscribe("allMessages");
 });
 
 Template.controllerDashboard.helpers({
@@ -66,13 +67,10 @@ Template.controllerDashboard.helpers({
 
   agents: () => {
     return Template.instance().agents.get();
-    // return Agents.find({});
-    //   return Template.parentData(1).agents.get();
   },
 
   assignments: () => {
     return Template.instance().assignments.get();
-    //  return Assignments.find({});
   },
 
   lastMessage: (aid) => {
@@ -81,6 +79,10 @@ Template.controllerDashboard.helpers({
 
   controllerid: () => {
     return Meteor.userId();
+  },
+
+  controllerEmail: () => {
+    return Meteor.user().emails[0].address;
   }
 });
 
@@ -125,7 +127,7 @@ Template.controllerDashboard.events({
     $('.form-bg').addClass('active');
   },
 
-  'click .agent-item' : (event, template) => {
+  'click #edit-agent' : (event, template) => {
     $('#agent-edit').addClass('active');
     $('.form-bg').addClass('active');
   },
@@ -145,6 +147,7 @@ Template.controllerDashboard.events({
       console.log(agentType);
       template.agents.set(Agents.find({type: agentType}));
   },
+  
   'change #search-agent' : (event, template) => {
       var search = $(event.target).val();
       console.log(search);
@@ -178,16 +181,8 @@ Template.controllerDashboard.datas = function(filter){
         var cursor = RawData.find({type:ac});
         var data = cursor.fetch();
         console.log(data);
-
-        // for(var ii = 0; ii < data.length;ii++){
-        //     var nData = NextData.findOne({_id : data[ii].Next_ID});
-        //     result[ii] = {
-        //         Name : nData.Name
-        //     };
-        // }
-
-        cursor.rewind(); //we rewind our cursor here so that it can be iterated again from the beginning when needed
-
+        //we rewind our cursor here so that it can be iterated again from the beginning when needed
+        cursor.rewind();
         return result;
     }
 };
