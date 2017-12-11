@@ -1,38 +1,3 @@
-
-//Template Helpers
-Template.registerHelper('formatFullDate', (date) => {
-  return moment(date).format('lll');
-});
-
-Template.registerHelper('formatDate', (date) => {
-  return moment(date).format('MMM. D, YYYY');
-});
-
-Template.registerHelper('formatDateTime', (date) => {
-  return moment(date).format('LT');
-});
-
-Template.registerHelper('formatDateFromNow', (date) => {
-    return moment(date).fromNow();
-});
-
-Template.registerHelper('getSender', (senderid) => {
-  if (Meteor.users.findOne({_id: senderid})) {
-    return Meteor.users.findOne({_id: senderid}).profile.callsign;
-  } else {
-    return Agents.findOne({agentid: senderid}).callsign;
-  }
-});
-
-Template.registerHelper('getController', (controllerid) => {
-  return Meteor.users.findOne({_id: controllerid}).profile.callsign;
-});
-
-Template.registerHelper('condenseMessage', (message) => {
-  return message.substring(0, 240) + '...';
-})
-
-
 //Application Init
 Template.applicationLayout.onCreated(() => {
   Blaze._allowJavascriptUrls();
@@ -92,9 +57,6 @@ Template.controllerDashboard.onCreated(function(){
     this.agents.set(Agents.find({}));
     this.assignments = new ReactiveVar([]);
     this.assignments.set(Assignments.find({}));
-    this.messages = this.subscribe("allMessages");
- // this.agents = this.subscribe("allAgents");
-  //this.assignments = this.subscribe("allAssignments");
 });
 
 Template.controllerDashboard.helpers({
@@ -115,6 +77,10 @@ Template.controllerDashboard.helpers({
 
   lastMessage: (aid) => {
     return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
+  },
+
+  controllerid: () => {
+    return Meteor.userId();
   }
 });
 
@@ -340,7 +306,6 @@ Template.agentDashboard.onCreated(function() {
   this.users = this.subscribe("allUsers");
   this.agents = this.subscribe("allAgents");
   this.assignments = this.subscribe("allAssignments");
-  this.messages = this.subscribe("allMessages");
 });
 
 Template.agentDashboard.helpers({
@@ -454,9 +419,16 @@ Template.editProfile.events({
 });
 
 //Assignment Messaging
-Template.messageAssignment.onCreated(function() {
+Template.messageAssignment.onCreated(function(aid) {
   this.assignments = this.subscribe("allAssignments");
-  this.messages = this.subscribe("allMessages");
+  this.agents = this.subscribe("allAgents");
+  this.users = this.subscribe("allUsers");
+
+  //Collection subscription and call to server method
+  this.messages = this.subscribe("allAssignmentMessages", FlowRouter.getParam('agentid'), FlowRouter.getParam('assignmentid'));
+
+  //Call to client method
+  Meteor.call("setMessageIDs", FlowRouter.getParam('agentid'), FlowRouter.getParam('assignmentid'));
 });
 
 Template.messageAssignment.helpers({
@@ -470,6 +442,6 @@ Template.messageAssignment.events({
     event.preventDefault();
     $('#assignment-message').removeClass('active');
     $('.form-bg').removeClass('active');
-    window.history.back()
+    window.history.back();
   }
 });

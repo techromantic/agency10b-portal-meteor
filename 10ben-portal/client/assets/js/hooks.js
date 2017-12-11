@@ -108,6 +108,5 @@ AutoForm.addHooks('sendMessage', {
       alert("Error sending message: " + error);
     },
     onSuccess: (formType, result) => {
-
     }
 });

@@ -2,9 +2,9 @@
 FlowRouter.route('/', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn())
-      FlowRouter.go('control-login');
+      FlowRouter.go('agent-login');
     else if (Meteor.user() || Meteor.loggingIn())
-      FlowRouter.go('control-dash');
+      FlowRouter.go('control-login');
   }
 });
 
@@ -104,10 +104,14 @@ FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
 });
 
 //View Assignment Message (Controller)
-FlowRouter.route( '/control-dash/message/assignment/:assignmentid', {
+FlowRouter.route( '/control-dash/:agentid/message/assignment/:assignmentid', {
   action: () => {
     if (!Meteor.user() && !Meteor.loggingIn()) {
       FlowRouter.go('control-login');
+    } else {
+      BlazeLayout.render('applicationLayout', {
+          main: 'messageAssignment'
+      })
     }
   },
   name: 'message-assignment-control'
@@ -116,6 +120,9 @@ FlowRouter.route( '/control-dash/message/assignment/:assignmentid', {
 //View Assignment Message (Agent)
 FlowRouter.route( '/agent-dash/:agentid/message/assignment/:assignmentid', {
   action: () => {
+    BlazeLayout.render('applicationLayout', {
+        main: 'messageAssignment'
+    })
   },
   name: 'message-assignment-agent'
 });

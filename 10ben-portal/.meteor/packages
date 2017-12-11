@@ -36,3 +36,10 @@ check
 aldeed:simple-schema
 meteorhacks:ssr
 email
+jquery
+meteorhacks:npm
+
+
+npm-container
+anti:methods
+reactive-dict

@@ -43,6 +43,7 @@ Meteor.publish('allMessages', () => {
   return Messages.find({});
 });
 
-Meteor.publish('assAssignmentMessages', () => {
-  return Messages.find({assignmentid: this.assignmentid});
+Meteor.publish('allAssignmentMessages', (sid, aid) => {
+  Meteor.call("setMessageIDs", sid, aid);
+  return Messages.find({assignmentid: aid});
 });
