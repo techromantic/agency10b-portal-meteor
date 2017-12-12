@@ -73,6 +73,10 @@ Template.controllerDashboard.helpers({
     return Template.instance().assignments.get();
   },
 
+  hasMessages: (aid) => {
+    return Messages.find({assignmentid: aid}).count() > 0 ? true : false;
+  },
+
   lastMessage: (aid) => {
     return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
   },
@@ -147,7 +151,7 @@ Template.controllerDashboard.events({
       console.log(agentType);
       template.agents.set(Agents.find({type: agentType}));
   },
-  
+
   'change #search-agent' : (event, template) => {
       var search = $(event.target).val();
       console.log(search);
@@ -429,6 +433,10 @@ Template.messageAssignment.onCreated(function(aid) {
 Template.messageAssignment.helpers({
   messages: () => {
     return Messages.find({assignmentid: FlowRouter.getParam('assignmentid')}, {sort: {datecreated: -1}});
+  },
+
+  isSender: (sid) => {
+    return (sid === FlowRouter.getParam('agentid')) ? true : false;
   }
 });
 

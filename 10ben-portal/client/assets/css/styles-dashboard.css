@@ -170,6 +170,7 @@
 }
 
 .control-panel {
+  margin-top: 60px;
   width: 100%;
   justify-content: space-around !important;
 }
@@ -280,6 +281,7 @@ select {
   padding: 25px 20px;
   border-bottom: 1px solid #FFF;
   background: transparent;
+  min-height: 200px;
 }
 
 .dash-item:first-child {
@@ -300,6 +302,12 @@ select {
 
 .dash-item-details {
   width: 100%;
+  font-size: 1.1em;
+}
+
+.dash-item-subdetails {
+  width: 100%;
+  font-size: 0.9em;
 }
 
 .dash-item-details.bold {

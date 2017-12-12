@@ -1,31 +1,44 @@
 <template name="messageAssignment">
-  <div class="form-container flex-column flex-start">
+  <div class="form-container message-container flex-column flex-start">
     <div class="message-list flex-column flex-start">
       {{#each messages}}
-        <div class="message-item full-border">
-          <div class="message-content"><span>{{content}}</span></div>
-          <div class="message-details flex-row flex-start">
-            <span class="message-sender">{{getSender senderid}}</span>
-            <span class="message-date">{{formatFullDate datecreated}}</span>
+        {{#if isSender senderid}}
+          <div class="message-item sender flex-column flex-end">
+            <div class="message-content full-border flex-column flex-start">
+              <span class="message-text right">{{content}}</span>
+              <span class="message-date right">{{formatFullDate datecreated}} ({{formatDateFromNow datecreated}})</span>
+            </div>
           </div>
-        </div>
+        {{else}}
+          <div class="message-item flex-row flex-start">
+            <div class="message-details left flex-column flex-center">
+              <span class="message-sender">{{getSender senderid}}</span>
+            </div>
+            <div class="message-content full-border flex-column flex-start">
+              <span class="message-text left">{{content}}</span>
+              <span class="message-date left">{{formatFullDate datecreated}} ({{formatDateFromNow datecreated}})</span>
+            </div>
+          </div>
+        {{/if}}
       {{/each}}
     </div>
-    {{#autoForm collection="Messages" id="sendMessage" type="insert" class="add-form"}}
-      <fieldset class="form-fieldset flex-column flex-start">
-          <div class="hidden">
-            {{> afFieldInput name='senderid'}}
-            {{> afFieldInput name='datecreated'}}
-          </div>
-          <div class="form-field flex-row flex-start">
-            <span>Create Message:</span>
-            {{> afFieldInput name='content' type='text'}}
-          </div>
-          <div class="button-container flex-row">
-            <button id="close-form">Close</button>
-            <button id="submit-form" type="submit">Send</button>
-          </div>
-      </fieldset>
-    {{/autoForm}}
+    <div class="message-form">
+      {{#autoForm collection="Messages" id="sendMessage" type="insert" class="add-form"}}
+        <fieldset class="form-fieldset flex-column flex-start">
+            <div class="hidden">
+              {{> afFieldInput name='senderid'}}
+              {{> afFieldInput name='datecreated'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Create Message:</span>
+              {{> afFieldInput name='content' type='text'}}
+            </div>
+            <div class="button-container flex-row">
+              <button id="close-form">Back</button>
+              <button id="submit-form" type="submit">Send Message</button>
+            </div>
+        </fieldset>
+      {{/autoForm}}
+    </div>
   </div>
 </template>

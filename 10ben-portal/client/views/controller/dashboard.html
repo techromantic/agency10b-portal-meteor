@@ -17,7 +17,7 @@
                 <span class="dash-name">{{name}}</span>
                 <span class="dash-email">{{email}}</span>
               </div>
-              <div class="dash-item-details flex-row flex-start">
+              <div class="dash-item-subdetails flex-row flex-start">
                 <span class="dash-type">Agent Type: {{type}}</span>
                 <span class="dash-status">Status: {{status}}</span>
               </div>
@@ -57,15 +57,23 @@
               <div class="dash-item-details bold flex-row flex-start">
                 <span class="dash-deadline">Deadline: {{formatFullDate deadline}} ({{formatDateFromNow deadline}})</span>
               </div>
-              {{#each lastMessage assignmentid}}
-                <div class="assign-message-item flex-column flex-start">
-                  <div class="full-width flex-row flex-start">
-                    <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
-                    <span class="assign-message-date">sent on {{formatFullDate datecreated}}</span>
+              {{#if hasMessages assignmentid}}
+                {{#each lastMessage assignmentid}}
+                  <div class="dash-item-subdetails flex-column flex-start">
+                    <div class="full-width flex-row flex-start">
+                      <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
+                      <span class="assign-message-date">sent on {{formatFullDate datecreated}}</span>
+                    </div>
+                    <span class="assign-message-details">{{condenseMessage content}}</span>
                   </div>
-                  <span class="assign-message-details">{{condenseMessage content}}</span>
+                {{/each}}
+              {{else}}
+                <div class="dash-item-subdetails flex-column flex-start">
+                  <div class="full-width flex-row flex-start">
+                    <span class="assign-message-sender">No messages.</span>
+                  </div>
                 </div>
-              {{/each}}
+              {{/if}}
               <div class="dash-panel flex-row flex-start">
                 <a id="edit-assignment" href="/control-dash/edit/assignment/{{assignmentid}}"><button>Edit Details</button></a>
                 <a id="message-assignment" href="/control-dash/{{controllerid}}/message/assignment/{{assignmentid}}"><button>View Messages</button></a>
