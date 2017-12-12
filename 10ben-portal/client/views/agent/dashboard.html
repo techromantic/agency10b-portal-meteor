@@ -5,70 +5,76 @@
     <h1>{{agentCallsign}}</h1>
   </div>
 
-  <div class="section-container agent-container flex-row flex-start">
-    <div class="dash-section">
-      <h1 class="dash-title">Your Assignments</h1>
-      <div class="dash-list">
-        {{#each assignments}}
-            <div class="dash-item flex-column flex-start {{getDueColor deadline}}">
-              <span class="dash-item-title">{{title}}</span>
-              <div class="dash-item-details bold flex-row flex-start">
-                <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
-                <span class="dash-controller">Assigned by {{getController controllerid}}</span>
-              </div>
-              <div class="dash-item-details flex-row flex-start">
-                <span>Type: {{type}}</span>
-                <span>Status: {{status}}</span>
-              </div>
-              {{#each lastMessage assignmentid}}
-                <div class="assign-message-item flex-column flex-start">
-                  <div class="full-width flex-row flex-start">
-                    <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
-                    <span class="assign-message-date">{{formatFullDate datecreated}}</span>
-                  </div>
-                  <span class="assign-message-details">{{condenseMessage content}}</span>
+  <div class="section-container">
+    <div class="control-section one active flex-column flex-start">
+      <h1 class="control-title">Your Assignments</h1>
+      <div class="control-container">
+        <div class="control-list">
+          {{#each assignments}}
+              <div class="dash-item flex-column flex-start {{getDueColor deadline}}">
+                <span class="dash-item-title">{{title}}</span>
+                <div class="dash-item-details bold flex-row flex-start">
+                  <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
+                  <span class="dash-controller">Assigned by {{getController controllerid}}</span>
                 </div>
-              {{/each}}
-              <div class="dash-panel flex-row flex-start">
-                <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
-                <a id="message-assignment" href="/agent-dash/{{agentid}}/message/assignment/{{assignmentid}}"><button>View Messages</button></a>
-                {{#if noConfirmation status}}
-                  <button>Accept</button>
-                  <button>Reject</button>
-                {{/if}}
+                <div class="dash-item-details flex-row flex-start">
+                  <span>Type: {{type}}</span>
+                  <span>Status: {{status}}</span>
+                </div>
+                {{#each lastMessage assignmentid}}
+                  <div class="assign-message-item flex-column flex-start">
+                    <div class="full-width flex-row flex-start">
+                      <span class="assign-message-sender">Last message by <span class="bold">{{getSender senderid}}</span></span>
+                      <span class="assign-message-date">{{formatFullDate datecreated}}</span>
+                    </div>
+                    <span class="assign-message-details">{{condenseMessage content}}</span>
+                  </div>
+                {{/each}}
+                <div class="control-panel flex-row flex-start">
+                  <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
+                  <a id="message-assignment" href="/agent-dash/{{agentid}}/message/assignment/{{assignmentid}}"><button>View Messages</button></a>
+                  {{#if noConfirmation status}}
+                    <button>Accept</button>
+                    <button>Reject</button>
+                  {{/if}}
+                </div>
               </div>
-            </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
-    <div class="dash-section profile-section">
-      <h1 class="dash-title">Your Profile</h1>
-      <div class="dash-details flex-column flex-start">
-        <span class="dash-callsign">Callsign: {{agentCallsign}}</span>
-        <span class="dash-name">Name: {{agentName}}</span>
-        <span class="dash-profile-email">Email: {{agentEmail}}</span>
-        <a id="edit-profile" href="/agent-dash/{{agentId}}/edit/profile"><button>Edit Profile</button></a>
+    <div class="control-section two flex-column flex-start">
+      <h1 class="control-title">Your Profile</h1>
+      <div class="control-container">
+        <div class="dash-details flex-column flex-start">
+          <span class="dash-callsign">Callsign: {{agentCallsign}}</span>
+          <span class="dash-name">Name: {{agentName}}</span>
+          <span class="dash-profile-email">Email: {{agentEmail}}</span>
+          <a id="edit-profile" href="/agent-dash/{{agentId}}/edit/profile"><button>Edit Profile</button></a>
+        </div>
       </div>
     </div>
-    <div class="dash-section posting-section">
-      <h1 class="dash-title">Job Postings</h1>
-      <div class="dash-list">
-        {{#each openAssignments}}
-            <div class="dash-item flex-column flex-start">
-              <span class="dash-item-title">{{title}}</span>
-              <div class="dash-item-details bold flex-row flex-start">
-                <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
+    <div class="control-section three flex-column flex-start">
+      <h1 class="control-title">Job Postings</h1>
+      <div class="control-container">
+        <div class="control-list">
+          {{#each openAssignments}}
+              <div class="dash-item flex-column flex-start">
+                <span class="dash-item-title">{{title}}</span>
+                <div class="dash-item-details bold flex-row flex-start">
+                  <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
+                </div>
+                <div class="dash-item-details flex-row flex-start">
+                  <span>Type: {{type}}</span>
+                  <span>Status: {{status}}</span>
+                </div>
+                <div class="dash-panel flex-row flex-start">
+                  <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
+                  <button id="accept-assignment" data-assignmentid="{{assignmentid}}">Accept</button>
+                </div>
               </div>
-              <div class="dash-item-details flex-row flex-start">
-                <span>Type: {{type}}</span>
-                <span>Status: {{status}}</span>
-              </div>
-              <div class="dash-panel flex-row flex-start">
-                <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
-                <button id="accept-assignment" data-assignmentid="{{assignmentid}}">Accept</button>
-              </div>
-            </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>
