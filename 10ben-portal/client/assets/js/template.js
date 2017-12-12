@@ -95,32 +95,6 @@ Template.controllerDashboard.events({
     AccountsTemplates.logout();
   },
 
-  'click .control-section .control-title' : (event, template) => {
-
-    $('.control-section').removeClass('active');
-    $('.control-section').css("left", "");
-    $('.control-section.one').css("left", "0px");
-    $('.control-section.two').css("left", "400px");
-    $('.control-section.three').css("left", "800px");
-    console.log('reset');
-
-    if ($(event.target).parent('.control-section').hasClass('one')) {
-      console.log('clicked 1');
-      $('.control-section.two').css("left", "400px");
-      $('.control-section.three').css("left", "800px");
-    } else if ($(event.target).parent('.control-section').hasClass('two')) {
-      console.log('clicked 2');
-      $('.control-section.one').css("left", "400px");
-      $('.control-section.three').css("left", "800px");
-    } else if ($(event.target).parent('.control-section').hasClass('three')) {
-      console.log('clicked 3');
-      $('.control-section.one').css("left", "400px");
-      $('.control-section.two').css("left", "800px");
-    }
-
-    $(event.target).parent('.control-section').addClass('active');
-  },
-
   'click #add-agent' : (event, template) => {
     $('#agent-add').addClass('active');
     $('.form-bg').addClass('active');
@@ -388,6 +362,31 @@ Template.viewAssignment.events({
 
   'click #accept-assignment' : (event, template) => {
     Meteor.call('acceptAssignment', FlowRouter.getParam('assignmentid'), FlowRouter.getParam('agentid'));
+  },
+
+  'click .view-section .view-section-title' : (event, template) => {
+    $('.view-section').removeClass('active');
+    $('.view-section').css("left", "");
+    $('.view-section.one').css("left", "0px");
+    $('.view-section.two').css("left", "250px");
+    $('.view-section.three').css("left", "500px");
+    console.log('reset');
+
+    if ($(event.target).parent('.view-section').hasClass('one')) {
+      console.log('clicked 1');
+      $('.view-section.two').css("left", "250px");
+      $('.view-section.three').css("left", "500px");
+    } else if ($(event.target).parent('.view-section').hasClass('two')) {
+      console.log('clicked 2');
+      $('.view-section.one').css("left", "250px");
+      $('.view-section.three').css("left", "500px");
+    } else if ($(event.target).parent('.view-section').hasClass('three')) {
+      console.log('clicked 3');
+      $('.view-section.one').css("left", "250px");
+      $('.view-section.two').css("left", "500px");
+    }
+
+    $(event.target).parent('.view-section').addClass('active');
   }
 });
 

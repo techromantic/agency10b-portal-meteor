@@ -1,23 +1,47 @@
 <template name="viewAssignment">
-  <div class="view-container flex-column flex-start">
+  <div class="view-container flex-column flex-center">
     {{#each assignmentDetail}}
-      <div class="view-title flex-column flex-start">
-        <h1>{{title}}</h1>
-        <div class="view-details flex-row flex-start">
-          <h4>Status: {{status}}</h4>
-          <h4>Assigned by: {{getController controllerid}}</h4>
+      <div class="view-header flex-row flex-start">
+        <div class="view-title flex-column flex-start">
+          <h1>{{title}}</h1>
+          <span class="view-type">Work Type: {{type}}</span>
+          <span class="view-assign">Assigned by {{getController controllerid}}</span>
+        </div>
+        <div class="view-details flex-column flex-start">
+          <span class="view-deadline">Due {{formatDate deadline}}</span>
+          <span class="view-deadline">({{formatDateFromNow deadline}})</span>
+          <span class="view-loe">LOE: {{loe}} hours</span>
+          <span class="view-status">Status: {{status}}</span>
         </div>
       </div>
-      <div class="view-description flex-column flex-start">
-        <h3>Assignment Details:</h3>
-        <span class="view-desc">{{desc}}</span>
-        <div class="view-details flex-row flex-start">
-          <h4 class="view-type">Work Type: {{type}}</h4>
-          <h4 class="view-deadline">Deadline: {{formatDate deadline}}</h4>
+      <div class="view-section-container">
+        <div class="view-section one active flex-column flex-start">
+          <h4 class="view-section-title">Brief</h4>
+          <div class="view-section-content flex-column flex-start">
+            <div class="view-brief-content">
+              <span>{{desc}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="view-section two flex-column flex-start">
+          <h4 class="view-section-title">Documents</h4>
+          <div class="view-section-content flex-column flex-start">
+            <div class="view-document-content">
+              <span>Documents</span>
+            </div>
+          </div>
+        </div>
+        <div class="view-section three flex-column flex-start">
+          <h4 class="view-section-title">Messages</h4>
+          <div class="view-section-content flex-column flex-start">
+            <div class="view-message-content">
+              <span>Messages</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="view-panel">
-        <div class="button-container flex-row">
+        <div class="button-container view-button flex-row">
           <button id="cancel-view">Cancel</button>
           <button id="accept-assignment">Accept</button>
         </div>

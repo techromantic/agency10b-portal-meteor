@@ -181,21 +181,21 @@ MessageSchema = new SimpleSchema({
         let docArray = [];
 
         for (let i = 0; i < docs.length; i++) {
-          let item = {label: docs[i].title, value:};
+          let item = {label: docs[i].title, value: docs[i].docid};
           docArray.push(item);
         }
 
         return docArray;
       }
     },
-    optional: true;
+    optional: true
   },
   'documents.$': {
     type: String
   },
   bids: {
     type: Array,
-    optional: true;
+    optional: true
   },
   'bids.$': {
     type: String

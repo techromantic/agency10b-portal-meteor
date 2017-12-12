@@ -67,69 +67,157 @@
   width: 50vw;
   min-width: 300px;
   max-width: 1024px;
-  margin: 20px;
+  margin: 40px;
+  height: 80vh;
+  max-height: 1024px;
 }
 
-.view-title,
-.view-description,
-.view-panel {
+.view-section-container {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  padding: 20px;
+  max-width: 900px;
 }
 
-.view-title h1 {
-  font-size: 3em;
-  margin: 20px 0 0 0;
+.view-section-content {
+  height: 400px;
+  overflow-y: auto;
 }
 
-.view-title h1::after {
-  display: block;
-  content: "";
-  height: 10px;
-  width: 40vw;
-  max-width: 500px;
-  border-bottom: 6px solid #FFF;
-  margin-bottom: 10px;
-  animation: border-color-shift 10s ease infinite;
-  -webkit-animation: border-color-shift 10s ease infinite;
-}
-
+.view-header,
 .view-details {
   width: 100%;
 }
 
-.view-details h4,
-.view-description h4 {
-  font-size: 1.4em;
-  font-weight: 600;
+.view-header {
+  margin-bottom: 20px;
+}
+
+.view-title {
+  width: 80%;
+}
+
+.view-title h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
   margin: 10px 0;
 }
 
-.view-details h4:last-child {
-  margin-left: auto;
-}
-
-.view-description span {
+.view-header span,
+.view-details span {
   font-size: 1.3em;
-  margin: 10px 0;
+  margin: 2px 0;
 }
 
-.view-description span.view-desc {
-  max-height: 400px;
-  line-height: 1.4em;
-  overflow-y: auto;
-  margin: 20px 10px;
+.view-details {
+  margin: 20px 0;
+  margin-left: auto;
+  width: 20%;
 }
 
-.view-description span.view-type,
-.view-description span.view-deadline {
-  font-size: 1.4em;
-  font-weight: 800;
+.view-deadline {
+  font-weight: 700;
 }
 
-.view-description h3 {
+.view-content-container {
+  width: 100%;
+  margin: 10px;
+}
+
+.view-panel {
+  margin-top: auto;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.button-container.view-button {
+  margin: 20px 0;
+}
+
+.view-section {
+  width: 100%;
+  position: absolute;
+  transition: left 400ms ease;
+  -webkit-transition: left 400ms ease;
+}
+
+.view-section-title {
   font-size: 2em;
   margin: 10px 0;
+}
+
+.view-section:nth-child(1) {
+  left: 0;
+}
+
+.view-section:nth-child(2) {
+  left: 250px;
+}
+
+.view-section:nth-child(3) {
+  left: 500px;
+}
+
+.view-section.active {
+  left: 0 !important;
+}
+
+.view-section .view-section-title,
+.view-section.active .view-section-title {
+  transition: color 400ms ease-out;
+  -webkit-transition: color 400ms ease-out;
+}
+
+.view-section .view-section-title {
+  color: #888;
+  z-index: 999;
+  border-bottom: 0;
+}
+
+.view-section.active .view-section-title {
+  color: #FFF;
+  z-index: 999;
+}
+
+.view-section .view-section-title::after {
+  width: 20%;
+}
+
+.view-section.active .view-section-title::after {
+  width: 60%;
+}
+
+.view-section .view-section-container {
+  display: none;
+}
+
+.view-section.active .view-section-container {
+  display: inherit;
+}
+
+.view-section-title::after {
+  display: block;
+  content: "";
+  height: 8px;
+  border-bottom: 2px solid #FFF;
+  animation: border-color-shift 10s ease infinite;
+  -webkit-animation: border-color-shift 10s ease infinite;
+  transition: width 300ms ease;
+  -webkit-transition: width 300ms ease;
+}
+
+.view-section:not(.active) .view-section-title:hover {
+  cursor: pointer;
+  color: #FFF;
+}
+
+.view-section:not(.active) .vie-section-title:hover::after {
+  width: 100%;
+  animation: border-color-highlight 300ms ease 1;
+  -webkit-animation: border-color-highlight 300ms ease 1;
 }
 
 /*Form Background*/
