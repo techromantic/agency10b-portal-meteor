@@ -328,6 +328,10 @@ Template.agentDashboard.helpers({
     return Assignments.find({agentid: FlowRouter.getParam('agentid')});
   },
 
+  openAssignments: () => {
+    return Assignments.find({status: 'Open'});
+  },
+
   lastMessage: (aid) => {
     return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
   }

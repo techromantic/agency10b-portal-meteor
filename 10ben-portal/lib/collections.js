@@ -130,7 +130,8 @@ AssignmentSchema = new SimpleSchema({
     denyUpdate: true
   },
   agentid: {
-    type: String
+    type: String,
+    optional: true
   }
 });
 

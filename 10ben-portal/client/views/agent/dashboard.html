@@ -8,7 +8,7 @@
   <div class="section-container agent-container flex-row flex-start">
     <div class="dash-section">
       <h1 class="dash-title">Your Assignments</h1>
-      <div class="dash-list flex-column flex-start">
+      <div class="dash-list">
         {{#each assignments}}
             <div class="dash-item flex-column flex-start">
               <span class="dash-item-title">{{title}}</span>
@@ -44,8 +44,29 @@
       <div class="dash-details flex-column flex-start">
         <span class="dash-callsign">Callsign: {{agentCallsign}}</span>
         <span class="dash-name">Name: {{agentName}}</span>
-        <span class="dash-email">Email: {{agentEmail}}</span>
+        <span class="dash-profile-email">Email: {{agentEmail}}</span>
         <a id="edit-profile" href="/agent-dash/{{agentId}}/edit/profile"><button>Edit Profile</button></a>
+      </div>
+    </div>
+    <div class="dash-section posting-section">
+      <h1 class="dash-title">Job Postings</h1>
+      <div class="dash-list">
+        {{#each openAssignments}}
+            <div class="dash-item flex-column flex-start">
+              <span class="dash-item-title">{{title}}</span>
+              <div class="dash-item-details bold flex-row flex-start">
+                <span class="dash-deadline">Deadline: {{formatDateFromNow deadline}}</span>
+              </div>
+              <div class="dash-item-details flex-row flex-start">
+                <span>Type: {{type}}</span>
+                <span>Status: {{status}}</span>
+              </div>
+              <div class="dash-panel flex-row flex-start">
+                <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
+                <button>Accept</button>
+              </div>
+            </div>
+        {{/each}}
       </div>
     </div>
   </div>
