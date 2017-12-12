@@ -437,6 +437,10 @@ Template.messageAssignment.helpers({
 
   isSender: (sid) => {
     return (sid === FlowRouter.getParam('agentid')) ? true : false;
+  },
+
+  assignment: () => {
+    return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
   }
 });
 

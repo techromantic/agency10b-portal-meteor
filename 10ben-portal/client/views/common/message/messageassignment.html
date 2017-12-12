@@ -1,6 +1,16 @@
 <template name="messageAssignment">
-  <div class="form-container message-container flex-column flex-start">
-    <div class="message-list flex-column flex-start">
+  <div class="form-container message-container flex-column flex-center">
+    {{#each assignment}}
+      <div class="message-assignment-container flex-column flex-center">
+        <h3>{{title}}</h3>
+        <div class="message-assignment-details flex-row flex-start">
+          <span class="message-assignment-type">Type: {{type}}</span>
+          <span class="message-assignment-type">Assigned to: {{getAgent agentid}}</span>
+          <span class="message-assignment-deadline">Due {{formatDateFromNow deadline}}</span>
+        </div>
+      </div>
+    {{/each}}
+    <div class="message-list">
       {{#each messages}}
         {{#if isSender senderid}}
           <div class="message-item sender flex-column flex-end">

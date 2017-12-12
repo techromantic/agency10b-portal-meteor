@@ -18,6 +18,10 @@ Template.registerHelper('formatDateFromNow', (date) => {
     return moment(date).fromNow();
 });
 
+Template.registerHelper('getAgent', (aid) => {
+  return Agents.findOne({agentid: aid}).callsign;
+});
+
 Template.registerHelper('getSender', (senderid) => {
   if (Meteor.users.findOne({_id: senderid})) {
     return Meteor.users.findOne({_id: senderid}).profile.callsign;
@@ -32,7 +36,17 @@ Template.registerHelper('getController', (controllerid) => {
 
 Template.registerHelper('condenseMessage', (message) => {
   return message.substring(0, 240) + (message.length > 240)? '' : '...';
-})
+});
+
+Template.registerHelper('agentOptions', () => {
+  let agents = Agents.find({}).fetch();
+  let agentArray = [];
+  for (let i = 0; i < agents.length; i++) {
+    let item = {label: agents[i].callsign, value: agents[i].agentid};
+    agentArray.push(item);
+  }
+  return agentArray;
+});
 
 
 Meteor.methods({

@@ -130,20 +130,6 @@ AssignmentSchema = new SimpleSchema({
     denyUpdate: true
   },
   agentid: {
-    type: Array,
-      autoform: {
-        options: function () {
-          var opts = Agents.find().map(function(agent) {
-              return {
-                  label: agent.name + ": " + agent.type,
-                  value: agent.agentid
-              };
-          });
-          return opts;
-        }
-    }
-  },
-  'agentid.$' : {
     type: String
   }
 });
