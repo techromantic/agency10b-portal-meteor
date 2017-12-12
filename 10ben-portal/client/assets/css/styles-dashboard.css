@@ -310,6 +310,27 @@ select {
   font-size: 0.9em;
 }
 
+.due-3m {
+  background: none;
+}
+
+.due-1m {
+  background: yellowgreen;
+}
+
+.due-2w {
+  background: yellow;
+}
+
+.due-1w {
+  background: orange;
+}
+
+.due-3d {
+  background: red;
+}
+
+
 .dash-item-details.bold {
   font-weight: 600;
 }

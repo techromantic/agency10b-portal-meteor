@@ -52,7 +52,7 @@
       <div class="control-container flex-row flex-start">
         <div class="control-list">
           {{#each assignments}}
-            <div class="dash-item flex-column flex-start">
+            <div class="dash-item flex-column flex-start {{getDueColor deadline}}">
               <span class="dash-item-title">{{title}}</span>
               <div class="dash-item-details bold flex-row flex-start">
                 <span class="dash-deadline">Deadline: {{formatFullDate deadline}} ({{formatDateFromNow deadline}})</span>

@@ -87,6 +87,25 @@ Template.controllerDashboard.helpers({
 
   controllerEmail: () => {
     return Meteor.user().emails[0].address;
+  },
+
+  getDueColor: (deadline) => {
+      console.log(deadline);
+      if(moment(deadline).isBefore(moment().add(3, 'days'))){
+          return 'due-3d';
+      }
+      if(moment(deadline).isBefore(moment().add(1, 'weeks'))){
+          return 'due-1w';
+      }
+      if(moment(deadline).isBefore(moment().add(2, 'weeks'))){
+          return 'due-2w';
+      }
+      if(moment(deadline).isBefore(moment().add(1, 'months'))){
+          return 'due-1m';
+      }
+      if(moment(deadline).isBefore(moment().add(3, 'months'))){
+          return 'due-3m';
+      }
   }
 });
 
@@ -312,6 +331,25 @@ Template.agentDashboard.helpers({
 
   noConfirmation: (status) => {
     return !(status === 'Accepted' || status === 'Rejected') ? true : false;
+  },
+
+  getDueColor: (deadline) => {
+      console.log(deadline);
+      if(moment(deadline).isBefore(moment().add(3, 'days'))){
+          return 'due-3d';
+      }
+      if(moment(deadline).isBefore(moment().add(1, 'weeks'))){
+          return 'due-1w';
+      }
+      if(moment(deadline).isBefore(moment().add(2, 'weeks'))){
+          return 'due-2w';
+      }
+      if(moment(deadline).isBefore(moment().add(1, 'months'))){
+          return 'due-1m';
+      }
+      if(moment(deadline).isBefore(moment().add(3, 'months'))){
+          return 'due-3m';
+      }
   }
 });
 
