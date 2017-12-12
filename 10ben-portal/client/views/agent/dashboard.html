@@ -32,8 +32,10 @@
               <div class="dash-panel flex-row flex-start">
                 <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
                 <a id="message-assignment" href="/agent-dash/{{agentid}}/message/assignment/{{assignmentid}}"><button>View Messages</button></a>
-                <button>Accept</button>
-                <button>Reject</button>
+                {{#if noConfirmation status}}
+                  <button>Accept</button>
+                  <button>Reject</button>
+                {{/if}}
               </div>
             </div>
         {{/each}}
@@ -63,7 +65,7 @@
               </div>
               <div class="dash-panel flex-row flex-start">
                 <a id="view-assignment" href="/agent-dash/{{agentId}}/view/assignment/{{assignmentid}}"><button>View Details</button></a>
-                <button>Accept</button>
+                <button id="accept-assignment" data-assignmentid="{{assignmentid}}">Accept</button>
               </div>
             </div>
         {{/each}}

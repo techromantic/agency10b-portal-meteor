@@ -334,6 +334,10 @@ Template.agentDashboard.helpers({
 
   lastMessage: (aid) => {
     return Messages.find({assignmentid: aid}, {sort: {datecreated: -1}, limit: 1});
+  },
+
+  noConfirmation: (status) => {
+    return !(status === 'Accepted' || status === 'Rejected') ? true : false;
   }
 });
 
@@ -356,6 +360,10 @@ Template.agentDashboard.events({
     $('#profile-edit').addClass('active');
     $('.form-bg').addClass('active');
   },
+
+  'click #accept-assignment' : (event, template) => {
+    Meteor.call('acceptAssignment', $(event.target).data("assignmentid"), FlowRouter.getParam('agentid'));
+  }
 });
 
 //View Assignment
@@ -375,21 +383,11 @@ Template.viewAssignment.events({
   'click #cancel-view' : (event, template) => {
     $('#assignment-view').removeClass('active');
     $('.form-bg').removeClass('active');
-    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
-  }
-});
+    window.history.back();
+  },
 
-Template.viewAssignment.helpers({
-  agentprofile: () => {
-    return Agents.find({agentid: FlowRouter.getParam('agentid')});
-  }
-});
-
-Template.viewAssignment.events({
-  'click #cancel-form' : (event, template) => {
-    $('#profile-edit').removeClass('active');
-    $('.form-bg').removeClass('active');
-    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+  'click #accept-assignment' : (event, template) => {
+    Meteor.call('acceptAssignment', FlowRouter.getParam('assignmentid'), FlowRouter.getParam('agentid'));
   }
 });
 
@@ -417,7 +415,7 @@ Template.editProfile.events({
     event.preventDefault();
     $('#profile-edit').removeClass('active');
     $('.form-bg').removeClass('active');
-    FlowRouter.go(`/agent-dash/${FlowRouter.getParam('agentid')}`);
+    window.history.back();
   }
 });
 

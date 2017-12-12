@@ -47,5 +47,8 @@ Meteor.methods({
     },
     'getAssignmentID': () => {
       return assignmentID;
+    },
+    'acceptAssignment': (aid, agid) => {
+      Assignments.update({assignmentid: aid}, {$set:{status: "Accepted", agentid: agid}});
     }
 });
