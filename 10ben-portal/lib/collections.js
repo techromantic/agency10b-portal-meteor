@@ -10,6 +10,7 @@ import SimpleSchema from 'simpl-schema';
 Agents = new Mongo.Collection('agents');
 Assignments = new Mongo.Collection('assignments');
 Messages = new Mongo.Collection('messages');
+Documents = new Mongo.Collection('documents');
 
 //Simple Schema
 SimpleSchema.extendOptions(['autoform']);
@@ -170,9 +171,80 @@ MessageSchema = new SimpleSchema({
     optional: true,
     denyInsert: false,
     denyUpdate: true
+  },
+  documents: {
+    type: Array,
+    autoform: {
+      type: 'select',
+      options: () => {
+        let docs = Documents.find({}).fetch();
+        let docArray = [];
+
+        for (let i = 0; i < docs.length; i++) {
+          let item = {label: docs[i].title, value:};
+          docArray.push(item);
+        }
+
+        return docArray;
+      }
+    },
+    optional: true;
+  },
+  'documents.$': {
+    type: String
+  },
+  bids: {
+    type: Array,
+    optional: true;
+  },
+  'bids.$': {
+    type: String
+  },
+  loe: {
+    type: Number,
+    optional: true
+  }
+});
+
+DocumentSchema = new SimpleSchema({
+  docid: {
+    type: String,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return Random.id(8)
+      } else if (this.isUpsert) {
+        return {$setOnInsert: Random.id(8)};
+      } else {
+        this.unset();
+      }
+    },
+    denyInsert: false,
+    denyUpdate: true
+  },
+  title: {
+    type: String
+  },
+  link: {
+    type: String
+  },
+  senderid: {
+    type: String,
+    denyInsert: false,
+    denyUpdate: true
+  },
+  datecreated: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert && (!this.isSet || this.value.length === 0)) {
+        return new Date();
+      }
+    },
+    denyInsert: false,
+    denyUpdate: true
   }
 });
 
 Agents.attachSchema(AgentSchema);
 Assignments.attachSchema(AssignmentSchema);
 Messages.attachSchema(MessageSchema);
+Documents.attachSchema(DocumentSchema);
