@@ -133,6 +133,38 @@ AssignmentSchema = new SimpleSchema({
   agentid: {
     type: String,
     optional: true
+  },
+  documents: {
+    type: Array,
+    autoform: {
+      type: 'select',
+      options: () => {
+        let docs = Documents.find({}).fetch();
+        let docArray = [];
+
+        for (let i = 0; i < docs.length; i++) {
+          let item = {label: docs[i].title, value: docs[i].docid};
+          docArray.push(item);
+        }
+
+        return docArray;
+      }
+    },
+    optional: true
+  },
+  'documents.$': {
+    type: String
+  },
+  bids: {
+    type: Array,
+    optional: true
+  },
+  'bids.$': {
+    type: String
+  },
+  loe: {
+    type: Number,
+    optional: true
   }
 });
 
@@ -171,38 +203,6 @@ MessageSchema = new SimpleSchema({
     optional: true,
     denyInsert: false,
     denyUpdate: true
-  },
-  documents: {
-    type: Array,
-    autoform: {
-      type: 'select',
-      options: () => {
-        let docs = Documents.find({}).fetch();
-        let docArray = [];
-
-        for (let i = 0; i < docs.length; i++) {
-          let item = {label: docs[i].title, value: docs[i].docid};
-          docArray.push(item);
-        }
-
-        return docArray;
-      }
-    },
-    optional: true
-  },
-  'documents.$': {
-    type: String
-  },
-  bids: {
-    type: Array,
-    optional: true
-  },
-  'bids.$': {
-    type: String
-  },
-  loe: {
-    type: Number,
-    optional: true
   }
 });
 

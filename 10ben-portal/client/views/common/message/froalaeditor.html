@@ -1,0 +1,16 @@
+<template name="froalaeditor">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/js/froala_editor.pkgd.min.js"></script>
+  <script type="text/javascript">
+    $(() => {
+      $('.richeditor').froalaEditor({
+        height: 400,
+        width: 1024,
+        imageDefaultWidth: 512,
+        imageMaxSize: 1024 * 1024 * 3,
+        fontFamily: {
+           'Raleway,sans-serif': 'Raleway'
+         }
+      })
+    });
+  </script>
+</template>

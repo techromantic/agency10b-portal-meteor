@@ -30,29 +30,11 @@
   font-size: 3em;
 }
 
-.form-container {
-  margin: 20px;
-}
-
-.form-fieldset {
-  border: 0;
-  width: 40vw;
-}
-
 .form-fieldset input {
   width: 100%;
   max-width: 100%;
   font-size: 1.3em;
   margin: 20px 0;
-}
-
-.button-container {
-  margin: 40px 0;
-  width: 100%;
-}
-
-.button-container button {
-  margin-right: 40px;
 }
 
 .delete-button {
@@ -249,12 +231,14 @@
 }
 
 .form-container {
-  margin: 20px;
+  margin-top: 160px;
 }
 
 .form-fieldset {
   border: 0;
-  width: 40vw;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 1024px;
 }
 
 .form-fieldset input {
@@ -263,21 +247,50 @@
   margin: 20px 0;
 }
 
+.form-field-row {
+  width: 100%;
+  justify-content: space-between;
+}
+
 .form-field {
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 10px;
 }
 
 .form-field span {
   font-size: 1.4em;
   font-weight: 800;
-  width: 40%;
   max-width: 150px;
   margin-right: 20px;
 }
 
+.form-field span.long {
+  width: 40%;
+  max-width: 300px;
+}
+
+.form-field span.full {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-field.form-textarea,
+.form-field.form-documents {
+  align-items: flex-start;
+  width: 100%;
+  margin: 20px 10px;
+}
+
+.form-textarea textarea {
+  margin: 20px 0;
+}
+
 .button-container {
-  margin: 40px 0;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
 }
 
 .button-container button {

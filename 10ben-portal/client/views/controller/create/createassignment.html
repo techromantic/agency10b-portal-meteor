@@ -1,8 +1,10 @@
 <template name="createAssignment">
-  <div class="form-header">
-    <h1>Create an Assignment</h1>
+  <div class="controller-header flex-row flex-center">
+    <h1>Assignment</h1>
+    <div class="vertical-divider"></div>
+    <h1>Create</h1>
   </div>
-  <div class="form-container flex-column flex-start">
+  <div class="form-container flex-column flex-center">
     {{#autoForm collection="Assignments" id="addAssignment" type="insert" class="add-form"}}
         <fieldset class="form-fieldset flex-column flex-start">
             <div class="hidden">
@@ -10,29 +12,45 @@
               {{> afFieldInput name='datecreated'}}
               {{> afFieldInput name='controllerid'}}
             </div>
-            <div class="form-field flex-row flex-start">
-              <span>Title:</span>
-              {{> afFieldInput name='title' type='text'}}
+            <div class="form-field-row flex-row">
+              <div class="form-field flex-row flex-start">
+                <span>Title:</span>
+                {{> afFieldInput name='title' type='text'}}
+              </div>
+              <div class="form-field flex-row flex-start">
+                <span>Deadline:</span>
+                {{> afFieldInput name='deadline' type='date'}}
+              </div>
             </div>
-            <div class="form-field flex-row flex-start">
+            <div class="form-field form-textarea flex-column flex-start">
               <span>Description:</span>
               {{> afFieldInput name='desc' type='textarea'}}
             </div>
-            <div class="form-field flex-row flex-start">
-              <span>Deadline:</span>
-              {{> afFieldInput name='deadline' type='date'}}
+            <div class="form-field-row flex-row">
+              <div class="form-field flex-row flex-start">
+                <span>Status:</span>
+                {{> afFieldInput name='status' type='select' options="allowed"}}
+              </div>
+              <div class="form-field flex-row flex-start">
+                <span>Type:</span>
+                {{> afFieldInput name='type' type='select' options="allowed"}}
+              </div>
             </div>
-            <div class="form-field flex-row flex-start">
-              <span>Status:</span>
-              {{> afFieldInput name='status' type='select' options="allowed"}}
+            <div class="form-field-row flex-row">
+              <div class="form-field flex-row flex-start">
+                <span>Assign To:</span>
+                {{> afFieldInput name='agentid' type="select" options=agentOptions}}
+              </div>
+              <div class="form-field flex-row flex-start">
+                <span class="long">LOE (hours):</span>
+                {{> afFieldInput name='loe' type='text'}}
+              </div>
             </div>
-            <div class="form-field flex-row flex-start">
-              <span>Assignment Type:</span>
-              {{> afFieldInput name='type' type='select' options="allowed"}}
-            </div>
-            <div class="form-field flex-row flex-start">
-              <span>Agent Assigned:</span>
-              {{> afFieldInput name='agentid' type="select" options=agentOptions}}
+            <div class="form-field-row flex-row">
+              <div class="form-field form-documents flex-column flex-start">
+                <span class="full">Add Document Links</span>
+                {{> afFieldInput name="documents" type="select"}}
+              </div>
             </div>
             <div class="button-container flex-row flex-start">
               <button id="cancel-form">Cancel</button>

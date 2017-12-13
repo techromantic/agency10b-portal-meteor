@@ -76,9 +76,7 @@ AutoForm.addHooks('addAssignment', {
       alert("Error adding assignment: " + error);
     },
     onSuccess: (formType, result) => {
-      $('#assignment-add').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
+      window.history.back();
     }
 });
 
@@ -92,9 +90,7 @@ AutoForm.addHooks('editAssignment', {
       alert("Error updating assignment: " + error);
     },
     onSuccess: (formType, result) => {
-      $('#assignment-edit').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
+      window.history.back();
     }
 });
 

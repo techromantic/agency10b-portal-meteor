@@ -145,20 +145,20 @@ Template.controllerDashboard.events({
     $('.form-bg').addClass('active');
   },
 
-  'click #add-assignment' : (event, template) => {
-    $('#assignment-add').addClass('active');
-    $('.form-bg').addClass('active');
-  },
+  // 'click #add-assignment' : (event, template) => {
+  //   $('#assignment-add').addClass('active');
+  //   $('.form-bg').addClass('active');
+  // },
 
   'click #edit-agent' : (event, template) => {
     $('#agent-edit').addClass('active');
     $('.form-bg').addClass('active');
   },
 
-  'click #edit-assignment' : (event, template) => {
-    $('#assignment-edit').addClass('active');
-    $('.form-bg').addClass('active');
-  },
+  // 'click #edit-assignment' : (event, template) => {
+  //   $('#assignment-edit').addClass('active');
+  //   $('.form-bg').addClass('active');
+  // },
 
   'click #message-assignment' : (event, template) => {
     $('#assignment-message').addClass('active');

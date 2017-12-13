@@ -69,8 +69,12 @@ FlowRouter.route( '/control-dash/add/agent/', {
 //Add Assignment
 FlowRouter.route( '/control-dash/add/assignment/', {
   action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn()) {
+    if (!Meteor.user() && !Meteor.loggingIn())
       FlowRouter.go('control-login');
+    else if (Meteor.user() || Meteor.loggingIn()) {
+        BlazeLayout.render('applicationLayout', {
+          main: 'createAssignment'
+        })
     }
   },
   name: 'add-assignment'
@@ -89,9 +93,13 @@ FlowRouter.route( '/control-dash/edit/agent/:agentid', {
 //Edit Assignment
 FlowRouter.route( '/control-dash/edit/assignment/:assignmentid', {
   action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn()) {
+    if (!Meteor.user() && !Meteor.loggingIn())
       FlowRouter.go('control-login');
-    }
+      else if (Meteor.user() || Meteor.loggingIn()) {
+        BlazeLayout.render('applicationLayout', {
+          main: 'editAssignment'
+        })
+      }
   },
   name: 'edit-assignment'
 });
