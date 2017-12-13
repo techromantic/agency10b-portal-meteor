@@ -8,7 +8,7 @@ FlowRouter.route('/', {
   }
 });
 
-
+//Login Routes
 //Controller Login
 FlowRouter.route('/control-login', {
   action: () => {
@@ -32,6 +32,7 @@ FlowRouter.route('/agent-login', {
     name: 'agent-login'
 });
 
+//Dashboard Routes
 //Agent Dashboard
 FlowRouter.route('/agent-dash/:agentid', {
   action: () => {
@@ -56,11 +57,16 @@ FlowRouter.route('/control-dash', {
   name: 'control-dash'
 });
 
+//Create Routes
 //Add Agent
 FlowRouter.route( '/control-dash/add/agent/', {
   action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn()) {
+    if (!Meteor.user() && !Meteor.loggingIn())
       FlowRouter.go('control-login');
+    else if (Meteor.user() || Meteor.loggingIn()) {
+        BlazeLayout.render('applicationLayout', {
+          main: 'createAgent'
+        })
     }
   },
   name: 'add-agent'
@@ -80,11 +86,16 @@ FlowRouter.route( '/control-dash/add/assignment/', {
   name: 'add-assignment'
 });
 
+//Edit Routes
 //Edit Agent
 FlowRouter.route( '/control-dash/edit/agent/:agentid', {
   action: () => {
-    if (!Meteor.user() && !Meteor.loggingIn()) {
+    if (!Meteor.user() && !Meteor.loggingIn())
       FlowRouter.go('control-login');
+    else if (Meteor.user() || Meteor.loggingIn()) {
+        BlazeLayout.render('applicationLayout', {
+          main: 'editAgent'
+        })
     }
   },
   name: 'edit-agent'
@@ -104,6 +115,15 @@ FlowRouter.route( '/control-dash/edit/assignment/:assignmentid', {
   name: 'edit-assignment'
 });
 
+//Edit Profile
+FlowRouter.route('/agent-dash/:agentid/edit/profile', {
+  action: () => {
+  },
+  name: 'edit-profile'
+});
+
+
+//View Routes
 //View Assignment
 FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
   action: () => {
@@ -111,6 +131,8 @@ FlowRouter.route('/agent-dash/:agentid/view/assignment/:assignmentid', {
   name: 'view-assignment'
 });
 
+
+//Message Routes
 //View Assignment Message (Controller)
 FlowRouter.route( '/control-dash/:agentid/message/assignment/:assignmentid', {
   action: () => {
@@ -133,11 +155,4 @@ FlowRouter.route( '/agent-dash/:agentid/message/assignment/:assignmentid', {
     })
   },
   name: 'message-assignment-agent'
-});
-
-//Edit Profile
-FlowRouter.route('/agent-dash/:agentid/edit/profile', {
-  action: () => {
-  },
-  name: 'edit-profile'
 });

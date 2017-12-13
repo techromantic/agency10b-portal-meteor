@@ -1,33 +1,39 @@
 <template name="createAgent">
-  <div class="form-header">
-    <h1>Create an Agent</h1>
+  <div class="controller-header flex-row flex-center">
+    <h1>Agent</h1>
+    <div class="vertical-divider"></div>
+    <h1>Create</h1>
   </div>
-  <div class="form-container flex-column flex-start">
+  <div class="form-container flex-column flex-center">
     {{#autoForm collection="Agents" id="addAgent" type="insert" class="add-form"}}
       <fieldset class="form-fieldset flex-column flex-start">
           <div class="hidden">
             {{> afFieldInput name='agentid'}}
             {{> afFieldInput name='datecreated'}}
           </div>
-          <div class="form-field flex-row flex-start">
-            <span>Full Name:</span>
-            {{> afFieldInput name='name' type='text'}}
+          <div class="form-field-row flex-row">
+            <div class="form-field flex-row flex-start">
+              <span>Full Name:</span>
+              {{> afFieldInput name='name' type='text'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Email:</span>
+              {{> afFieldInput name='email' type='text' }}
+            </div>
           </div>
-          <div class="form-field flex-row flex-start">
-            <span>Email:</span>
-            {{> afFieldInput name='email' type='text' }}
-          </div>
-          <div class="form-field flex-row flex-start">
-            <span>Agent Type:</span>
-            {{> afFieldInput name='type' type='select' options="allowed"}}
-          </div>
-          <div class="form-field flex-row flex-start">
-            <span>Callsign:</span>
-            {{> afFieldInput name='callsign' type='text'}}
-          </div>
-          <div class="form-field flex-row flex-start">
-            <span>Status:</span>
-            {{> afFieldInput name='status' type='select' options="allowed"}}
+          <div class="form-field-row flex-row">
+            <div class="form-field flex-row flex-start">
+              <span>Agent Type:</span>
+              {{> afFieldInput name='type' type='select' options="allowed"}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Callsign:</span>
+              {{> afFieldInput name='callsign' type='text'}}
+            </div>
+            <div class="form-field flex-row flex-start">
+              <span>Status:</span>
+              {{> afFieldInput name='status' type='select' options="allowed"}}
+            </div>
           </div>
           <div class="button-container flex-row">
             <button id="cancel-form">Cancel</button>

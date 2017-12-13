@@ -1,48 +1,3 @@
-//Edit Assignment
-Template.editAssignment.onCreated(function() {
-    this.assignments = this.subscribe("allAssignments");
-    this.agents = this.subscribe("allAgents");
-
-    //this.currentAgent = Agents.findOne({_id: FlowRouter.getParam({'assignmentid'})});
-});
-
-
-
-Template.editAssignment.helpers({
-  assignmentdetail: () => {
-    return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
-  },
-
-  beforeRemove: () => {
-    return function (collection, id) {
-      let doc = collection.findOne(id);
-      if (confirm('Really delete "' + doc.name + '"?')) {
-        this.remove();
-      }
-    };
-  },
-
-  onSuccess: () => {
-    return (result) => {
-      $('#assignment-edit').removeClass('active');
-      $('.form-bg').removeClass('active');
-      FlowRouter.go('control-dash');
-    };
-  }
-});
-
-Template.editAssignment.events({
-  'click #cancel-form' : (event, template) => {
-    event.preventDefault();
-    $('#assignment-edit').removeClass('active');
-    $('.form-bg').removeClass('active');
-    FlowRouter.go('control-dash');
-  }
-})
-
-
-
-
 //View Assignment
 Template.viewAssignment.onCreated(function() {
   this.users = this.subscribe("allUsers");
@@ -92,6 +47,46 @@ Template.viewAssignment.events({
     $(event.target).parent('.view-section').addClass('active');
   }
 });
+
+//Edit Assignment
+Template.editAssignment.onCreated(function() {
+    this.assignments = this.subscribe("allAssignments");
+    this.agents = this.subscribe("allAgents");
+
+    //this.currentAgent = Agents.findOne({_id: FlowRouter.getParam({'assignmentid'})});
+});
+
+Template.editAssignment.helpers({
+  assignmentdetail: () => {
+    return Assignments.find({assignmentid: FlowRouter.getParam('assignmentid')});
+  },
+
+  beforeRemove: () => {
+    return function (collection, id) {
+      let doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.name + '"?')) {
+        this.remove();
+      }
+    };
+  },
+
+  onSuccess: () => {
+    return (result) => {
+      $('#assignment-edit').removeClass('active');
+      $('.form-bg').removeClass('active');
+      FlowRouter.go('control-dash');
+    };
+  }
+});
+
+Template.editAssignment.events({
+  'click #cancel-form' : (event, template) => {
+    event.preventDefault();
+    $('#assignment-edit').removeClass('active');
+    $('.form-bg').removeClass('active');
+    FlowRouter.go('control-dash');
+  }
+})
 
 //Edit Profile
 Template.editProfile.onCreated(function() {
